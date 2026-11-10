@@ -171,7 +171,7 @@
       venue: { plate: 'newyork', label: 'Wall Street, October 1929' },
       text: 'You are in New York at the end of a lecture tour, and you have put most of your earnings into American shares, which have only ever gone up. On Thursday morning they start to fall. By the afternoon a man is said to have jumped from a window under yours. Your broker asks for instructions. Sell now and take a loss, or hold on for the bounce?',
       basis: 'Churchill in America during the Wall Street Crash, October 1929; his heavy losses on shares.',
-      real: 'Churchill lost most of his American investments in the Wall Street Crash of October 1929. He is said to have been in New York at the time; that detail is still to be checked. He spent the 1930s writing to restore his finances.',
+      real: 'Churchill lost most of his American investments in the Wall Street Crash of October 1929. He was in New York on Black Tuesday, 29 October, and sailed for home the next day. He spent the 1930s writing to restore his finances.',
       check: 'research', facts: ['crash-1929'],
       choices: [
         { label: 'Hold on for the bounce', historical: true, effects: 'money-18 temper+2 #in-debt', result: 'There is no bounce. By Christmas you have lost most of what you had. You go home and write, as fast as you can, for the rest of the decade.', diary: 'Lost nearly everything. Books, then. Many books.' },
@@ -249,7 +249,7 @@
       menu: ['Clear soup (the Prof\'s without stock)', 'Sole, and for the Prof an omelette of egg whites', 'Treacle tart and the brandy he will not drink'],
       text: 'The Prof has motored down from Oxford in his chauffeur-driven car. He eats no meat, drinks no wine, and calculates everyone\'s age and income at sight. He is the cleverest man you know and the most disliked, and he is the only scientist in England who will explain things to you without condescension. Over lunch he means to talk about the air, and about what the bombers will do.',
       basis: 'Lindemann ("the Prof") at Chartwell, where he was a guest over a hundred times; his feud with Henry Tizard on the Air Defence Research committee, 1935–36.',
-      real: 'Lindemann joined the Air Defence Research sub-committee through Churchill in 1935 and fell out bitterly with Henry Tizard, who backed radar, while Lindemann favoured other schemes. Tizard\'s committee members threatened to resign, and Lindemann was removed in 1936. Radar was ready in time for 1940. This lunch is an invention for the game.',
+      real: 'Lindemann joined the Air Defence Research sub-committee through Churchill in 1935 and fell out bitterly with Henry Tizard, who backed radar, while Lindemann favoured other schemes. Blackett and Hill resigned in the summer of 1936, and the committee was re-formed without Lindemann, who was replaced by Appleton. Radar was ready in time for 1940. This lunch is an invention for the game.',
       check: 'research', facts: ['lindemann-chartwell', 'tizard-feud'],
       courses: [
         { course: 'The soup', text: 'The Prof says the bomber will always get through unless science stops it. He wants a place on the Air Ministry\'s new defence committee, and only you can get him one.',
@@ -298,7 +298,7 @@
       venue: { plate: 'chine', label: 'Your study, summer 1938' },
       text: 'Two letters on the same morning. Your broker says that your debts now exceed what you can raise, and that the house will have to be sold. Your constituency chairman says that a group in the association wants you dropped at the next election for disloyalty to the Prime Minister. A rich admirer has sent word through Bracknell that he would like to help, quietly.',
       basis: 'Churchill\'s financial crisis of 1938, when Chartwell was put up for sale and he was rescued by a financier; and the attempts to deselect him at Epping in 1938–39.',
-      real: 'In 1938 Churchill put Chartwell on the market. The financier Sir Henry Strakosch took over his share losses, and the house was withdrawn from sale. Some members of his Epping association tried to unseat him in 1938–39 for attacking Chamberlain, but failed.',
+      real: 'In 1938 Churchill put Chartwell on the market. The financier Sir Henry Strakosch took over his share losses, and the house was withdrawn from sale. After Munich some members of his Epping association, led by Colin Thornton-Kemsley, sought to censure and deselect him for attacking Chamberlain. They did not succeed.',
       check: 'unchecked', facts: ['rescue-1938', 'epping-deselect'],
       choices: [
         { label: 'Take the admirer\'s help and fight the association', historical: true, effects: 'money+20 steel+2 seat+5 @bracknell+6 #obliged', result: 'The debts are taken over. The house is withdrawn from sale. At a stormy meeting in Woodford the association backs you by three to one.', diary: 'Rescued. The house is saved. Woodford backs me. I owe a great deal, to a man I hardly know.' },

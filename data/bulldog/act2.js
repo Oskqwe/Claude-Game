@@ -303,8 +303,8 @@
     { id: 'influenza-1918', t: 1918.85, year: 1918, title: 'The influenza',
       venue: { plate: 'sickroom', label: 'A bedroom in London, November 1918' },
       text: 'The war is ending and a new killer is going through London: an influenza that takes the young and strong in two days, turning their faces blue. The theatres are half empty and the undertakers have run out of coffins. You woke this morning with a fever and an ache in every bone. Your doctor is overworked and frightened. There is an Armistice to celebrate, and a great deal to do.',
-      basis: 'The influenza pandemic of 1918–19.',
-      real: 'The 1918–19 influenza killed something like a quarter of a million people in Britain, many of them young adults, in waves from 1918 into 1919. None of the camp\'s figures is recorded as having died of it, but it is the risk every one of them ran.',
+      basis: 'The influenza pandemic of 1918–19, which killed about 228,000 people in Britain.',
+      real: 'The 1918–19 influenza killed about 228,000 people in Britain, many of them young adults, in waves from 1918 into 1919. None of the camp\'s figures is recorded as having died of it, but it is the risk every one of them ran.',
       check: 'unchecked', facts: ['flu-1918'],
       choices: [
         { label: 'Go to bed and stay there', effects: 'health-6 cap-1', death: D(0.015, 'The influenza of 1918 took you in three days, a week after the Armistice. You were forty-four.', 'Death from influenza'), result: 'You stay in bed for a fortnight and miss the Armistice. You get up thin and weak, and alive.', diary: 'Missed the Armistice in bed. Alive. Many are not.' },

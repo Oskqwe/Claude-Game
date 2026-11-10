@@ -350,8 +350,8 @@
       if (!sc) return;
       const first = !seen.has(sc.id); seen.add(sc.id);
       const facts = (sc.facts || []).map((f) => TM.FACTS[f]).filter(Boolean);
-      const status = facts.some((f) => f.status === 'unchecked') ? 'unchecked' : sc.check || 'research';
-      const statusLabel = { unchecked: 'Not yet verified', corroborated: 'Checked: two sources', research: 'Source: Wikipedia' }[status] || status;
+      const status = facts.some((f) => f.status === 'unchecked') ? 'unchecked' : facts.some((f) => f.status === 'conflicting') ? 'conflicting' : sc.check || 'research';
+      const statusLabel = { unchecked: 'Not yet verified', conflicting: 'Sources disagree', corroborated: 'Checked: two sources', research: 'Source: Wikipedia' }[status] || status;
       rows.push(`<tr><td>${l.year}</td>
         <td><div class="lbl">${esc(sc.title)}${l.course ? ` · <i>${esc(l.course)}</i>` : ''}</div>${esc(l.label)} <span class="${l.historical ? 'tag-hist' : 'tag-off'}">${l.historical ? 'as in history' : 'your own path'}</span><div class="muted" style="margin-top:4px">${esc(l.result)}</div></td>
         <td>${first ? `${esc(sc.real)}<div class="src">Basis: ${esc(sc.basis)} <span class="vstatus ${status}">${statusLabel}</span></div>` : '<span class="muted">(same occasion)</span>'}</td></tr>`);
@@ -375,7 +375,7 @@
   }
 
   function realNames() {
-    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin'], ['Mr St John Brodwell', 'St John Brodrick'], ['Sir William Walbrook', 'Sir William Walrond'], ['Lord Hugo Seyton', 'Lord Hugh Cecil'], ['Mr Lloyd Gwynne', 'David Lloyd George'], ['Mr Arthur Belford', 'Arthur Balfour'], ['Ivor Gest', 'Ivor Guest'], ['Mr H. H. Askwith', 'H. H. Asquith'], ['Miss Clemency Hosier', 'Clementine Hozier'], ['Brendan Bracknell', 'Brendan Bracken'], ['the Prof, Professor Lindqvist', 'Frederick Lindemann'], ['Major Desmond Martyn', 'Desmond Morton'], ['Roger Keys', 'Roger Keyes'], ['Duff Cowper', 'Duff Cooper'], ['Mr Stanley Baldock', 'Stanley Baldwin'], ['Mr Maynard Kaine', 'John Maynard Keynes'], ['Mr Antony Edgerton', 'Anthony Eden'], ['Mr MacDougal', 'Ramsay MacDonald'], ['Sir John Simmons', 'Sir John Simon'], ['Sir Herbert Samuels', 'Sir Herbert Samuel'], ['Sir Henry Tisdale', 'Sir Henry Tizard'], ['Lord Beaverhulme', 'Lord Beaverbrook']];
+    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin'], ['Mr St John Brodwell', 'St John Brodrick'], ['Sir William Walbrook', 'Sir William Walrond'], ['Lord Hugo Seyton', 'Lord Hugh Cecil'], ['Mr Lloyd Gwynne', 'David Lloyd George'], ['Mr Arthur Belford', 'Arthur Balfour'], ['Ivor Gest', 'Ivor Guest'], ['Mr H. H. Askwith', 'H. H. Asquith'], ['Miss Clemency Hosier', 'Clementine Hozier'], ['Brendan Bracknell', 'Brendan Bracken'], ['the Prof, Professor Lindqvist', 'Frederick Lindemann'], ['Major Desmond Martyn', 'Desmond Morton'], ['Roger Keys', 'Roger Keyes'], ['Duff Cowper', 'Duff Cooper'], ['Mr Stanley Baldock', 'Stanley Baldwin'], ['Mr Maynard Kaine', 'John Maynard Keynes'], ['Mr Antony Edgerton', 'Anthony Eden'], ['Mr MacDougal', 'Ramsay MacDonald'], ['Sir John Simmons', 'Sir John Simon'], ['Sir Herbert Samuels', 'Sir Herbert Samuel'], ['Sir Henry Tisdale', 'Sir Henry Tizard'], ['Lord Beaverhulme', 'Lord Beaverbrook'], ['Mr Nevil Chambers', 'Neville Chamberlain'], ['Viscount Hallifield', 'Lord Halifax'], ['Captain David Margrave', 'David Margesson'], ['Mr Clement Astley', 'Clement Attlee'], ['Mr Arthur Greenhalgh', 'Arthur Greenwood'], ['Sir William Beverley', 'Sir William Beveridge'], ['Nye Bowen', 'Aneurin Bevan']];
     return `<p class="muted" style="font-size:.95rem">Names in play and the real people behind them: ${pairs.map(([a, b]) => `${esc(a)} = <b>${esc(b)}</b>`).join('; ')}.</p>`;
   }
 
@@ -387,12 +387,14 @@
     const age = s.year - s.born;
     const head = s.act === 1
       ? (mp ? 'The Member for the Borough' : 'Still outside the House')
-      : (mp ? 'On the eve of the storm' : 'Outside, as the storm comes');
+      : s.act === 2 ? (mp ? 'On the eve of the storm' : 'Outside, as the storm comes')
+      : (s.flags.includes('pm') ? 'Prime Minister, at the end' : s.flags.includes('was-pm') ? 'The old lion' : mp ? 'A Member to the last' : 'The life outside');
     const body = s.act === 1
       ? (mp ? `${esc(s.first)} ${esc(s.last)} sits in the new Parliament, aged ${age}, with a famous name, a small income from books and lectures, and no patience at all.`
             : `${esc(s.first)} ${esc(s.last)} reaches the new century outside Parliament, aged ${age}, and means to be inside it before long.`)
-      : `${esc(s.first)} ${esc(s.last)} is ${age}, ${mp ? 'a Member of Parliament' : 'out of Parliament'}, ${esc(s.office || 'without office')}, and watching Germany.`;
-    const tail = playable ? `${esc(next.title)} begins in ${esc(next.span.split('–')[0])}.` : (next ? '' : 'Act III, the test of 1938 to 1951, is the next part of this life to be written.');
+      : s.act === 2 ? `${esc(s.first)} ${esc(s.last)} is ${age}, ${mp ? 'a Member of Parliament' : 'out of Parliament'}, ${esc(s.office || 'without office')}, and watching Germany.`
+      : `October 1951. ${esc(s.first)} ${esc(s.last)} is ${age}${s.office && s.office !== 'None' ? ', ' + esc(s.office) : ''}. ${s.flags.includes('long-peace') ? 'Britain kept the peace of 1940, and Europe paid for it.' : s.flags.includes('peace-ends') ? 'Britain made peace in 1940 and went back to war in 1942.' : 'The war is won, the Empire is going, and the world is divided by a curtain of iron.'} Here the story of this life ends.`;
+    const tail = playable ? `${esc(next.title)} begins in ${esc(next.span.split('–')[0])}.` : '';
     if (!playable) { s.ended = true; TM.save(); }
     setSheet(`<div class="stack">
       ${TM.plate('gallery', 'The Palace of Westminster')}

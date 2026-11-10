@@ -31,6 +31,10 @@ To make a single shareable file: `python3 tools/bundle.py` writes `dist/the-memb
 
 `data/bulldog/act2.js` (1901–1918) and `act2-later.js` (1919–1938) hold 43 scenes. The spine is Churchill's middle years; the Act I routes carry on into the lives of the camp's other figures (Keyes at Zeebrugge, Morton at Arras, Lindemann at Farnborough, Duff Cooper with the Guards, Amery torpedoed, Bracken from 1923). Players still outside Parliament get a way in at 1906, 1908, 1910, 1918, 1924 or 1934. At the end of Act I the player goes on to Act II; the history comparison is shown only when the life ends. 19 of Act II's 44 facts are still unchecked (see `data/facts.js`).
 
+## Act III (draft)
+
+`data/bulldog/act3.js` (1938–40), `act3-war.js` (1940–45) and `act3-after.js` (1945–51) hold 42 scenes, including a walkable Lobby after Munich and the invented "Peace of 1940" branch (DESIGN §10) if terms are sought in May 1940. Flags: `!pm`, `!was-pm`, `!peer-war` (Hallifield as PM), `!peace-1940`, `!peace-signed`, `!long-peace`. The life ends after the October 1951 election, and the full comparison with history is shown then.
+
 ## Camp briefs
 
 `docs/camps/` holds a brief for each of the nine unbuilt camps. See `docs/camps/README.md`.
