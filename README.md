@@ -27,6 +27,14 @@ To make a single shareable file: `python3 tools/bundle.py` writes `dist/the-memb
 - **Epilogue**: your life set against the real one, scene by scene, with each note's verification status, the real names behind the echo names, and the full diary.
 - **Venue plates** (`js/plates.js`): engraved vignettes of each place, drawn in SVG.
 
+## Act II (draft)
+
+`data/bulldog/act2.js` (1901–1918) and `act2-later.js` (1919–1938) hold 43 scenes. The spine is Churchill's middle years; the Act I routes carry on into the lives of the camp's other figures (Keyes at Zeebrugge, Morton at Arras, Lindemann at Farnborough, Duff Cooper with the Guards, Amery torpedoed, Bracken from 1923). Players still outside Parliament get a way in at 1906, 1908, 1910, 1918, 1924 or 1934. At the end of Act I the player goes on to Act II; the history comparison is shown only when the life ends. 19 of Act II's 44 facts are still unchecked (see `data/facts.js`).
+
+## Camp briefs
+
+`docs/camps/` holds a brief for each of the nine unbuilt camps. See `docs/camps/README.md`.
+
 ## Writing scenes
 
 Each scene in `data/<camp>/actN.js` has `id, t (decimal year; scenes sort by it), year, title, venue, text (60–100 words), basis, real, check, facts, if, choices[]`. A lunch has `kind: 'lunch'`, `guests`, `menu` and `courses[]`, each with its own choices.

@@ -341,11 +341,12 @@
   /* ───────── Endings ───────── */
 
   function comparison(s) {
-    const act = TM.ACTS[s.camp][1];
+    const acts = Object.values(TM.ACTS[s.camp] || {});
     const rows = [];
     const seen = new Set();
     s.log.forEach((l) => {
-      const sc = act.scenes.find((x) => x.id === l.scene);
+      let sc = null;
+      for (const a of acts) { sc = a.scenes.find((x) => x.id === l.scene); if (sc) break; }
       if (!sc) return;
       const first = !seen.has(sc.id); seen.add(sc.id);
       const facts = (sc.facts || []).map((f) => TM.FACTS[f]).filter(Boolean);
@@ -374,28 +375,39 @@
   }
 
   function realNames() {
-    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin'], ['Mr St John Brodwell', 'St John Brodrick'], ['Sir William Walbrook', 'Sir William Walrond'], ['Lord Hugo Seyton', 'Lord Hugh Cecil'], ['Mr Lloyd Gwynne', 'David Lloyd George'], ['Mr Arthur Belford', 'Arthur Balfour'], ['Ivor Gest', 'Ivor Guest']];
+    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin'], ['Mr St John Brodwell', 'St John Brodrick'], ['Sir William Walbrook', 'Sir William Walrond'], ['Lord Hugo Seyton', 'Lord Hugh Cecil'], ['Mr Lloyd Gwynne', 'David Lloyd George'], ['Mr Arthur Belford', 'Arthur Balfour'], ['Ivor Gest', 'Ivor Guest'], ['Mr H. H. Askwith', 'H. H. Asquith'], ['Miss Clemency Hosier', 'Clementine Hozier'], ['Brendan Bracknell', 'Brendan Bracken'], ['the Prof, Professor Lindqvist', 'Frederick Lindemann'], ['Major Desmond Martyn', 'Desmond Morton'], ['Roger Keys', 'Roger Keyes'], ['Duff Cowper', 'Duff Cooper'], ['Mr Stanley Baldock', 'Stanley Baldwin'], ['Mr Maynard Kaine', 'John Maynard Keynes'], ['Mr Antony Edgerton', 'Anthony Eden'], ['Mr MacDougal', 'Ramsay MacDonald'], ['Sir John Simmons', 'Sir John Simon'], ['Sir Herbert Samuels', 'Sir Herbert Samuel'], ['Sir Henry Tisdale', 'Sir Henry Tizard'], ['Lord Beaverhulme', 'Lord Beaverbrook']];
     return `<p class="muted" style="font-size:.95rem">Names in play and the real people behind them: ${pairs.map(([a, b]) => `${esc(a)} = <b>${esc(b)}</b>`).join('; ')}.</p>`;
   }
 
   function actEnd() {
     const s = TM.state, act = TM.ACTS[s.camp][s.act];
-    s.ended = true; TM.save();
+    const next = TM.ACTS[s.camp][s.act + 1];
+    const playable = next && next.scenes && next.scenes.length;
+    const mp = s.flags.includes('mp');
+    const age = s.year - s.born;
+    const head = s.act === 1
+      ? (mp ? 'The Member for the Borough' : 'Still outside the House')
+      : (mp ? 'On the eve of the storm' : 'Outside, as the storm comes');
+    const body = s.act === 1
+      ? (mp ? `${esc(s.first)} ${esc(s.last)} sits in the new Parliament, aged ${age}, with a famous name, a small income from books and lectures, and no patience at all.`
+            : `${esc(s.first)} ${esc(s.last)} reaches the new century outside Parliament, aged ${age}, and means to be inside it before long.`)
+      : `${esc(s.first)} ${esc(s.last)} is ${age}, ${mp ? 'a Member of Parliament' : 'out of Parliament'}, ${esc(s.office || 'without office')}, and watching Germany.`;
+    const tail = playable ? `${esc(next.title)} begins in ${esc(next.span.split('–')[0])}.` : (next ? '' : 'Act III, the test of 1938 to 1951, is the next part of this life to be written.');
+    if (!playable) { s.ended = true; TM.save(); }
     setSheet(`<div class="stack">
       ${TM.plate('gallery', 'The Palace of Westminster')}
       <span class="eyebrow">${esc(act.title)} · complete</span>
-      <h1>${s.flags.includes('mp') ? 'The Member for the Borough' : 'Still outside the House'}</h1>
-      <div class="prose"><p class="drop">${s.flags.includes('mp')
-        ? `${esc(s.first)} ${esc(s.last)} sits in the new Parliament, aged ${s.year - s.born}, with a famous name, a small income from books and lectures, and no patience at all.`
-        : `${esc(s.first)} ${esc(s.last)} reaches the new century outside Parliament, aged ${s.year - s.born}, and means to be inside it before long.`}
-        Act II, the climb to 1938, is the next part of this life to be written.</p></div>
+      <h1>${head}</h1>
+      <div class="prose"><p class="drop">${body} ${tail}</p></div>
       ${summary(s)}
-      <hr class="rule"><h3>Your life against the real one</h3>
+      ${playable ? `<div class="row"><button class="btn" id="nextAct">Go on to ${esc(next.title.split('·')[0].trim())}</button></div>` : ''}
+      ${playable ? '' : `<hr class="rule"><h3>Your life against the real one</h3>
       <p class="muted">Every scene is drawn from the real life its camp is built on. Notes marked "Not yet verified" still need a second source.</p>
       ${comparison(s)}
-      ${realNames()}
+      ${realNames()}`}
       <hr class="rule"><h3>The diary</h3>${diaryBook(s)}
-      <div class="row"><button class="btn" id="again">Begin another life</button></div></div>`);
+      <div class="row"><button class="btn ghost" id="again">Begin another life</button></div></div>`);
+    if (playable) $('#nextAct').addEventListener('click', () => { TM.startAct(s, s.act + 1); TM.save(); render(); });
     $('#again').addEventListener('click', () => { TM.clearSave(); title(); });
   }
 
