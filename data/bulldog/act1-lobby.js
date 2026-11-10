@@ -12,7 +12,7 @@
   });
 
   act.scenes.push(
-    { id: 'lobby-1901', t: 1900.995, year: 1901, title: 'The Members\' Lobby', kind: 'lobby', if: '!mp',
+    { id: 'lobby-1901', t: 1900.995, year: 1901, title: 'The Members\' Lobby', kind: 'walk', place: 'lobby', if: '!mp', enter: 'Walk into the Lobby', skip: 'Pass through without stopping', leaveLabel: 'Leave the Lobby',
       venue: { plate: 'gallery', label: 'The Members\' Lobby' },
       text: 'Questions are over and the House empties into the Members\' Lobby, under the gas-lamps and the marble statesmen, where the real business of Parliament is done standing up. The Chief Whip is by the Chamber door. A Colonial Secretary holds court by a statue. A Welsh Radical, a newspaperman and a clever young lord are each, for their own reasons, waiting to see whether the new Member will come their way.',
       basis: 'Churchill\'s first session, 1901: the Members\' Lobby as the place of business with Whips, ministers and lobby journalists; Lord Hugh Cecil\'s group of young Conservative rebels, the "Hughligans"; Lloyd George\'s pro-Boer campaign; and the army estimates fight with the War Office.',

@@ -264,21 +264,28 @@
     $('#rise').addEventListener('click', () => { qtCalled = s.sceneId; render(); });
   }
 
-  // A walkable 3D room: the page shows the setting, and the room opens over everything.
+  // A walkable 3D place (kind 'lobby' or 'walk'): the page shows the setting, and the place
+  // opens over everything. A companion (the first whose `if` holds) walks with you and brings
+  // their own conversation beats.
   function lobbyScene(sc, s) {
-    const people = sc.npcs.filter((n) => TM.check(s, n.if));
+    const people = (sc.npcs || []).filter((n) => TM.check(s, n.if));
+    const spots = (sc.spots || []).filter((n) => TM.check(s, n.if));
+    const mate = (sc.companions || []).find((c) => TM.check(s, c.if)) || null;
+    const who = (mate ? [mate.name] : []).concat(people.map((n) => n.name));
     setSheet(`<div class="stack">${sceneHead(sc, s)}
       <div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>
-      <div class="lobby-gate"><div style="flex:1;min-width:200px"><span class="eyebrow">In the Lobby now</span>
-        <p style="margin:4px 0 0">${people.map((n) => esc(n.name)).join(', ')}</p></div>
-        <button class="btn" id="walk">Walk into the Lobby</button></div>
-      <p class="muted" style="font-size:.95rem">You walk your Member in 3D. On a computer use WASD or the arrow keys and drag to look round; on a phone use the thumb-stick. Go up to anyone to talk to them, and back through the Chamber door when you are done.</p>
-      <div class="row"><button class="btn ghost" id="pass">Pass through without stopping</button></div></div>`);
+      <div class="lobby-gate"><div style="flex:1;min-width:200px"><span class="eyebrow">${mate ? 'Walking with you' : spots.length && !people.length ? 'Choose your place' : 'Here now'}</span>
+        <p style="margin:4px 0 0">${who.length ? who.map(esc).join(', ') : spots.map((x) => esc(x.name)).join(' · ')}</p></div>
+        <button class="btn" id="walk">${esc(sc.enter || 'Walk in')}</button></div>
+      <p class="muted" style="font-size:.95rem">You walk your Member in 3D. On a computer use WASD or the arrow keys and drag to look round; on a phone use the thumb-stick. ${mate ? 'Follow the lit markers on the path, and your companion will talk as you go.' : 'Go up to anyone to talk to them, or tap a name.'}</p>
+      <div class="row"><button class="btn ghost" id="pass">${esc(sc.skip || 'Pass by')}</button></div></div>`);
     const done = () => { TM.lobbyLeave(s, sc); render(); };
     $('#pass').addEventListener('click', done);
-    $('#walk').addEventListener('click', () => TM.Lobby.open({
-      title: sc.venue.label, npcs: people, talked: s.lobbyTalked || [],
-      onTalk: (npc, i) => { const r = TM.lobbyTalk(s, sc, npc, i); TM.renderDossier(); return r; },
+    $('#walk').addEventListener('click', () => TM.Walk.open({
+      place: sc.place || 'lobby', title: sc.venue.label, leaveLabel: sc.leaveLabel || 'Leave',
+      npcs: people, spots, companion: mate, beats: mate ? mate.beats : [],
+      talked: s.lobbyTalked || [],
+      onTalk: (it, i) => { const r = TM.lobbyTalk(s, sc, it, i); TM.renderDossier(); return r; },
       onLeave: done,
     }));
   }
@@ -288,7 +295,7 @@
     const s = TM.state, sc = TM.scene(s);
     const isLunch = sc.kind === 'lunch', isQt = sc.kind === 'qt';
     if (isQt && s.course === 0 && qtCalled !== s.sceneId) return qtIntro(sc, s);
-    if (sc.kind === 'lobby') return lobbyScene(sc, s);
+    if (sc.kind === 'lobby' || sc.kind === 'walk') return lobbyScene(sc, s);
     const opts = TM.choices(s);
     const entryDoc = sc.doc && s.course === 0 ? TM.renderDoc(Object.fromEntries(Object.entries(sc.doc).map(([k, v]) => [k, typeof v === 'string' ? TM.fill(v, s) : v]))) : '';
     const body = isQt ? qtCard(sc, s) : isLunch
@@ -367,7 +374,7 @@
   }
 
   function realNames() {
-    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin']];
+    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin'], ['Mr St John Brodwell', 'St John Brodrick'], ['Sir William Walbrook', 'Sir William Walrond'], ['Lord Hugo Seyton', 'Lord Hugh Cecil'], ['Mr Lloyd Gwynne', 'David Lloyd George'], ['Mr Arthur Belford', 'Arthur Balfour'], ['Ivor Gest', 'Ivor Guest']];
     return `<p class="muted" style="font-size:.95rem">Names in play and the real people behind them: ${pairs.map(([a, b]) => `${esc(a)} = <b>${esc(b)}</b>`).join('; ')}.</p>`;
   }
 
