@@ -23,6 +23,7 @@ To make a single shareable file: `python3 tools/bundle.py` writes `dist/the-memb
   - **The guns** (Morton): Woolwich, Colenso, a bullet in the lung, intelligence and the leak.
   Each episode transposed from another life into this one says so in its "what really happened" note. Lunches and dinners are played course by course and feed Reputation.
 - **Question Time** (`data/bulldog/act1-qt.js`): a `kind: 'qt'` scene is five quick-fire questions in a row, each with its own clock (`seconds`) and a `timeout` outcome if the player is too slow. The first comes in February 1901 for anyone elected.
+- **The Members' Lobby in 3D** (`js/lobby.js`, `data/bulldog/act1-lobby.js`): a `kind: 'lobby'` scene opens a walkable three.js room with a third-person camera (WASD or arrows and drag to look; a thumb-stick on phones). Walk up to a figure to talk; each conversation's choice feeds the dossier like any other. three.js r128 is vendored in `js/vendor/` so the game still runs from disk; devices without WebGL get the same conversations as a list.
 - **Epilogue**: your life set against the real one, scene by scene, with each note's verification status, the real names behind the echo names, and the full diary.
 - **Venue plates** (`js/plates.js`): engraved vignettes of each place, drawn in SVG.
 

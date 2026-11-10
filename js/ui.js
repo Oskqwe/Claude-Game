@@ -264,11 +264,31 @@
     $('#rise').addEventListener('click', () => { qtCalled = s.sceneId; render(); });
   }
 
+  // A walkable 3D room: the page shows the setting, and the room opens over everything.
+  function lobbyScene(sc, s) {
+    const people = sc.npcs.filter((n) => TM.check(s, n.if));
+    setSheet(`<div class="stack">${sceneHead(sc, s)}
+      <div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>
+      <div class="lobby-gate"><div style="flex:1;min-width:200px"><span class="eyebrow">In the Lobby now</span>
+        <p style="margin:4px 0 0">${people.map((n) => esc(n.name)).join(', ')}</p></div>
+        <button class="btn" id="walk">Walk into the Lobby</button></div>
+      <p class="muted" style="font-size:.95rem">You walk your Member in 3D. On a computer use WASD or the arrow keys and drag to look round; on a phone use the thumb-stick. Go up to anyone to talk to them, and back through the Chamber door when you are done.</p>
+      <div class="row"><button class="btn ghost" id="pass">Pass through without stopping</button></div></div>`);
+    const done = () => { TM.lobbyLeave(s, sc); render(); };
+    $('#pass').addEventListener('click', done);
+    $('#walk').addEventListener('click', () => TM.Lobby.open({
+      title: sc.venue.label, npcs: people, talked: s.lobbyTalked || [],
+      onTalk: (npc, i) => { const r = TM.lobbyTalk(s, sc, npc, i); TM.renderDossier(); return r; },
+      onLeave: done,
+    }));
+  }
+
   function scene() {
     clearQt();
     const s = TM.state, sc = TM.scene(s);
     const isLunch = sc.kind === 'lunch', isQt = sc.kind === 'qt';
     if (isQt && s.course === 0 && qtCalled !== s.sceneId) return qtIntro(sc, s);
+    if (sc.kind === 'lobby') return lobbyScene(sc, s);
     const opts = TM.choices(s);
     const entryDoc = sc.doc && s.course === 0 ? TM.renderDoc(Object.fromEntries(Object.entries(sc.doc).map(([k, v]) => [k, typeof v === 'string' ? TM.fill(v, s) : v]))) : '';
     const body = isQt ? qtCard(sc, s) : isLunch

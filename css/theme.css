@@ -379,3 +379,30 @@ p { margin: 0; }
 @keyframes qt-burn { from { transform: scaleX(1); } to { transform: scaleX(0); } }
 .qt-hint { font-size: .85rem; margin: 6px 0 0; }
 @media (prefers-reduced-motion: reduce) { .qt-fuse span { animation-timing-function: steps(5); } }
+
+/* ───────── The 3D Lobby ───────── */
+body.in-lobby { overflow: hidden; }
+.lobby { position: fixed; inset: 0; z-index: 1000; background: #140e09; color: #f1e7d0; overflow: hidden; touch-action: none; user-select: none; -webkit-user-select: none; }
+.lobby-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; outline: none; }
+.lobby-bar { position: absolute; top: 0; left: 0; right: 0; display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 10px 16px; background: linear-gradient(rgba(10,7,4,.85), rgba(10,7,4,0)); z-index: 3; }
+.lobby-title { font-family: var(--f-display-sc); letter-spacing: .08em; font-size: 1.05rem; color: #e8d6ad; }
+.lobby-bar .btn { font-size: .9rem; padding: 8px 14px; white-space: nowrap; }
+.lobby-tags { position: absolute; inset: 0; pointer-events: none; z-index: 2; }
+.lobby-tag { position: absolute; left: 0; top: 0; pointer-events: auto; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 1px; background: rgba(20,14,9,.72); color: #f1e7d0; border: 1px solid rgba(201,160,80,.55); border-radius: 3px; padding: 3px 9px; white-space: nowrap; font-family: var(--f-body); }
+.lobby-tag b { font-family: var(--f-display); font-weight: 400; font-size: .95rem; }
+.lobby-tag i { font-family: var(--f-type); font-style: normal; font-size: .62rem; letter-spacing: .06em; text-transform: uppercase; color: #c9b58c; }
+.lobby-tag.near { border-color: #e9c46a; box-shadow: 0 0 0 2px rgba(233,196,106,.35); }
+.lobby-tag.done b::after { content: " ✓"; color: #9fc49a; }
+.lobby-prompt { position: absolute; left: 50%; bottom: 84px; transform: translateX(-50%); z-index: 3; cursor: pointer; background: var(--seal); color: #f1e7d0; border: 0; padding: 10px 20px; border-radius: 3px; font-family: var(--f-display-sc); letter-spacing: .06em; font-size: 1rem; box-shadow: 0 3px 12px rgba(0,0,0,.4); white-space: nowrap; max-width: calc(100vw - 32px); overflow: hidden; text-overflow: ellipsis; }
+.lobby-prompt::before { content: "E · "; opacity: .7; }
+@media (pointer: coarse) { .lobby-prompt::before { content: ""; } }
+.lobby-help { position: absolute; left: 0; right: 0; bottom: 14px; text-align: center; font-family: var(--f-type); font-size: .72rem; letter-spacing: .06em; color: rgba(241,231,208,.65); z-index: 2; padding: 0 16px; }
+.lobby-stick { display: none; position: absolute; left: 22px; bottom: 44px; width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(233,214,173,.45); background: rgba(20,14,9,.35); z-index: 3; touch-action: none; }
+.lobby-stick span { position: absolute; left: 50%; top: 50%; width: 50px; height: 50px; margin: -25px 0 0 -25px; border-radius: 50%; background: rgba(233,214,173,.55); }
+@media (pointer: coarse) { .lobby-stick { display: block; } .lobby-help { bottom: 8px; } .lobby-prompt { left: auto; right: 16px; transform: none; bottom: 70px; } }
+.lobby-dialog { position: absolute; left: 50%; bottom: 16px; transform: translateX(-50%); width: min(600px, calc(100vw - 32px)); max-height: calc(100% - 90px); overflow: auto; z-index: 4; background: var(--paper); color: var(--ink); border: 1px solid var(--paper-edge, #c9b88f); box-shadow: 0 10px 40px rgba(0,0,0,.55); padding: 16px 18px; border-radius: 2px; user-select: text; -webkit-user-select: text; }
+.lobby-dialog h3 { margin: 0; font-family: var(--f-display); font-weight: 400; font-size: 1.35rem; }
+.lobby-dialog p { margin: 6px 0 10px; font-size: 1.05rem; line-height: 1.45; }
+.lobby-dialog .choices { display: flex; flex-direction: column; }
+.lobby-list { position: absolute; top: 64px; left: 50%; transform: translateX(-50%); width: min(560px, calc(100vw - 32px)); display: flex; flex-direction: column; background: var(--paper); color: var(--ink); padding: 8px 12px; }
+.lobby-gate { border: 1px solid var(--rule); padding: 14px 16px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }

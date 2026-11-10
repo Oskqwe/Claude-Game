@@ -132,6 +132,30 @@
     TM.save();
   };
 
+  // The walkable Lobby (kind: 'lobby'): each conversation is resolved on the spot, and leaving
+  // the Lobby becomes the scene's outcome.
+  TM.lobbyTalk = function (s, sc, npc, index) {
+    const c = npc.talk.choices[index];
+    if (!c || !TM.check(s, c.requires)) return null;
+    const delta = TM.applyEffects(s, c.effects);
+    TM.applyStatus(s, c.status);
+    s.lastDelta = delta;
+    if (c.diary) s.diary.push({ year: s.year, text: TM.fill(c.diary, s) });
+    s.log.push({ scene: sc.id, course: npc.name, title: sc.title, year: s.year,
+      label: TM.fill(c.label, s), result: TM.fill(c.result || '', s), historical: !!c.historical, passed: null });
+    s.lobbyTalked = (s.lobbyTalked || []).concat(npc.id);
+    TM.save();
+    return TM.fill(c.result || '', s);
+  };
+
+  TM.lobbyLeave = function (s, sc) {
+    const n = (s.lobbyTalked || []).length;
+    const text = n ? sc.leave : sc.leaveAlone || sc.leave;
+    s.lobbyTalked = [];
+    s.pending = { result: TM.fill(text || 'You go back into the Chamber.', s), docs: [], goto: null, died: false, end: false };
+    TM.save();
+  };
+
   // Move on after the player has read an outcome.
   TM.advance = function (s) {
     const p = s.pending;
