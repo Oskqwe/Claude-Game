@@ -171,9 +171,9 @@
     { id: 'censure-1942', t: 1942.5, year: 1942, title: 'The censure motion', if: '!mp ~!peace-signed',
       venue: { plate: 'gallery', label: 'The House of Commons, July 1942' },
       doc: { type: 'division', title: 'Motion of No Confidence in the Central Direction of the War, 2 July 1942', ayes: 25, noes: 475, note: 'Motion rejected by 450.' },
-      text: 'Singapore has fallen, and now Tobruk, with thirty thousand men. A senior Tory has moved a vote of no confidence in the central direction of the war. Sir Roger Keys has seconded it, and promptly said the Prime Minister should have more power, not less. Nye Bowen is savage. The House is angry, frightened and loyal all at once, and wants someone to blame.',
-      basis: 'The censure motion of 1–2 July 1942 after the fall of Tobruk, moved by Sir John Wardlaw-Milne and seconded by Keyes.',
-      real: 'The motion was defeated by 475 to 25 (Jenkins gives 477 to 27). The mover proposed the Duke of Gloucester as Commander-in-Chief, to laughter, and Keyes, seconding, argued for giving Churchill more power. Bevan attacked the Government fiercely.',
+      text: 'Singapore has fallen, and now Tobruk, with thirty thousand men. A senior Tory has moved a vote of no confidence in the central direction of the war. Sir Roger Keys has backed it, and promptly said the Prime Minister should have more power, not less. Nye Bowen is savage. The House is angry, frightened and loyal all at once, and wants someone to blame.',
+      basis: 'The censure motion of 1–2 July 1942 after the fall of Tobruk, moved by Sir John Wardlaw-Milne and supported by Admiral Keyes; Bevan spoke against the Government.',
+      real: 'The motion was defeated by 475 to 25 (Jenkins gives 477 to 27). The mover proposed the Duke of Gloucester as Commander-in-Chief, to laughter, and Keyes, supporting the motion, argued for giving Churchill more power. Bevan attacked the Government fiercely.',
       check: 'research', facts: ['censure-1942'],
       choices: [
         { label: 'Answer the debate as Prime Minister', requires: '!pm', showLocked: true, historical: true, effects: 'cap+6 rep+3 fav+6', result: 'You admit the disasters, take the blame, and ask for the vote. The House gives it to you by 475 to 25.', diary: 'Four hundred and seventy-five to twenty-five. They are angry, and they are mine.' },

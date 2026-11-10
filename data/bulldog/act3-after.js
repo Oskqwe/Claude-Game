@@ -101,13 +101,13 @@
 
     { id: 'schuman-1950', t: 1950.45, year: 1950, title: 'Coal and steel', if: '!mp',
       venue: { plate: 'gallery', label: 'The House of Commons, June 1950' },
-      doc: { type: 'division', title: 'Opposition motion on the Schuman Plan, June 1950', ayes: 296, noes: 309, note: 'Government majority 13. (Figures to be confirmed against Hansard.)' },
+      doc: { type: 'division', title: 'Opposition motion on the Schuman Plan, 27 June 1950', ayes: 289, noes: 309, note: 'Motion lost by 20. The Government amendment was then carried by 309 to 296.' },
       text: 'The French have proposed pooling the coal and steel of France and Germany under a common authority, and invited others to join. The Labour government has refused even to attend the talks unless it can keep control of British industry. The Opposition has a motion urging Britain to take part. You once called for a United States of Europe. Did you mean Britain to be in it?',
-      basis: 'The Schuman Plan (May 1950) and the Commons debate of June 1950; Churchill attacked Labour for refusing to join the talks.',
-      real: 'Labour declined to join the Schuman talks. Churchill attacked the decision, though he was vague about whether Britain should accept a supranational authority. The Opposition motion was defeated by a small margin. The European Coal and Steel Community was founded in 1951 without Britain.',
-      check: 'unchecked', facts: ['schuman-1950'],
+      basis: 'The Schuman Plan (May 1950) and the Commons debate of 26–27 June 1950; Churchill attacked Labour for refusing to join the talks.',
+      real: 'Labour declined to join the Schuman talks. Churchill attacked the decision, though he was vague about whether Britain should accept a supranational authority. On 27 June the Opposition motion was lost by 289 to 309, and the Government amendment carried by 309 to 296. The European Coal and Steel Community was founded in 1951 without Britain.',
+      check: 'corroborated', facts: ['schuman-1950'],
       choices: [
-        { label: 'Attack the Government for staying out of the talks', historical: true, effects: 'empire-1 cap+3 press+3', result: 'You attack Labour for its absence, without quite saying Britain should join. The motion is lost by thirteen.', diary: 'Attacked Labour on Schuman. Lost by 13. We should be at the table.' },
+        { label: 'Attack the Government for staying out of the talks', historical: true, effects: 'empire-1 cap+3 press+3', result: 'You attack Labour for its absence, without quite saying Britain should join. The motion is lost by twenty.', diary: 'Attacked Labour on Schuman. Lost by 20. We should be at the table.' },
         { label: 'Say plainly that Britain should join the pool', effects: 'empire-4 state+2 loyalty-3 !paris-treaty', result: 'You say Britain should be in, authority and all. Half your own party is appalled. The French are delighted.', diary: 'Said we should join. The party is appalled. Paris sends flowers.' },
         { label: 'Back the Government: no foreign authority over British coal', effects: 'empire+3 loyalty-2 @astley+4', result: 'You side with the Government against your own front bench. The miners\' MPs cheer you, which is a novelty.', diary: 'Sided with Labour on coal. The miners cheered me. Strange times.' },
       ] },

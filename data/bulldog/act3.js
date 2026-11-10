@@ -143,8 +143,8 @@
       venue: { plate: 'veldt', label: 'A depot in the south of England' },
       text: 'The war has begun with nothing happening. The bombers have not come. Men are called up by age, and you are sixty-five, too old for the line. But the Territorials need officers, the Ministry of Information needs writers, and every constituency party is short of candidates now that the old men are retiring. You could put on a uniform, or find a seat.',
       basis: 'The Phoney War, 1939–40; wartime by-elections, uncontested under the electoral truce, which favoured party nominees.',
-      real: 'The main parties agreed an electoral truce in September 1939: by-elections were left to the party holding the seat. Independents still stood and sometimes won from 1941.',
-      check: 'unchecked', facts: ['electoral-truce'],
+      real: 'The main parties agreed an electoral truce early in the war: by-elections were left to the party holding the seat. Independents still stood and sometimes won from 1941.',
+      check: 'corroborated', facts: ['electoral-truce'],
       choices: [
         { label: 'Seek a seat under the truce', effects: 'loyalty+3 fav+4', roll: { stat: 'favour', diff: 45,
             pass: { effects: 'seat+40 cap+4 office=Member_of_Parliament !mp', result: 'A safe seat falls vacant and the party gives it to you, unopposed under the truce.', diary: 'Elected unopposed. In wartime nobody minds who you are.' },
