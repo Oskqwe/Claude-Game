@@ -31,7 +31,7 @@
       venue: { plate: 'whitehall', label: 'London, June 1941' },
       text: 'A year of uneasy peace. Rationing has eased. The German embassy gives parties again. This morning Germany invaded Russia along a front of a thousand miles. The papers say it is no affair of Britain\'s, and the City is relieved. Secret rearmament goes on in the shadow factories. Moscow is asking, through a frightened ambassador, whether Britain will keep the North Sea closed.',
       basis: 'Invented, within "The Peace of 1940". The German invasion of the Soviet Union on 22 June 1941 is real.',
-      real: 'In real history Britain was still at war when Germany invaded the Soviet Union on 22 June 1941. Churchill broadcast that night that Britain would give Russia all the help it could.',
+      real: 'In real history Britain was still at war when Germany invaded the Soviet Union on 22 June 1941. Churchill at once promised Russia Britain\'s support.',
       check: 'research', facts: ['barbarossa'],
       choices: [
         { label: 'Speak for helping Russia, peace or no peace', effects: 'steel+3 loyalty-3 press+4 @astley+4', result: 'You say in the House that Britain cannot watch Europe enslaved in two halves. The Government calls it warmongering. The country starts to listen.', diary: 'Said it. Help Russia. They call me a warmonger again. Good.' },
@@ -60,7 +60,7 @@
       venue: { plate: 'whitehall', label: 'The Cabinet Room, July 1940' },
       text: 'France has signed an armistice. Her fleet, the fourth largest in the world, lies at Oran and Mers-el-Kébir, and the Germans may seize it. Admiral Somerville has orders ready: the French must join you, sail to a British or American port, scuttle, or be sunk. The French were your allies a fortnight ago. You must decide whether to give the order.',
       basis: 'Mers-el-Kébir, 3 July 1940: the British attack on the French fleet at Oran.',
-      real: 'Churchill ordered the attack. Somerville\'s force opened fire on 3 July 1940; about 1,300 French sailors were killed. The House cheered Churchill when he reported it, and the world took note that Britain would fight.',
+      real: 'Churchill ordered the attack. Somerville\'s force opened fire on 3 July 1940; 1,297 French servicemen were killed. The House cheered Churchill when he reported it, and the world took note that Britain would fight.',
       check: 'unchecked', facts: ['mers-el-kebir'],
       choices: [
         { label: 'Give the order', historical: true, effects: 'steel+5 war+6 rep+3 @astley+4', result: 'The French refuse. Somerville opens fire. Thirteen hundred French sailors die. When you tell the House, it rises and cheers, and you sit with tears on your face.', diary: 'Oran. We have fired on our allies. The House cheered. I wept.' },
@@ -148,7 +148,7 @@
       venue: { plate: 'india', label: 'Singapore, January 1942' },
       text: 'You were sent to Singapore as Resident Minister to coordinate the Far East, and found a colony that refused to believe in the war. The Japanese have come down the Malay peninsula in six weeks. The Governor will not order slit trenches dug on the golf course. You have been recalled. The last ships are leaving, and the Governor is asking whether you will stay.',
       basis: 'Duff Cooper as Resident Cabinet Minister in Singapore, 1941–42, his clashes with Governor Shenton Thomas, and his recall before the fall.',
-      real: 'Duff Cooper was sent to Singapore in 1941 as Resident Minister. He clashed with the Governor over civil defence, was recalled in January 1942, and left before Singapore surrendered on 15 February 1942.',
+      real: 'Duff Cooper was sent to Singapore in 1941 as Minister Resident. Both the military and civil authorities were reluctant to cooperate with him. He returned to Britain before Singapore surrendered on 15 February 1942, and was blamed by some for its fall.',
       check: 'unchecked', facts: ['duff-singapore'],
       choices: [
         { label: 'Obey the recall', historical: true, effects: 'loyalty+3 rep-3', result: 'You leave on one of the last flights out. Singapore falls a month later. Your report on the Governor is read in London and filed.', diary: 'Left Singapore. It will fall. I said so, in writing, for all the good it did.' },
@@ -173,7 +173,7 @@
       doc: { type: 'division', title: 'Motion of No Confidence in the Central Direction of the War, 2 July 1942', ayes: 25, noes: 475, note: 'Motion rejected by 450.' },
       text: 'Singapore has fallen, and now Tobruk, with thirty thousand men. A senior Tory has moved a vote of no confidence in the central direction of the war. Sir Roger Keys has seconded it, and promptly said the Prime Minister should have more power, not less. Nye Bowen is savage. The House is angry, frightened and loyal all at once, and wants someone to blame.',
       basis: 'The censure motion of 1–2 July 1942 after the fall of Tobruk, moved by Sir John Wardlaw-Milne and seconded by Keyes.',
-      real: 'The motion was defeated by 475 to 25 on 2 July 1942. The mover proposed the Duke of Gloucester as Commander-in-Chief, to laughter, and Keyes, seconding, argued for giving Churchill more power. Bevan attacked the Government fiercely.',
+      real: 'The motion was defeated by 475 to 25 (Jenkins gives 477 to 27). The mover proposed the Duke of Gloucester as Commander-in-Chief, to laughter, and Keyes, seconding, argued for giving Churchill more power. Bevan attacked the Government fiercely.',
       check: 'research', facts: ['censure-1942'],
       choices: [
         { label: 'Answer the debate as Prime Minister', requires: '!pm', showLocked: true, historical: true, effects: 'cap+6 rep+3 fav+6', result: 'You admit the disasters, take the blame, and ask for the vote. The House gives it to you by 475 to 25.', diary: 'Four hundred and seventy-five to twenty-five. They are angry, and they are mine.' },

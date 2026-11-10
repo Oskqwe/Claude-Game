@@ -12,7 +12,7 @@
       venue: { plate: 'city', label: 'Broadcasting House, June 1945' },
       text: 'The election campaign has begun, and you are to open it on the wireless. Lord Beaverhulme and the party\'s young men want a fighting speech: socialism means controls, controls mean inspectors, inspectors mean a police state. Your wife thinks it a terrible idea. Astley, who sat beside you in the War Cabinet for five years, will answer you the next night.',
       basis: 'Churchill\'s election broadcast of 4 June 1945, in which he said a socialist government would need some form of "Gestapo"; Attlee\'s reply the next evening.',
-      real: 'Churchill\'s first election broadcast, on 4 June 1945, claimed that socialism would require a political police, "some form of Gestapo". It shocked many listeners. Attlee\'s calm reply the next night did him much good.',
+      real: 'Churchill\'s first election broadcast, on 4 June 1945, claimed that a socialist government would have to fall back on "some form of a Gestapo". It shocked many listeners. Attlee\'s calm reply the next night did him much good.',
       check: 'research', facts: ['gestapo-1945'],
       choices: [
         { label: 'Give them the fighting speech', historical: true, effects: 'order+3 state-3 press-6 rep-6 @astley-10 !partisan-1945', result: 'You warn that socialism would need a political police. The nation, which has just beaten a real one, is not amused. Astley\'s reply the next night is quiet and devastating.', diary: 'The broadcast. A mistake. Clemmie said so. She was right.' },
@@ -79,7 +79,7 @@
       venue: { plate: 'sickroom', label: 'Your house, February 1947' },
       text: 'The worst winter in living memory. Snow has drifted to the hedge-tops, the coal trains cannot move, the power stations are shutting down, and offices work by candlelight. You are seventy-two. You have a cough that will not go, and your doctor says your chest is not what it was. There is a debate on the fuel crisis on Tuesday that you could make into a massacre.',
       basis: 'The fuel crisis of the winter of 1946–47 and Churchill\'s health in his seventies.',
-      real: 'The winter of 1946–47 brought heavy snow and a fuel crisis; power cuts closed factories and unemployment briefly rose to over two million. Churchill, in his seventies, suffered recurring bronchial illness in these years.',
+      real: 'The winter of 1946–47 brought heavy snow and a fuel crisis; power cuts closed factories and up to four million people claimed unemployment benefit. Churchill, in his seventies, suffered recurring bronchial illness in these years.',
       check: 'unchecked', facts: ['winter-1947'],
       choices: [
         { label: 'Go to the House and savage the Government', effects: 'steel+2 press+4 health-10', death: D(0.06, 'You went out into the frozen February of 1947 with a fever, and the bronchitis became pneumonia. You were seventy-two.', 'Death of a great Englishman'), result: 'You make the speech, wrapped in a coat, and the Minister of Fuel sits through it grey-faced. You spend the next three weeks in bed.', diary: 'Spoke on the fuel crisis. Shinfield had no answer. My chest has given me one.' },
@@ -87,11 +87,11 @@
         { label: 'Go to the sun and paint', effects: 'health+4 press-3 money-4', death: D(0.015, 'You died abroad in the winter of 1947, painting in the sun. You were seventy-two.', 'Death of a great Englishman'), result: 'You go to Marrakech and paint. The papers ask where the Leader of the Opposition is during the nation\'s worst winter.', diary: 'Marrakech. Sunlight. The papers are cross. My chest is not.' },
       ] },
 
-    { id: 'stroke-1949', t: 1949.6, year: 1949, title: 'Monte Carlo', if: 'health>0',
-      venue: { plate: 'sickroom', label: 'A villa near Monte Carlo, August 1949' },
+    { id: 'stroke-1949', t: 1949.6, year: 1949, title: 'The Riviera', if: 'health>0',
+      venue: { plate: 'sickroom', label: 'A villa on the Riviera, August 1949' },
       text: 'You are seventy-four, on holiday, painting in the sun and playing cards until two. This morning you woke with a cramp in your right arm and leg, and your pen will not do what you tell it. The doctor flies out from London. It is a stroke, a small one. There will be an election within the year. If it becomes known, the party will want you to go.',
-      basis: 'Churchill\'s first stroke, at Beaverbrook\'s villa near Monte Carlo, August 1949, which was kept secret.',
-      real: 'Churchill had a mild stroke in August 1949 at Beaverbrook\'s villa on the Riviera. It was concealed, and he recovered enough to lead the Conservatives through the elections of 1950 and 1951. A more serious stroke in 1953, while Prime Minister, was also concealed.',
+      basis: 'Churchill\'s first stroke, while staying with Beaverbrook in the south of France, August 1949, which was kept secret.',
+      real: 'Churchill had his first stroke in August 1949 while visiting Beaverbrook in the south of France. It was concealed, and he recovered enough to lead the Conservatives through the elections of 1950 and 1951. A more serious stroke in 1953, while Prime Minister, was also concealed.',
       check: 'research', facts: ['stroke-1949'],
       choices: [
         { label: 'Conceal it and carry on', historical: true, effects: 'health-10 steel+2', death: D(0.07, 'A second stroke followed the first, in the autumn of 1949. You died at seventy-four.', 'Death of a great Englishman'), result: 'The doctor tells the press it is a chill. You go home in a fortnight, practise your signature, and go on.', diary: 'A chill, they say. My hand is weak. My will is not.' },

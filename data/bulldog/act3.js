@@ -91,7 +91,7 @@
       venue: { plate: 'gallery', label: 'The Press Gallery, October 1938' },
       text: 'You watch the Munich debate from the Press Gallery, where your newspaper pays you to describe what you would rather be doing. Below you, men you despise are winning the argument. The Oxford by-election is coming, fought on Munich and nothing else, and the anti-Munich side is looking for candidates for the next one. A war, you think, would empty the House of its comfortable men.',
       basis: 'The Munich by-elections of autumn 1938 (Oxford, Bridgwater); Fitzroy Maclean and Profumo, who entered the House as serving officers during the war.',
-      real: 'The Oxford by-election of October 1938 was fought on Munich; Quintin Hogg won as the Munich candidate. At Bridgwater in November an independent anti-appeasement candidate won. Several later Members, such as Profumo in 1940 and Fitzroy Maclean in 1941, were elected while serving officers.',
+      real: 'The Oxford by-election of October 1938 was fought on Munich; Quintin Hogg won as the Munich candidate. At Bridgwater on 17 November the Independent Progressive Vernon Bartlett, an anti-appeaser, won. Several later Members, such as Profumo in 1940 and Fitzroy Maclean in 1941, were elected while serving officers.',
       check: 'unchecked', facts: ['oxford-1938'],
       choices: [
         { label: 'Stand as an anti-Munich independent at the next by-election', effects: 'steel+3 loyalty-4 #independent', roll: { stat: 'press', diff: 55,
