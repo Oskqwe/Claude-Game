@@ -22,6 +22,7 @@ To make a single shareable file: `python3 tools/bundle.py` writes `dist/the-memb
   - **The colonies** (Bracken): bolting to Echuca, the shearers' strike, the invented orphan, selling advertising, luncheon with the great man, stabbed on election night.
   - **The guns** (Morton): Woolwich, Colenso, a bullet in the lung, intelligence and the leak.
   Each episode transposed from another life into this one says so in its "what really happened" note. Lunches and dinners are played course by course and feed Reputation.
+- **Question Time** (`data/bulldog/act1-qt.js`): a `kind: 'qt'` scene is five quick-fire questions in a row, each with its own clock (`seconds`) and a `timeout` outcome if the player is too slow. The first comes in February 1901 for anyone elected.
 - **Epilogue**: your life set against the real one, scene by scene, with each note's verification status, the real names behind the echo names, and the full diary.
 - **Venue plates** (`js/plates.js`): engraved vignettes of each place, drawn in SVG.
 

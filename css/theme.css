@@ -363,3 +363,19 @@ p { margin: 0; }
   .rail-meta { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* ───────── Question Time ───────── */
+.qt { border: 1px solid var(--rule); border-left: 4px solid var(--seal); padding: 14px 16px 12px; background: color-mix(in srgb, var(--paper) 92%, var(--seal)); }
+.qt-top { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; }
+.qt-no { font-family: var(--f-type); font-size: .74rem; letter-spacing: .14em; text-transform: uppercase; color: var(--seal); }
+.qt-from { font-family: var(--f-display-sc); color: var(--ink-soft); letter-spacing: .06em; }
+.qt-pips { list-style: none; display: flex; gap: 6px; margin: 10px 0 4px; padding: 0; }
+.qt-pips li { width: 22px; height: 6px; border-radius: 3px; background: var(--rule); }
+.qt-pips li.done { background: var(--ink-soft); }
+.qt-pips li.now { background: var(--seal); }
+.qt-q { font-family: var(--f-display); font-size: 1.22rem; line-height: 1.35; margin: 10px 0 12px; }
+.qt-fuse { height: 6px; background: var(--rule); border-radius: 3px; overflow: hidden; }
+.qt-fuse span { display: block; height: 100%; background: linear-gradient(90deg, var(--seal), var(--brass)); transform-origin: left; animation: qt-burn linear forwards; }
+@keyframes qt-burn { from { transform: scaleX(1); } to { transform: scaleX(0); } }
+.qt-hint { font-size: .85rem; margin: 6px 0 0; }
+@media (prefers-reduced-motion: reduce) { .qt-fuse span { animation-timing-function: steps(5); } }

@@ -235,12 +235,43 @@
     </div>`;
   }
 
+  // Question Time: one question at a time, against the clock.
+  let qtTimer = null;
+  function clearQt() { if (qtTimer) { clearTimeout(qtTimer); qtTimer = null; } }
+
+  function qtCard(sc, s) {
+    const q = sc.courses[s.course];
+    const secs = q.seconds || sc.seconds || 15;
+    return `<div class="qt">
+        <div class="qt-top"><span class="qt-no">Question ${s.course + 1} of ${sc.courses.length}</span>
+          <span class="qt-from">${esc(TM.fill(q.course, s))}</span></div>
+        <ol class="qt-pips">${sc.courses.map((_, i) => `<li class="${i < s.course ? 'done' : i === s.course ? 'now' : ''}"></li>`).join('')}</ol>
+        <p class="qt-q">${esc(TM.fill(q.text, s))}</p>
+        <div class="qt-fuse" aria-hidden="true"><span style="animation-duration:${secs}s"></span></div>
+        <p class="qt-hint muted">The House will not wait: ${secs} seconds.</p>
+      </div>`;
+  }
+
+  // The House is called to order before the first question, so the clock never runs while you read.
+  let qtCalled = null;
+  function qtIntro(sc, s) {
+    setSheet(`<div class="stack">${sceneHead(sc, s)}
+      <div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>
+      <div class="table-card"><div class="placecard"><h4>In the Chamber</h4><ul>${(sc.guests || []).map((g) => `<li>${esc(TM.fill(g, s))}</li>`).join('')}<li>${esc(s.first)} ${esc(s.last)}</li></ul></div>
+        <div class="menu"><h4>Order Paper</h4><ol>${sc.courses.map((c) => `<li>${esc(TM.fill(c.course, s))}</li>`).join('')}</ol></div></div>
+      <p class="muted">${sc.courses.length} questions, one after another. Each has a clock; if it runs out, the House moves on without you.</p>
+      <div class="row"><button class="btn" id="rise">Rise in your place</button></div></div>`);
+    $('#rise').addEventListener('click', () => { qtCalled = s.sceneId; render(); });
+  }
+
   function scene() {
+    clearQt();
     const s = TM.state, sc = TM.scene(s);
-    const isLunch = sc.kind === 'lunch';
+    const isLunch = sc.kind === 'lunch', isQt = sc.kind === 'qt';
+    if (isQt && s.course === 0 && qtCalled !== s.sceneId) return qtIntro(sc, s);
     const opts = TM.choices(s);
     const entryDoc = sc.doc && s.course === 0 ? TM.renderDoc(Object.fromEntries(Object.entries(sc.doc).map(([k, v]) => [k, typeof v === 'string' ? TM.fill(v, s) : v]))) : '';
-    const body = isLunch
+    const body = isQt ? qtCard(sc, s) : isLunch
       ? `${s.course === 0 ? `<div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>` : ''}${lunchCard(sc, s)}
          <p class="course-label">${esc(sc.courses[s.course].course)}</p><div class="prose"><p>${esc(TM.fill(sc.courses[s.course].text, s))}</p></div>`
       : `<div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>${entryDoc}`;
@@ -251,18 +282,26 @@
     }).join('');
     setSheet(`<div class="stack">${sceneHead(sc, s)}${body}<div class="choices">${choices}</div></div>`);
     document.querySelectorAll('.choice:not([disabled])').forEach((b) => b.addEventListener('click', () => {
+      clearQt();
       TM.choose(s, +b.dataset.i);
       render();
     }));
+    if (isQt) {
+      const secs = sc.courses[s.course].seconds || sc.seconds || 15;
+      const card = document.querySelector('.qt');
+      if (card && card.getBoundingClientRect().top > innerHeight * 0.4) card.scrollIntoView({ block: 'start' });
+      qtTimer = setTimeout(() => { qtTimer = null; if (TM.state === s && s.phase === 'scene' && !s.pending) { TM.choose(s, -1); render(); } }, secs * 1000);
+    }
   }
 
   function outcome() {
     const s = TM.state, sc = TM.scene(s), p = s.pending;
     const lastDiary = s.diary.length ? s.diary[s.diary.length - (p.died ? 2 : 1)] : null;
     const docs = p.docs.map((id) => TM.renderDoc(paperById(id))).join('');
-    const isLunch = sc.kind === 'lunch';
+    clearQt();
+    const isLunch = TM.isMulti(sc);
     const more = isLunch && !p.died && !p.goto && !p.end && s.course < sc.courses.length - 1;
-    const label = p.died ? 'Read the notice' : more ? (sc.menu ? 'The next course' : 'Go on') : 'Continue';
+    const label = p.died ? 'Read the notice' : more ? (sc.kind === 'qt' ? 'Next question' : sc.menu ? 'The next course' : 'Go on') : 'Continue';
     setSheet(`<div class="stack">${sceneHead(sc, s)}
       ${isLunch ? `<p class="course-label">${esc(sc.courses[s.course].course)}</p>` : ''}
       <div class="outcome prose"><p>${esc(p.result)}</p></div>
@@ -320,7 +359,7 @@
       <span class="eyebrow">${esc(act.title)} · complete</span>
       <h1>${s.flags.includes('mp') ? 'The Member for the Borough' : 'Still outside the House'}</h1>
       <div class="prose"><p class="drop">${s.flags.includes('mp')
-        ? `${esc(s.first)} ${esc(s.last)} takes the oath in the new year, aged ${s.year - s.born}, with a famous name, a small income from books and lectures, and no patience at all.`
+        ? `${esc(s.first)} ${esc(s.last)} sits in the new Parliament, aged ${s.year - s.born}, with a famous name, a small income from books and lectures, and no patience at all.`
         : `${esc(s.first)} ${esc(s.last)} reaches the new century outside Parliament, aged ${s.year - s.born}, and means to be inside it before long.`}
         Act II, the climb to 1938, is the next part of this life to be written.</p></div>
       ${summary(s)}
@@ -365,6 +404,7 @@
   /* ───────── Router ───────── */
 
   function render() {
+    clearQt();
     const s = TM.state;
     rail();
     TM.renderDossier();

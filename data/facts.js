@@ -104,5 +104,10 @@
       sources: ["https://en.wikipedia.org/wiki/Brendan_Bracken"] },
     'amery-1908': { status: 'research', claim: "In the 1900 election the government held power on the war. Amery did not stand until the Wolverhampton East by-election of 1908, which he lost by eight votes; he entered Parliament in 1911.",
       sources: ["https://en.wikipedia.org/wiki/Leo_Amery"] },
+    /* First Question Time, 1901 */
+    'maiden-1901': { status: 'corroborated', claim: 'Churchill\'s maiden speech, on the Boer War, 18 February 1901, following Lloyd George.', sources: ['https://winstonchurchill.org/1901/02/18/the-maiden-speech/', 'https://en.wikipedia.org/wiki/Winston_Churchill_in_politics,_1900%E2%80%931939'] },
+    'brodrick-1901': { status: 'corroborated', claim: 'Churchill attacked Brodrick\'s six-army-corps scheme on 13 May 1901.', sources: ['https://api.parliament.uk/historic-hansard/commons/1901/may/13/army-organisation', 'https://winstonchurchill.org/1901/05/13/army-reform/'] },
+    'remounts': { status: 'corroborated', claim: 'Purchases of remount horses for the Boer War (including in Hungary) were questioned in the Commons from 1901 and led to a military court of inquiry in 1902.', sources: ['https://api.parliament.uk/historic-hansard/commons/1901/aug/08/army-remounts-purchases-in-austro-hungary', 'https://api.parliament.uk/historic-hansard/commons/1902/mar/11/remounts-military-court-of-inquiry-terms'] },
+    'irish-1901': { status: 'corroborated', claim: 'Irish Nationalist members who refused to leave after suspension were removed from the Chamber by police on 5 March 1901.', sources: ['https://api.parliament.uk/historic-hansard/commons/1901/mar/07/suspension-of-members-5th-march-police', 'https://www.historyhit.com/the-worse-case-of-parliamentary-disorder-in-british-history/'] },
   };
 })();

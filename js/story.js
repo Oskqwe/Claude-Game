@@ -46,12 +46,15 @@
     s.phase = 'intro';
   };
 
+  // Scenes played in several rounds: lunches (courses) and Question Time (questions).
+  TM.isMulti = (sc) => !!sc && (sc.kind === 'lunch' || sc.kind === 'qt');
+
   // The choices a player sees for the current scene or lunch course.
   TM.choices = function (s) {
     s = s || TM.state;
     const sc = TM.scene(s);
     if (!sc) return [];
-    const list = sc.kind === 'lunch' ? sc.courses[s.course].choices : sc.choices;
+    const list = TM.isMulti(sc) ? sc.courses[s.course].choices : sc.choices;
     return list
       .map((c, i) => ({ c, i, ok: TM.check(s, c.requires) }))
       .filter((x) => x.ok || x.c.showLocked);
@@ -71,8 +74,11 @@
   // Resolve a choice. Returns nothing; the outcome is held in s.pending so a reload shows it again.
   TM.choose = function (s, index) {
     const sc = TM.scene(s);
-    const list = sc.kind === 'lunch' ? sc.courses[s.course].choices : sc.choices;
-    const c = list[index];
+    const list = TM.isMulti(sc) ? sc.courses[s.course].choices : sc.choices;
+    // index -1: the clock ran out on a quick-fire question (Question Time).
+    const c = index === -1
+      ? Object.assign({ label: 'Lost for words', effects: 'cap-2 press-2 rep-1', result: 'You hesitate a moment too long. The House notices, and the Speaker moves on.' }, sc.timeout, sc.courses[s.course].timeout)
+      : list[index];
     if (!c || !TM.check(s, c.requires)) return;
 
     const delta = TM.applyEffects(s, c.effects);
@@ -104,7 +110,7 @@
     if (diary) s.diary.push({ year: s.year, text: TM.fill(diary, s) });
     s.log.push({
       scene: sc.id,
-      course: sc.kind === 'lunch' ? sc.courses[s.course].course : null,
+      course: TM.isMulti(sc) ? sc.courses[s.course].course : null,
       title: sc.title,
       year: s.year,
       label: TM.fill(c.label, s),
@@ -136,7 +142,7 @@
     const sc = TM.scene(s);
     const act = TM.act(s);
 
-    if (sc.kind === 'lunch' && !p.goto && !p.end && s.course < sc.courses.length - 1) {
+    if (TM.isMulti(sc) && !p.goto && !p.end && s.course < sc.courses.length - 1) {
       s.course++;
       TM.save();
       return;
