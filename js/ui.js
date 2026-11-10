@@ -308,7 +308,7 @@
   }
 
   function realNames() {
-    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton']];
+    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin']];
     return `<p class="muted" style="font-size:.95rem">Names in play and the real people behind them: ${pairs.map(([a, b]) => `${esc(a)} = <b>${esc(b)}</b>`).join('; ')}.</p>`;
   }
 

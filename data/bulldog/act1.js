@@ -90,7 +90,7 @@
         ] },
 
       /* 3 ─────────────────────────────────────────── */
-      { id: 'harrow-paper', year: 1888, title: 'The entrance paper',
+      { id: 'harrow-paper', year: 1888, title: 'The entrance paper', if: '!route-harrow',
         venue: { plate: 'harrow', label: 'Harrow on the Hill' },
         text: 'The Harrow entrance examination. The Latin paper lies in front of you and you cannot answer one question of it. Your father\'s name is known to every master on the Hill, and the Head Master has a famous pupil\'s son in mind. Two hours. Outside, the bell of the chapel. On the desk: a pen, an inkpot, and a blank sheet that will decide what kind of education you are to have.',
         basis: 'Churchill\'s Harrow entrance examination, March 1888, and Dr J. E. C. Welldon, the Head Master.',
@@ -113,7 +113,7 @@
         ] },
 
       /* 4 ─────────────────────────────────────────── */
-      { id: 'harrow', year: 1889, title: 'The bottom of the school',
+      { id: 'harrow', year: 1889, title: 'The bottom of the school', if: '!route-harrow',
         venue: { plate: 'harrow', label: 'Harrow School' },
         text: 'Three years at the bottom of the school. While the clever boys do Latin and Greek, you are taught plain English by a master who makes you parse sentences in coloured inks until the grammar is in your bones. Your father has seen your toy soldiers, nearly fifteen hundred of them, and decided you are fit only for the Army Class. You have a little time each week that is your own.',
         basis: 'Churchill at Harrow, 1888–92: the English lessons of Robert Somervell, the Army Class, the school fencing championship, and a prize for reciting Macaulay.',
@@ -136,7 +136,7 @@
         ] },
 
       /* 5 ─────────────────────────────────────────── */
-      { id: 'gallery', year: 1893, title: 'The Strangers\' Gallery',
+      { id: 'gallery', year: 1893, title: 'The Strangers\' Gallery', if: '!route-harrow ~!route-oxford ~!route-gunner',
         venue: { plate: 'gallery', label: 'The House of Commons, Westminster' },
         text: 'April 1893. The old Liberal leader, past eighty, is moving his second Home Rule Bill, and you have a ticket for the Strangers\' Gallery. Below you, the green benches are packed to the gangways. Your father sits on the front bench opposite, thinner and greyer than you remember. Afterwards the night is soft and you can walk home along the Embankment, past the river lamps, or wait in Palace Yard for your father to come out.',
         basis: 'Churchill watching from the gallery during the second Home Rule Bill debates of 1893, and his father\'s decline.',
@@ -157,7 +157,7 @@
         ] },
 
       /* 6 ─────────────────────────────────────────── */
-      { id: 'chine', year: 1893, title: 'The bridge at Branksome',
+      { id: 'chine', year: 1893, title: 'The bridge at Branksome', if: '!route-harrow ~!route-oxford ~!route-gunner',
         venue: { plate: 'chine', label: 'A wooded chine near Bournemouth' },
         text: 'January, on your aunt\'s estate by the sea. You are eighteen and playing a game of chase with your brother and a cousin through the pines. They have trapped you on a rustic bridge across a deep ravine, one at each end. Below, the tops of the fir trees reach almost to the bridge. If you jumped, you think, you could catch one and slide down it like a pole.',
         basis: 'Churchill\'s fall at Branksome Dene, Bournemouth, January 1893.',
@@ -179,7 +179,7 @@
         ] },
 
       /* 7 ─────────────────────────────────────────── */
-      { id: 'sandhurst', year: 1893, title: 'The third attempt',
+      { id: 'sandhurst', year: 1893, title: 'The third attempt', if: '!route-harrow ~!route-oxford ~!route-gunner',
         venue: { plate: 'sandhurst', label: 'Royal Military College, Sandhurst' },
         text: 'You have failed the Sandhurst examination twice. At the third attempt, after a crammer in the Cromwell Road, you pass, but too low for the infantry. You are offered a cadetship in the cavalry. The cavalry is grander, and far dearer: a charger, a polo string, the mess bills. Your father had wanted the infantry, and has not yet heard. His letter, when it comes, will be terrible.',
         basis: 'Churchill\'s entry to Sandhurst at the third attempt in 1893, and his father\'s furious letter.',
@@ -224,7 +224,7 @@
         ] },
 
       /* 8 ─────────────────────────────────────────── */
-      { id: 'empire', year: 1894, title: 'The Empire promenade',
+      { id: 'empire', year: 1894, title: 'The Empire promenade', if: '!route-harrow ~!route-oxford ~!route-gunner',
         venue: { plate: 'theatre', label: 'The Empire Theatre, Leicester Square' },
         text: 'A purity campaigner has persuaded the London County Council to fence off the Empire\'s famous promenade, where young men drink and meet ladies of uncertain reputation, with canvas screens. On a Saturday night in November a crowd of young men, cadets among them, is pressing against the flimsy partitions. Someone puts a boot through the canvas. The whole bar is roaring, and looking for someone to speak.',
         basis: 'Churchill at the Empire Theatre riot, 3 November 1894, against Mrs Ormiston Chant\'s campaign.',
@@ -246,7 +246,7 @@
         ] },
 
       /* 9 ─────────────────────────────────────────── */
-      { id: 'two-deaths', year: 1895, title: 'Two deaths',
+      { id: 'two-deaths', year: 1895, title: 'Two deaths', if: '!route-harrow',
         venue: { plate: 'bedside', label: 'A small house in Crouch End' },
         text: 'January: your father dies, aged forty-five, after a long and terrible decline. He never came to think well of you. Now it is July, and a telegram says that Woom is dying of peritonitis in her sister\'s house in north London. You have duties you are expected at. Your mother is in mourning, short of money and very much in society. There is no one else who will go.',
         basis: 'The death of Lord Randolph Churchill, 24 January 1895, and of Mrs Everest, July 1895.',
@@ -558,7 +558,7 @@
         ] },
 
       /* 15 ─────────────────────────────────────────── */
-      { id: 'armoured-train', year: 1899, title: 'The armoured train',
+      { id: 'armoured-train', year: 1899, title: 'The armoured train', if: '!army|!resigned|!no-army',
         venue: { plate: 'veldt', label: 'The railway near Chieveley, Natal' },
         text: 'October 1899. War with the Boers. A London paper is paying you a record salary as its correspondent. On 15 November you ride out on an armoured train to scout towards the Boer lines. They have rolled boulders onto the track. The front trucks are derailed and the Boer guns are firing from the hill. The engine is still on the rails, but trapped behind the wreckage.',
         basis: 'The ambush of the armoured train near Chieveley, Natal, 15 November 1899, under Captain Aylmer Haldane.',
@@ -607,7 +607,7 @@
         ] },
 
       /* 17 ─────────────────────────────────────────── */
-      { id: 'light-horse', year: 1900, title: 'With the Light Horse',
+      { id: 'light-horse', year: 1900, title: 'With the Light Horse', if: '!army|!resigned|!no-army',
         venue: { plate: 'veldt', label: 'The Tugela heights, Natal' },
         text: 'Spring 1900. You are a lieutenant in a regiment of colonial cavalry and still a correspondent, which the War Office has just forbidden for anyone else. The army is fighting its way up the Tugela towards besieged Ladysmith. A general wants a volunteer to carry a message across the hill at Spion Kop, where the infantry have been dying all day under fire from three sides.',
         basis: 'Churchill with the South African Light Horse, 1900: Spion Kop, the relief of Ladysmith, Diamond Hill.',
@@ -632,7 +632,7 @@
         ] },
 
       /* 18 ─────────────────────────────────────────── */
-      { id: 'khaki', year: 1900, title: 'The khaki election', if: '~!mp',
+      { id: 'khaki', year: 1900, title: 'The khaki election', if: '!army|!resigned|!no-army ~!mp',
         venue: { plate: 'mill', label: 'The count, Oldham Town Hall' },
         text: 'October 1900. The government has called an election on the war, and you are standing again for Oldham, a hero this time. The town brass band meets your train, and the mill girls cheer. One of the Liberal Members who beat you last year is defending; the other is a rising man. The great Colonial Secretary himself, with his monocle and orchid, has offered to come and speak for you.',
         basis: 'Churchill\'s election for Oldham in the "khaki election" of October 1900; Joseph Chamberlain spoke for him.',
@@ -668,7 +668,7 @@
         ] },
 
       /* L4 ── a dinner with the opposition ───────────── */
-      { id: 'twain', year: 1900, title: 'Dinner at the Waldorf-Astoria', kind: 'lunch', if: '#escaper|#brave|!mp',
+      { id: 'twain', year: 1900, title: 'Dinner at the Waldorf-Astoria', kind: 'lunch', if: '!escaped',
         venue: { plate: 'ballroom', label: 'The Waldorf-Astoria, New York' },
         guests: ['Mr Mark Twain, who thinks the Boer War a crime', 'The lecture agent, Major Pond'],
         menu: ['Terrapin Maryland', 'Filet of beef, sauce Périgueux', 'Ices and champagne'],

@@ -13,13 +13,21 @@ To make a single shareable file: `python3 tools/bundle.py` writes `dist/the-memb
 - **Engine** (`js/engine.js`, `js/story.js`): state, the compact effects language, conditions, hidden dice, period mortality, multi-course lunches, documents, save and resume.
 - **Quiz** (`data/quiz.js`, `data/camps.js`): 22 questions on six conviction axes, matched by distance to all ten camps, top three shown with a reason. Any playable camp can be chosen.
 - **Dossier** (`js/ui.js`): every standing score (Capital, Seat, Favour, Press, Reputation, Money, Health), the six convictions with drift from the quiz, named connections with status lines, traits, and the nation meters. Changes flash after each choice.
-- **The Bulldog, Act I: The Making, 1882–1900** (`data/bulldog/act1.js`): 18 scenes on the real path, 4 off-path branches if you leave the Army, and 4 social set-pieces (dinner on Fifth Avenue, an audience at the Foreign Office, luncheon at the Carlton, dinner at the Waldorf-Astoria) played course by course and feeding Reputation.
+- **The Bulldog, Act I: The Making, 1882–1900** (`data/bulldog/act1.js`, `data/bulldog/act1-routes.js`). At thirteen your answers send you down one of seven lives drawn from the camp's leading figures, so Act I does not simply retell the anchor's biography:
+  - **Harrow and Sandhurst**, the soldier-journalist (Churchill): the Frontier, Omdurman, the armoured train, Oldham.
+  - **Oxford and All Souls** (Amery): Balliol, Turkish, a dinner with the High Commissioner, The Times in the Boer War, the campaign against a general.
+  - **The Foreign Office** (Duff Cooper and Nicolson): the Western Department, supper at the Savoy and a forbidden marriage, the Fashoda night, the Yeomanry.
+  - **The Navy** (Keyes): Britannia, slavers off Zanzibar, a destroyer of your own, the New Territories, the Peiho forts, the walls of Peking.
+  - **German science** (Lindemann): Darmstadt, Nernst's laboratory, luncheon at the Kaiserhof after the Kruger telegram, leaving in haste, the balloon section.
+  - **The colonies** (Bracken): bolting to Echuca, the shearers' strike, the invented orphan, selling advertising, luncheon with the great man, stabbed on election night.
+  - **The guns** (Morton): Woolwich, Colenso, a bullet in the lung, intelligence and the leak.
+  Each episode transposed from another life into this one says so in its "what really happened" note. Lunches and dinners are played course by course and feed Reputation.
 - **Epilogue**: your life set against the real one, scene by scene, with each note's verification status, the real names behind the echo names, and the full diary.
 - **Venue plates** (`js/plates.js`): engraved vignettes of each place, drawn in SVG.
 
 ## Writing scenes
 
-Each scene in `data/<camp>/actN.js` has `id, year, title, venue, text (60–100 words), basis, real, check, facts, if, choices[]`. A lunch has `kind: 'lunch'`, `guests`, `menu` and `courses[]`, each with its own choices.
+Each scene in `data/<camp>/actN.js` has `id, t (decimal year; scenes sort by it), year, title, venue, text (60–100 words), basis, real, check, facts, if, choices[]`. A lunch has `kind: 'lunch'`, `guests`, `menu` and `courses[]`, each with its own choices.
 
 Effects are a space-separated string:
 

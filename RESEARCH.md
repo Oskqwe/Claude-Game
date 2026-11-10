@@ -191,6 +191,36 @@ Compiled for *The Member*. Base source: the English Wikipedia article for each p
 
 ## L. Gaps to fill before the camps that need them
 
-Not yet read: **Duff Cooper**, **Harold Nicolson** (camp 1 or 6), **Fitzroy Maclean** (the title fetched was a disambiguation page), **Jack Lawson**, **George Tomlinson** (camp 4), **James Stuart** (camp 9). Bevan's early life needs a second read. Also worth adding: Hore-Belisha, Sinclair, Clement Davies, Maxton, Gallacher, A. P. Herbert, Richard Acland, Tom Driberg, Beaverbrook, Laski, Florence Horsbrugh, Bessie Braddock, P. J. Grigg, Hastings Ismay.
+*The six figures below were read on 10 November 2026; see section M.* Previously not yet read: **Duff Cooper**, **Harold Nicolson** (camp 1 or 6), **Fitzroy Maclean** (the title fetched was a disambiguation page), **Jack Lawson**, **George Tomlinson** (camp 4), **James Stuart** (camp 9). Bevan's early life needs a second read. Also worth adding: Hore-Belisha, Sinclair, Clement Davies, Maxton, Gallacher, A. P. Herbert, Richard Acland, Tom Driberg, Beaverbrook, Laski, Florence Horsbrugh, Bessie Braddock, P. J. Grigg, Hastings Ismay.
 
 Need a non-Wikipedia source: the Schuman Plan debate of June 1950; the Cabinet argument over hospitals, autumn 1945; the equal-pay division figures of March 1944; the 1947 national service revolt.
+
+---
+
+## M. Gap figures, read 10 November 2026
+
+Read from Wikipedia (`Roger_Keyes,_1st_Baron_Keyes`, `Leo_Amery`, `Frederick_Lindemann,_1st_Viscount_Cherwell`, `Brendan_Bracken`, `Desmond_Morton_(civil_servant)`, `Duff_Cooper`, `Harold_Nicolson`, `Sir_Fitzroy_Maclean,_1st_Baronet`, `Jack_Lawson,_1st_Baron_Lawson`, `George_Tomlinson_(British_politician)`, `James_Stuart,_1st_Viscount_Stuart_of_Findhorn`, `Aneurin_Bevan`). Same caveat: read through an automated summariser.
+
+**Keyes, early (added detail).** b. 4 Oct 1872, Punjab; general's son. HMS *Britannia* 15 July 1885. 1887 HMS *Raleigh*, Cape station; midshipman; corvette *Turquoise* from Zanzibar against the slave trade. 1893 *Beagle*, Pacific. 1898 destroyer *Opossum*, Plymouth; Sept 1898 to China (*Hart*, then *Fame*, Jan 1899). April 1899, New Territories: led a charge to relieve a surrounded British party. June 1900, Peiho: boarded and captured four Chinese destroyers; then with 32 men destroyed the Hsi-cheng fort's guns and magazine. Among the first over the Peking walls to the legations. Commander Nov 1900.
+
+**Amery, early (added detail).** b. 22 Nov 1873, Gorakhpur; Hindi from his ayah; mother moved to England 1877, divorced 1885. Harrow 1887: top of examinations; gymnast; pushed into the school pool by the younger Churchill. Balliol: double first (1894, 1896); Ouseley scholar in Turkish; half-blue. Fellow of All Souls. Languages: Turkish, Bulgarian, Serbian, Hungarian. Boer War for *The Times*: the only correspondent to visit the Boer forces; nearly captured with Churchill; his 1901 articles helped end Buller's command. 1908 Wolverhampton East by-election lost by eight votes. No private means.
+
+**Lindemann, early (added detail).** b. 5 Apr 1886, Baden-Baden; American mother, naturalised German-born father. School in Scotland and Darmstadt; Berlin under Nernst. 1911 Solvay Conference, youngest present. Fled Germany in August 1914 from a tennis tournament to avoid internment. Farnborough 1915–16: spin recovery theory, learned to fly to test it. "Baron Berlin" to detractors.
+
+**Bracken, early (added detail).** b. 15 Feb 1901, Templemore. 1915 bolted from Mungret College (Jesuit), ran up hotel bills; sent to a priest cousin at Echuca, Victoria. 1920 at Sedbergh posed as a 15-year-old Australian bush-fire orphan. Schoolmaster; publisher from 1922 (advertising). Introduced to Churchill by J. L. Garvin, 1923; stabbed in street fighting at the 1924 Westminster Abbey by-election. North Paddington 1929 by 528.
+
+**Morton, early.** b. 13 Nov 1891. Royal Artillery 1911. Shot in the lung at Arras 1917, served on with the bullet in him; MC. ADC to Haig. SIS Section V. (Article silent on school and family.)
+
+**Duff Cooper** (camp 1 or 6). b. 22 Feb 1890, Cavendish Square; society surgeon's son; mother had eloped twice. Unhappy at prep school (Wixenford), happy at Eton. New College 1908–11; "The Coterie"; gambling, women, drink, modelled on Charles James Fox. Foreign Office Oct 1913 at the third attempt. Grenadier Guards June 1917; DSO Aug 1918 for capturing men and machine guns. Married Lady Diana Manners 1919 against her family; her stage earnings let him leave the FO in 1924. Oldham 1924 (majority 13,000). Lost 1929; won St George's 1931 by 5,710. Resigned over Munich 3 Oct 1938. Information 1940–41; Singapore 1941–42; Free French 1943; Paris embassy 1944–47; Treaty of Dunkirk.
+
+**Harold Nicolson** (camp 1 or 6). b. 21 Nov 1886, Tehran; diplomat's son; childhood in St Petersburg, Constantinople, Madrid, Sofia, Tangier. Wellington; Balliol, a Third. FO 1909. 4 Aug 1914 handed the declaration of war to Prince Lichnowsky. Married Vita Sackville-West 1913; an open marriage. Paris 1919. Demoted 1927; resigned 1929. New Party 1931. National Labour, Leicester West 1935. Stayed seated at Munich. Ministry of Information 1940–41. Lost 1945; lost Croydon North 1948 as Labour.
+
+**Fitzroy Maclean** (camp 1). b. 11 Mar 1911, Cairo. Eton; King's, Cambridge. Diplomatic Service 1933; Moscow 1937–39, the purges. 1939 resigned to enlist as a private. Lancaster by-election Oct 1941. SAS 1942; kidnapped General Zahedi in Persia. Mission to Tito 1943.
+
+**Jack Lawson** (camp 4). b. 16 Oct 1881, Whitehaven; illiterate parents. Trapper in the pit the day after his 12th birthday, ten hours for ten pence. Methodist; socialist via the *Labour Leader* and *Clarion*. Ruskin College 1906–08: he and his wife sold their furniture to pay. Agent at Jarrow, Jan 1910, lost by under 100. Checkweighman. RFA driver in France. Chester-le-Street by-election Nov 1919, majority 11,000. Secretary for War 1945–46. Son killed by a bomb 1942.
+
+**George Tomlinson** (camp 4). b. 21 Mar 1890, Rishton; weaver's son; half-timer at 12. Weavers' district president 1912. Conscientious objector, three years on the land. Farnworth by-election 1938. Bevin's parliamentary secretary 1941–45. Minister of Works 1945–47; Education 1947–51.
+
+**James Stuart** (camp 9). b. 9 Feb 1897, Edinburgh; Earl of Moray's third son. Eton; Royal Scots; MC and Bar 1917. Equerry to Prince Albert 1920; a suitor of Lady Elizabeth Bowes-Lyon. Married a Duke of Devonshire's daughter 1923; Moray and Nairn 1923. Deputy Chief Whip 1937; Government Chief Whip Jan 1941–45; Opposition Chief Whip to 1948.
+
+**Bevan, early (second pass).** b. 15 Nov 1897, Tredegar; miner's son; ten children, five died young. Sirhowy Elementary; severe stammer. Butcher's boy at 13, then Ty-Trist colliery. Lodge chairman at 19. Avoided conscription (nystagmus). Sacked and reinstated; refused unsafe timber. Central Labour College 1919–21 on a miners' scholarship; beat the stammer partly by reciting William Morris. Unemployed 1921–24. Father died of pneumoconiosis, Feb 1925, without compensation. Union official 1926. County council 1928. Ebbw Vale 1929, 20,000 to 8,000.
