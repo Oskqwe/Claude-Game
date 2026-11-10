@@ -37,7 +37,7 @@
       venue: { plate: 'city', label: 'Rooms in Mayfair' },
       text: 'The new century has begun without you in Parliament. Men you knew at school are already Members, and one or two are already bores. You have a name, a set of rooms you cannot quite afford, and a pile of letters asking you to speak, to write, to invest, to marry. A seat will come up sooner or later. The question is what you will be when it does.',
       basis: 'Churchill\'s lecture tours of 1900–01; Amery\'s years at The Times before his 1908 by-election; Bracken\'s self-invention in publishing.',
-      real: 'Churchill was already an MP by 1901 and earned about £10,000 from lectures and books in 1900–01. Amery spent the decade at The Times and writing its history of the Boer War before standing for Parliament. Bracken, a generation later, made his name and money in financial publishing.',
+      real: 'Churchill was already an MP by 1901. He had earned about £10,000 in 1899–1900 from books, journalism and a lecture tour of Britain and America begun late in 1900. Amery, The Times\'s correspondent in the Boer War, then edited and largely wrote its seven-volume history of the war before standing for Parliament. Bracken, a generation later, made his name and money in financial publishing.',
       check: 'research', facts: ['lecture-tour', 'amery-times'],
       choices: [
         { label: 'Lecture in America and come home with money', effects: 'money+12 press+3 rep+2 #lecturer', result: 'You lecture from Boston to Winnipeg on the war, to halls that are sometimes full and sometimes hostile. You come home with ten thousand pounds and a cold.', diary: 'Ten thousand pounds! America pays to hear about a war it disapproves of.' },
@@ -52,7 +52,7 @@
       venue: { plate: 'mill', label: 'A Lancashire count' },
       text: 'January 1906. The Tories are going down to the worst defeat in their history: Free Trade, Chinese labour on the Rand, and a decade of being in office. You have been offered a candidacy. The question is under which colours. The Tory label is poison this winter. The Liberals would take you, and so might the Free Trade Unionists, who belong to nobody.',
       basis: 'The 1906 general election; the Liberal landslide; Churchill\'s Free Trade campaign in Manchester North West.',
-      real: 'The Liberals won about 400 seats in January 1906, and the Conservatives fell to 157. Churchill, by then a Liberal, won Manchester North West. Balfour lost his own seat.',
+      real: 'The Liberals won about 400 seats in January 1906, and the Conservatives fell to 156. Churchill, by then a Liberal, won Manchester North West. Balfour lost his own seat.',
       check: 'research', facts: ['election-1906'],
       choices: [
         { label: 'Stand as a Liberal and Free Trader', historical: true, effects: 'state+1 loyalty-2 !liberal', roll: { stat: 'reputation', diff: 30,
@@ -147,7 +147,7 @@
       venue: { plate: 'club', label: 'The Carlton Club' },
       text: 'The Lords have lost two elections on the Budget, and now the King has promised to create enough Liberal peers to swamp them. Some Tories want to fight to the last ditch: let the King make five hundred peers and be damned. Others say surrender and save the House from ridicule. Your leaders are divided. They want to know which way the younger men will go.',
       basis: 'The Parliament Act crisis, 1910–11: the Conservative "ditchers" against the "hedgers". Amery, then a young Tariff Reformer, sided with the diehards.',
-      real: 'The Parliament Act passed the Lords in August 1911 by 131 to 114 after the King agreed to create peers if needed. The Conservative diehards who fought to the end were called "ditchers".',
+      real: 'The Parliament Act passed the Lords on 11 August 1911 by 131 to 114 after the King agreed to create peers if needed. The Conservative diehards who fought to the end were called "ditchers".',
       check: 'unchecked', facts: ['ditchers-1911'],
       choices: [
         { label: 'Die in the last ditch', effects: 'order+3 steel+2 loyalty-2 fav+2 #diehard', result: 'You vote and speak with the diehards. You lose, gloriously, and the leader who would not fight is gone within the year.', diary: 'We lost. We were right. The leader is finished.' },
@@ -189,7 +189,7 @@
       onEnter: 'office=First_Lord_of_the_Admiralty !admiralty',
       text: 'July 1914. You have been First Lord of the Admiralty since 1911. The Fleet has just finished a test mobilisation at Spithead and is due to disperse. Austria has sent an ultimatum to Serbia. The Cabinet has not decided anything and will not for days. If the ships go to their home ports, it will take a week to bring them back together.',
       basis: 'Churchill at the Admiralty, 1911–15; the order of 26 July 1914 keeping the Fleet together after the test mobilisation.',
-      real: 'Churchill became First Lord in October 1911. On 26 July 1914 the First Sea Lord, Prince Louis of Battenberg, stopped the dispersal of the Fleet after the test mobilisation, and Churchill backed him. On 29 July the Fleet moved to Scapa Flow.',
+      real: 'Churchill became First Lord in October 1911. On the eve of war, he and the First Sea Lord, Prince Louis of Battenberg, cancelled the planned dispersal of the Fleet after its practice manoeuvres, so that it was concentrated when war came.',
       check: 'unchecked', facts: ['fleet-1914'],
       choices: [
         { label: 'Hold the Fleet together without asking', historical: true, effects: 'steel+3 loyalty-2 war+4 @askwith-2', result: 'The order goes out at four in the afternoon. The Fleet stays together, then steams north to Scapa in the dark, unlit. When war comes, it is ready.', diary: 'Fleet held. Sent north in the dark. Nobody asked me. I shall be glad of that.' },
@@ -229,7 +229,7 @@
       venue: { plate: 'frontier', label: 'Off Zeebrugge' },
       text: 'The night of 22 April 1918. You command a ship in the raid on Zeebrugge, where the German submarines come out of the Bruges canal. Blockships are to be sunk across the canal mouth while storming parties go over the Mole under fire. Your old friend Keys commands the whole thing from a destroyer. The smoke screen has just blown back in the wind.',
       basis: 'Roger Keyes and the Zeebrugge raid, 23 April 1918.',
-      real: 'Keyes planned and led the raid. Blockships were sunk in the canal mouth, but the canal was only partly blocked. There were about 500 British casualties, and eight Victoria Crosses were awarded. Keyes became a national hero.',
+      real: 'Keyes planned and led the raid. Blockships were sunk in the canal mouth, but the canal was only partly blocked. More than 200 British were killed and about 300 to 350 wounded, and eight Victoria Crosses were awarded. Keyes became a national hero.',
       check: 'research', facts: ['keyes-zeebrugge'],
       choices: [
         { label: 'Go in, smoke or no smoke', historical: true, effects: 'steel+3 rep+6 health-6 #decorated', death: D(0.07, 'Your ship was hit alongside the Mole at Zeebrugge on St George\'s Day 1918. You were forty-three.', 'Naval officer killed at Zeebrugge'), result: 'You go in under the guns. The blockships settle in the canal mouth. You come out with a hole in your funnel and a recommendation for the DSO.', diary: 'Zeebrugge. We went in. Not all of us came out.' },
@@ -303,8 +303,8 @@
     { id: 'influenza-1918', t: 1918.85, year: 1918, title: 'The influenza',
       venue: { plate: 'sickroom', label: 'A bedroom in London, November 1918' },
       text: 'The war is ending and a new killer is going through London: an influenza that takes the young and strong in two days, turning their faces blue. The theatres are half empty and the undertakers have run out of coffins. You woke this morning with a fever and an ache in every bone. Your doctor is overworked and frightened. There is an Armistice to celebrate, and a great deal to do.',
-      basis: 'The influenza pandemic of 1918–19, which killed about 228,000 people in Britain.',
-      real: 'The 1918 influenza killed about a quarter of a million people in Britain, many of them young adults, with the worst wave in October and November 1918. None of the camp\'s figures is recorded as having died of it, but it is the risk every one of them ran.',
+      basis: 'The influenza pandemic of 1918–19.',
+      real: 'The 1918–19 influenza killed something like a quarter of a million people in Britain, many of them young adults, in waves from 1918 into 1919. None of the camp\'s figures is recorded as having died of it, but it is the risk every one of them ran.',
       check: 'unchecked', facts: ['flu-1918'],
       choices: [
         { label: 'Go to bed and stay there', effects: 'health-6 cap-1', death: D(0.015, 'The influenza of 1918 took you in three days, a week after the Armistice. You were forty-four.', 'Death from influenza'), result: 'You stay in bed for a fortnight and miss the Armistice. You get up thin and weak, and alive.', diary: 'Missed the Armistice in bed. Alive. Many are not.' },
@@ -316,7 +316,7 @@
       venue: { plate: 'city', label: 'A khaki election' },
       text: 'December 1918. The war is won, and the coalition is going to the country at once. Men with a letter of endorsement from the Prime Minister and the Tory leader, the "coupon", are almost certain to win. Men without one are going down by the hundred. Your war record is a good one. The party managers have a coupon to offer you, for a seat in the suburbs.',
       basis: 'The 1918 "coupon" election; ex-officers entering Parliament on the coalition ticket.',
-      real: 'The Lloyd George–Bonar Law coalition won the December 1918 election by a landslide, with 478 seats. Many officers entered the House for the first time. Asquith lost his seat.',
+      real: 'The Lloyd George–Bonar Law coalition won the December 1918 election by a landslide, with 521 seats. Many officers entered the House for the first time. Asquith lost his seat.',
       check: 'research', facts: ['coupon-1918'],
       choices: [
         { label: 'Take the coupon', effects: 'seat+45 cap+4 loyalty+2 office=Member_of_Parliament !mp', result: 'You are elected by eleven thousand. The new House is full of hard-faced men who have done well out of the war, and some who have done badly.', diary: 'Elected at last. Forty-four years old. The war has made a great many Members, and me.' },

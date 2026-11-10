@@ -61,7 +61,7 @@
       venue: { plate: 'club', label: 'The Carlton Club, 19 October 1922' },
       text: 'The Conservative Members have been summoned to the Carlton to decide whether to fight the coming election as part of Mr Lloyd Gwynne\'s coalition. The leaders want to stay in. The backbenchers have had enough of the Welshman\'s honours for sale and his adventures abroad. A quiet man from the Board of Trade, Stanley Baldock, has said he will speak against. Which way do you vote?',
       basis: 'The Carlton Club meeting of 19 October 1922, which ended the Lloyd George coalition. Baldwin spoke against the coalition; the meeting voted to fight as an independent party.',
-      real: 'The Conservative MPs voted 187 to 87 to leave the coalition. Lloyd George resigned that day, Bonar Law formed a government, and Baldwin\'s speech made his name. Churchill, then a Coalition Liberal, was not present.',
+      real: 'The Conservative MPs voted to leave the coalition, by a margin usually given as 187 to 87. Lloyd George resigned that day, Bonar Law formed a government, and Baldwin\'s speech made his name. Churchill, then a Coalition Liberal, was not present.',
       check: 'unchecked', facts: ['carlton-1922'],
       choices: [
         { label: 'Vote to leave the coalition', effects: 'loyalty+3 fav+6 @baldock+10', result: 'You vote with the backbenchers. The coalition falls by teatime. Mr Baldock nods to you on the stairs.', diary: 'The coalition is finished. Baldock nodded. He will remember.' },
@@ -73,7 +73,7 @@
       venue: { plate: 'sickroom', label: 'A nursing home, then Dundee' },
       text: 'November 1922. Days before the election your appendix bursts, and you are operated on. Your wife goes north to campaign for you. You arrive in Dundee in the last week, carried to the platform on a chair, to face crowds who have not forgotten Russia and who throw things. Labour and a Prohibitionist are both against you, and the Liberal vote is split in two.',
       basis: 'Churchill\'s appendicectomy and his defeat at Dundee, November 1922.',
-      real: 'Churchill had his appendix removed in October 1922, campaigned briefly in Dundee from a chair, and came fourth. The seat went to the Prohibitionist Edwin Scrymgeour and Labour\'s E. D. Morel. He said he was "without an office, without a seat, without a party and without an appendix".',
+      real: 'Churchill had his appendix removed in October 1922, campaigned briefly in Dundee from a chair, and came fourth of six. The seat went to the Prohibitionist Edwin Scrymgeour and Labour\'s E. D. Morel. He said he was "without an office, without a seat, without a party and without an appendix".',
       check: 'research', facts: ['dundee-1922'],
       choices: [
         { label: 'Speak from the chair, whatever they throw', historical: true, effects: 'steel+2 health-6', roll: { stat: 'reputation', diff: 70,
@@ -103,7 +103,7 @@
       venue: { plate: 'city', label: 'Westminster, March 1924' },
       text: 'A by-election in the Abbey division of Westminster, the seat that holds Parliament itself. You stand as an independent against both the official Tory and Labour, backed by half the press and a crowd of chorus girls who address envelopes. Bracknell runs your committee room and sleeps on its floor. The fight is dirty. On polling day it is too close to call.',
       basis: 'Churchill as "Independent Anti-Socialist" at the Westminster Abbey by-election, March 1924, with Bracken running his campaign.',
-      real: 'Churchill lost the Abbey by-election by 43 votes to the official Conservative. It brought him back towards the Conservatives, who gave him a clear run at Epping that autumn.',
+      real: 'Churchill lost the Abbey by-election on 19 March 1924 by 43 votes to the official Conservative, Otho Nicholson. It brought him back towards the Conservatives, who gave him a clear run at Epping that autumn.',
       check: 'research', facts: ['abbey-1924'],
       choices: [
         { label: 'Fight to the last vote', historical: true, effects: 'steel+2 press+6 @bracknell+6', roll: { stat: 'press', diff: 60,
@@ -171,7 +171,7 @@
       venue: { plate: 'newyork', label: 'Wall Street, October 1929' },
       text: 'You are in New York at the end of a lecture tour, and you have put most of your earnings into American shares, which have only ever gone up. On Thursday morning they start to fall. By the afternoon a man is said to have jumped from a window under yours. Your broker asks for instructions. Sell now and take a loss, or hold on for the bounce?',
       basis: 'Churchill in America during the Wall Street Crash, October 1929; his heavy losses on shares.',
-      real: 'Churchill was in the United States in October 1929, witnessed scenes of the Crash in New York, and lost a large part of his savings in American shares. He spent the 1930s writing to restore his finances.',
+      real: 'Churchill lost most of his American investments in the Wall Street Crash of October 1929. He is said to have been in New York at the time; that detail is still to be checked. He spent the 1930s writing to restore his finances.',
       check: 'research', facts: ['crash-1929'],
       choices: [
         { label: 'Hold on for the bounce', historical: true, effects: 'money-18 temper+2 #in-debt', result: 'There is no bounce. By Christmas you have lost most of what you had. You go home and write, as fast as you can, for the rest of the decade.', diary: 'Lost nearly everything. Books, then. Many books.' },
@@ -197,7 +197,7 @@
       venue: { plate: 'gallery', label: 'August 1931' },
       text: 'The pound is falling, the Labour Cabinet has split over cuts to the dole, and Mr MacDougal has formed a National Government with the Tories and Liberals. The Liberals are splitting three ways. Sir John Simmons is leading a group into permanent alliance with the Tories, Sir Herbert Samuels wants to stay a separate party, and the old Welshman is against it all from his sickbed.',
       basis: 'The 1931 crisis and the Liberal split: Simon\'s Liberal Nationals, Samuel\'s official Liberals, Lloyd George\'s family group.',
-      real: 'In 1931 the Liberals split three ways. Simon\'s Liberal Nationals merged in practice with the Conservatives; Samuel\'s Liberals left the National Government over tariffs in 1932; Lloyd George opposed the election. The National Government won 554 seats.',
+      real: 'In 1931 the Liberals split three ways. Simon\'s Liberal Nationals merged in practice with the Conservatives; Samuel\'s Liberals left the National Government over tariffs in 1932; Lloyd George led a small group of Independent Liberals. The National Government won 554 of 615 seats.',
       check: 'unchecked', facts: ['liberal-split-1931'],
       choices: [
         { label: 'Go with Simmons and the Liberal Nationals', effects: 'loyalty+3 state-1 fav+6 seat+10 office=Liberal_National_Member', result: 'You join the Liberal Nationals. You keep your seat and, in time, a post. Your old friends say you have become a Tory by stages.', diary: 'Liberal National. A Tory in a Liberal coat, they say.' },
@@ -298,7 +298,7 @@
       venue: { plate: 'chine', label: 'Your study, summer 1938' },
       text: 'Two letters on the same morning. Your broker says that your debts now exceed what you can raise, and that the house will have to be sold. Your constituency chairman says that a group in the association wants you dropped at the next election for disloyalty to the Prime Minister. A rich admirer has sent word through Bracknell that he would like to help, quietly.',
       basis: 'Churchill\'s financial crisis of 1938, when Chartwell was put up for sale and he was rescued by a financier; and the attempts to deselect him at Epping in 1938–39.',
-      real: 'In 1938 Churchill put Chartwell on the market. A wealthy supporter took over his share losses, and the house was withdrawn from sale. Some members of his Epping association tried to unseat him in 1938–39 for attacking Chamberlain, but failed.',
+      real: 'In 1938 Churchill put Chartwell on the market. The financier Sir Henry Strakosch took over his share losses, and the house was withdrawn from sale. Some members of his Epping association tried to unseat him in 1938–39 for attacking Chamberlain, but failed.',
       check: 'unchecked', facts: ['rescue-1938', 'epping-deselect'],
       choices: [
         { label: 'Take the admirer\'s help and fight the association', historical: true, effects: 'money+20 steel+2 seat+5 @bracknell+6 #obliged', result: 'The debts are taken over. The house is withdrawn from sale. At a stormy meeting in Woodford the association backs you by three to one.', diary: 'Rescued. The house is saved. Woodford backs me. I owe a great deal, to a man I hardly know.' },
