@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Member</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Live the whole life of a British politician of the 1938–1951 era, and bend history.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&family=Playfair+Display:ital,wght@0,900;1,400&family=UnifrakturMaguntia&display=swap">
+<link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+  <header class="rail">
+    <div class="rail-inner">
+      <span class="brand">The Member <em>· a life in politics</em></span>
+      <span class="rail-meta" id="rail-meta"></span>
+      <button class="rail-btn only-narrow" id="btn-file" type="button" hidden>File</button>
+      <button class="rail-btn" id="btn-diary" type="button" hidden>Diary</button>
+      <button class="rail-btn" id="btn-papers" type="button" hidden>Papers</button>
+      <button class="rail-btn" id="btn-new" type="button" hidden>New life</button>
+    </div>
+  </header>
+  <main class="desk" id="desk">
+    <section class="sheet" id="sheet" aria-live="polite"></section>
+    <aside class="dossier" id="dossier" aria-label="Dossier"></aside>
+  </main>
+  <noscript><p style="color:#f1e7d0;text-align:center">The Member needs JavaScript to play.</p></noscript>
+
+  <script src="js/engine.js"></script>
+  <script src="js/story.js"></script>
+  <script src="js/plates.js"></script>
+  <script src="data/camps.js"></script>
+  <script src="data/quiz.js"></script>
+  <script src="data/facts.js"></script>
+  <script src="data/bulldog/act1.js"></script>
+  <script src="js/ui.js"></script>
+</body>
+</html>
