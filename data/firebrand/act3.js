@@ -325,7 +325,7 @@
         venue: { plate: 'sickroom', label: 'BMA House, Tavistock Square' },
         text: 'February 1948. Five months to the appointed day, and the doctors have voted, in a plebiscite run by Dr Charles Hilliard of the BMA, nearly nine to one not to serve in your Health Service. They fear becoming salaried civil servants. Lord Moreland of the physicians, a clever courtier, has hinted at a way out: let consultants keep private patients and pay beds in the new state hospitals. Without the doctors there is no service.',
         basis: 'The BMA plebiscite of February 1948, in which doctors voted overwhelmingly against the NHS terms, and Bevan\'s concessions in April 1948, including private practice for consultants, negotiated partly through Lord Moran.',
-        real: 'In February 1948 about 40,000 doctors voted against the NHS terms and some 4,500 for. Bevan conceded that there would be no full-time salaried service by regulation, and let consultants keep private practice and pay beds. In May the BMA advised doctors to join. Years later, at a dinner in the mid-1950s, Bevan is reported to have said that he had stuffed their mouths with gold.',
+        real: 'In the BMA plebiscite of February 1948, of about 45,000 doctors voting, fewer than 5,000 approved of the Act. Bevan made concessions, among them letting consultants keep their private practices, and the doctors came in before the appointed day. Years later, at a dinner in the mid-1950s, Bevan is reported to have said that he had stuffed their mouths with gold.',
         check: 'unchecked', facts: ['bma-1948'],
         choices: [
           { label: 'Buy the consultants with pay beds and private practice', effects: 'cap+3 fav+3 state-1 @moreland+6', historical: true,
@@ -473,13 +473,13 @@
 
       { id: 'hanging-1948', year: 1948, title: 'The rope', if: '!route-co !mp',
         venue: { plate: 'gallery', label: 'The House of Commons' },
-        text: 'April 1948. The Criminal Justice Bill is in committee, and you have tabled a new clause to suspend the death penalty for five years. The Home Secretary, James Chilton Eade, once an abolitionist, says the country is not ready and the government will oppose you. The whips will allow a free vote. You think you have the numbers on the Labour benches. The Lords are another matter.',
-        basis: 'Silverman\'s amendment to the Criminal Justice Bill to suspend capital punishment for five years, carried in the Commons on 14 April 1948 against the government\'s advice and rejected by the Lords.',
-        real: 'Silverman\'s clause passed the Commons on 14 April 1948 by 245 votes to 222 on a free vote, with Chuter Ede opposing it. The Lords threw it out, and a compromise clause also failed. Hanging was suspended only in 1965, under Silverman\'s own bill.',
+        text: 'April 1948. The Criminal Justice Bill is in committee, and you have tabled a new clause to suspend the death penalty for five years. The Home Secretary, James Chilton Eade, once an abolitionist, says public opinion is not ripe, which is why the government left it out of the Bill. The whips will allow a free vote. You think you have the numbers on the Labour benches. The Lords are another matter.',
+        basis: 'Silverman\'s amendment to the Criminal Justice Bill to suspend capital punishment for five years, carried in the Commons on 14 April 1948 on a free vote, and rejected by the Lords.',
+        real: 'Silverman\'s clause passed the Commons on a free vote on 14 April 1948. The Lords threw it out, and the government\'s compromise, keeping hanging for certain categories of murder, failed too. Hanging was suspended only in 1965, under Silverman\'s own bill.',
         check: 'unchecked', facts: ['hanging-1948'],
         choices: [
           { label: 'Press it to a vote', effects: 'state+2 order-2 press+3 #abolitionist', historical: true,
-            result: 'Two hundred and forty-five to two hundred and twenty-two. The House has voted to stop hanging. In June the Lords vote it down, and the executions resume. You will try again, for as long as it takes.',
+            result: 'The House has voted to stop hanging, by twenty-three votes. In June the Lords vote it down, and the executions resume. You will try again, for as long as it takes.',
             diary: '245 to 222! Then the Lords. Again, then.' },
           { label: 'Accept a compromise: hanging only for the worst murders', effects: 'order+1 fav+3 cap+2',
             result: 'A clause keeping the rope for poisoners, police killers and a few more. The Lords throw that out too.',
