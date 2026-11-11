@@ -122,3 +122,16 @@ file. Rogue forks: the 1911 street fight (`fork=riot11`), the General Strike not
 no British bomb (`world=nobomb46`) and the 1947 plot succeeding (`world=pm47`). Lives outside office get a
 citizen's war: fire-watching in the Blitz, the 1945 vote, nationalisation. Facts are in data/facts.js under
 "The Docker".
+
+## The Firebrand (camp 5)
+
+`data/firebrand/act1.js`, `act2.js`, `act3.js`: a full life, 1897–1951, after Aneurin Bevan (Nye Bowen), with
+routes from Jennie Lee (the scholarship: Fife, Edinburgh, North Lanark), Emanuel Shinwell (Glasgow: the
+tailoring shop, George Square, Seaham, coal) and Sydney Silverman (the objector: Liverpool, three prison terms,
+Nelson and Colne, the hanging amendment), chosen at "The scholarship" (1911). The scholarship route is written
+to read for either sex. Five everyday scenes open the life (the Revival, the 1906 election, the first pensions,
+Tonypandy, the Tredegar riot). Set piece: lunch with Lord Beaverhulme, 1940. Rogue forks: Moscow in 1921
+(`fork=moscow21`), America in 1923 (`fork=america23`), the New Party (`fork=newparty31`), staying out with
+Crisp in 1939 (`fork=popular39`), losing the whip in 1944 (`fork=whip44`), and the hospitals left with the
+councils (`world=townhall45`, the town hall health service). Lives outside the House get the first morning
+of the NHS. Facts are in data/facts.js under "The Firebrand".

@@ -40,7 +40,7 @@
     span: '1904–1921',
     regen: 3,
     intro: 'You were born in November 1897 at 32 Charles Street, Tredegar, a coal and iron town at the head of the Sirhowy valley in Monmouthshire. Your father is a collier, a Baptist, a singer and a reader of books. Your mother is a seamstress and a Methodist, and runs the house like a general. There were ten of you; five are dead. You have a stammer that makes every sentence a fight. You are seven.',
-    continues: 'Act II of this life, from the blacklist to the eve of war, is still being written, so this life ends here for now.',
+    continues: 'Act II follows: the blacklist, the slump and the road to Westminster.',
     end: (s) => ({ head: s.flags.includes('mp') ? 'The Member for {seat}' : 'Twenty-four, and angry', text: '1921. {first} {last} is ' + (s.year - s.born) + '. ' + (s.flags.includes('mp') ? 'Somehow, already in the House.' : 'Behind you, a valley, a library and a stammer. Ahead, the blacklist, the dole and everything else.') }),
     start: {
       born: 1897,
