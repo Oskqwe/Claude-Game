@@ -323,7 +323,7 @@
       text: 'A society of middle-class socialists who believed in gradual reform through research, pamphlets and persuading people in power, rather than revolution. Its leading lights wrote the tracts, sat on commissions and later helped write Labour\'s policies.' },
     { id: 'minority-report', m: 'Minority Report', title: 'The Minority Report', date: '1909',
       text: 'The Royal Commission on the Poor Laws split in 1909. The majority wanted to reform the workhouse system; a minority, led by Beatrice Webber, wanted to abolish it and replace it with public services for health, unemployment and old age. Their campaign failed at the time but shaped the welfare state.' },
-    { id: 'toynbee', m: 'Toynbee Hall', title: 'Toynbee Hall', date: 'founded 1884',
+    { id: 'toynbee', m: 'Toynbee Hall|Nobody in Whitechapel', title: 'Toynbee Hall', date: 'founded 1884',
       text: 'A "settlement" in Whitechapel where young university men lived among the East End poor, ran clubs, classes and legal advice, and studied poverty at first hand. Many future reformers and civil servants passed through it.' },
     { id: 'national-insurance', m: 'National Insurance Act', title: 'The National Insurance Act', date: '1911',
       text: 'Insurance against sickness for most workers, and against unemployment in a few trades, paid for by weekly stamps: fourpence from the worker, threepence from the employer and twopence from the state, "ninepence for fourpence". Doctors, friendly societies and many workers opposed it at first.' },
@@ -341,6 +341,18 @@
       text: 'Many public schools and colleges ran a "mission" or club in a poor district of London, where old boys volunteered in the evenings with boxing, football, savings banks and summer camps for working boys. For a number of future politicians it was their first sight of real poverty.' },
     { id: 'councils-1919', m: 'Labour has swept the Stepney', title: 'Labour takes the town halls', date: 'November 1919',
       text: 'In the London borough elections of 1919 Labour won control of about a dozen boroughs, most of them in the East End, and began using local government to improve housing, health and poor relief.' },
+    { id: 'zinoviev', m: 'Zinoviev', title: 'The Zinoviev letter', date: 'October 1924',
+      text: 'A letter, said to be from Grigory Zinoviev of the Communist International, urging British Communists to stir up revolution, published by the Daily Mail four days before the 1924 election. It helped the Conservatives paint Labour as soft on Moscow. Most historians now think it a forgery.' },
+    { id: 'simon-commission', m: 'a commission to decide India', title: 'The Simon Commission', date: '1927–30',
+      text: 'A Parliamentary commission of seven British members sent to report on India\'s constitution. Because it had no Indian members, the Indian National Congress and others boycotted it, greeting it with black flags. Its report was overtaken by the Round Table Conferences.' },
+    { id: 'mosley-memo', m: 'Moseby, a brilliant', title: 'The Moseby memorandum', date: '1930',
+      text: 'A young Labour minister proposed tackling unemployment with public works, protective tariffs, cheap credit and early retirement pensions. The Cabinet and the Treasury rejected it. He resigned in May 1930, left Labour to found the New Party, and went on to lead British fascism.' },
+    { id: 'means-test', m: 'means test', title: 'The means test', date: 'from 1931',
+      text: 'From 1931 the long-term unemployed had to prove need to get relief. Officials visited homes and counted the family\'s savings, furniture and the earnings of sons and daughters. It was bitterly hated, and broke up many households.' },
+    { id: 'intl-brigades', m: 'International Brigades', title: 'The International Brigades', date: '1936–38',
+      text: 'Volunteers from more than fifty countries who went to fight for the Spanish Republic against Franco\'s rebels. About 2,500 came from Britain and Ireland, many of them unemployed workers and Communists; over 500 were killed. Britain\'s policy of non-intervention barred arms sales to both sides.' },
+    { id: 'rhineland', m: 'marched into the Rhineland', title: 'The Rhineland', date: '7 March 1936',
+      text: 'Hitler sent troops into the Rhineland, the strip of Germany along the French border that the Versailles and Locarno treaties had made a demilitarised zone. France and Britain protested and did nothing.' },
   ];
 
   // Compile once; the first mention of each entry in a block of text is linked.

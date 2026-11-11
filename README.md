@@ -95,5 +95,7 @@ time, keep echo names, and are never attached to invented alternate-history even
 `data/major/act1.js`: Act I, 1889–1922, playable. It opens with five everyday scenes from 1889 to 1896
 (the dock strike, the 1892 election, the governess, the great frost, the Armenian meetings) before Haileybury,
 Stepney, the Webbers, the war and Limehouse. Branches: the officer (Helles, Suvla, Hanna), the objector
-(the tribunal and prison) and the ambulance driver. Acts II and III are still to come; `act.continues`
-says so on the end screen. Facts are in data/facts.js under "The Quiet Major".
+(the tribunal and prison) and the ambulance driver. `data/major/act2.js`: Act II, 1922–1938 (PPS, the War Office, the Zinoviev letter, the 1926 power
+committee, the Simon Commission, 1931, Brighton, the leadership ballot, Spain), with routes back for
+players outside the House and two rogue forks: National Labour in 1931 (`world=national31`) and staying
+to fight in Spain (`fork=spain37`). Act III is still to come; `act.continues` says so on the end screen. Facts are in data/facts.js under "The Quiet Major".
