@@ -406,3 +406,17 @@ body.in-lobby { overflow: hidden; }
 .lobby-dialog .choices { display: flex; flex-direction: column; }
 .lobby-list { position: absolute; top: 64px; left: 50%; transform: translateX(-50%); width: min(560px, calc(100vw - 32px)); display: flex; flex-direction: column; background: var(--paper); color: var(--ink); padding: 8px 12px; }
 .lobby-gate { border: 1px solid var(--rule); padding: 14px 16px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+
+/* Counterfactual forks */
+.fork-note { border-left: 3px solid var(--seal); padding: 6px 0 6px 12px; display: grid; gap: 6px; }
+.fork-note p { font-style: italic; color: var(--ink-soft); }
+.fork-card { border: 1px solid var(--rule, rgba(0,0,0,.15)); border-left: 3px solid var(--seal); padding: 12px 14px; margin: 10px 0; display: grid; gap: 4px; }
+.fork-card h4 { font-family: var(--f-display); font-weight: 400; font-size: var(--s1); margin: 0; }
+
+/* Your own move (live, claude.ai only) */
+.own-move { border-top: 1px dashed var(--ink-soft); padding-top: 10px; }
+.own-move summary { cursor: pointer; font-family: var(--f-type); font-size: .85rem; letter-spacing: .06em; color: var(--ink-soft); }
+.own-move textarea { width: 100%; min-height: 70px; margin: 8px 0; font: inherit; padding: 8px; background: transparent; border: 1px solid var(--ink-soft); color: inherit; box-sizing: border-box; }
+.own-move .muted { font-size: .85rem; }
+.compare .tag-live { color: var(--ink-soft); font-family: var(--f-type); font-size: .7rem; }
+.fork-note .stamp { justify-self: start; }

@@ -34,7 +34,7 @@
             pass: { effects: 'office=Member_of_Parliament !mp -!pm', result: 'You are returned for a safe suburb. The rest of the news is terrible.', diary: 'Safe. The rest is ruin.' },
             fail: { effects: 'office=None -!mp -!pm', result: 'Even the safe seat goes. It is that kind of year.', diary: 'Even the safe seat. Extraordinary.' } } },
         { label: 'Stand for Parliament at last', requires: '~!mp', effects: 'loyalty+1', roll: { stat: 'reputation', diff: 45,
-            pass: { effects: 'seat+35 cap+4 office=Member_of_Parliament !mp', result: 'You win a seat at the end of the war, one of the few new Members on your side. The rest of the news is terrible for it.', diary: 'Elected, at last, at seventy. On the losing side. Typical.' },
+            pass: { effects: 'seat+35 cap+4 office=Member_of_Parliament !mp -!offmap !returned', result: 'You win a seat at the end of the war, one of the few new Members on your side. The rest of the news is terrible for it.', diary: 'Elected, at last, at seventy. On the losing side. Typical.' },
             fail: { effects: 'seat+5', result: 'You lose, like most of your side.', diary: 'Beaten in the landslide. Too old to try again, perhaps.' } } },
         { label: 'Do not stand. Seventy is old enough', requires: 'age>=68', showLocked: true, effects: 'health+6 office=None -!mp -!pm', result: 'You do not stand, and watch the landslide from the country, with relief and a little grief.', diary: 'Did not stand. Watched it from the garden. Relief. Grief.' },
       ] },

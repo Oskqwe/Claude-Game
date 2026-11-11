@@ -409,6 +409,11 @@
           { label: 'Stay in cover and write the truest account of the day', effects: 'press+5 temper-1 cap+2',
             result: 'Your account of the fighting is the best in any paper, and you are alive to sign it.',
             diary: 'Saw it all from the rocks. Wrote it all down.' },
+          { label: 'Ride on alone after the tribesmen, into the village', effects: 'steel+3 temper+4',
+            death: { chance: 0.08, text: 'You rode alone into the lanes of the village after the retreating tribesmen. You were cut down among the walls before anyone in the brigade saw where you had gone. You were twenty-two.', headline: 'Lord Randal {last}\'s son killed on the Frontier' },
+            roll: { stat: 'health', diff: 50,
+              pass: { effects: 'press+8 rep+3 fav-3 #reckless', result: 'You gallop through the village and out the other side with three bullets through your coat and none through you. The general calls it the bravest and stupidest thing he has seen this year.', diary: 'Rode through the village alone. Three holes in my coat. Blood says I am a fool. He is right.' },
+              fail: { effects: 'fork=mamund health-12 office=Prisoner_of_the_Mamund', result: 'In the lanes beyond the last wall the pony goes down, shot through the neck. Before you can draw your revolver there are a dozen men around you. Nobody in the brigade sees you taken.', diary: '(Written later.) I rode one risk too far. That was the day my life left the road it was on.' } } },
         ],
         doc: null },
 

@@ -117,6 +117,7 @@
       result: TM.fill(result, s),
       historical: !!c.historical,
       passed,
+      fork: delta.fork || null,
     });
 
     if (died) {
@@ -128,7 +129,7 @@
     }
 
     s.lastDelta = delta;
-    s.pending = { result: TM.fill(result, s), docs: docs.filter(Boolean), goto: gotoId, died, end: !!c.end };
+    s.pending = { result: TM.fill(result, s), docs: docs.filter(Boolean), goto: gotoId, died, end: !!c.end, fork: delta.fork || null };
     TM.save();
   };
 

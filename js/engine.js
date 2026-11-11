@@ -44,6 +44,7 @@
       diary: [],
       log: [],
       papers: [],
+      forks: [],
       dead: false,
       death: null,
       ended: false,
@@ -107,6 +108,14 @@
         s.flags = s.flags.filter((f) => f !== m[1]);
       } else if ((m = tok.match(/^!(.+)$/))) {
         if (!s.flags.includes(m[1])) s.flags.push(m[1]);
+      } else if ((m = tok.match(/^fork=([\w-]+)$/))) {
+        // A rogue choice: the life leaves recorded history. Recorded once; marks the life off the map.
+        s.forks = s.forks || [];
+        if (!s.forks.some((f) => f.id === m[1])) {
+          s.forks.push({ id: m[1], year: s.year });
+          delta.fork = m[1];
+        }
+        for (const f of ['offmap', 'fork-' + m[1]]) if (!s.flags.includes(f)) s.flags.push(f);
       } else if ((m = tok.match(/^office=(.+)$/))) {
         s.office = m[1].replace(/_/g, ' ');
         delta.office = s.office;

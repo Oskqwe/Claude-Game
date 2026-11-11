@@ -45,7 +45,7 @@ Found while writing the briefs. None of it is needed for the Bulldog.
 | Need | Camps | Notes |
 |---|---|---|
 | A different birth year per route | planner (Wilson route), pioneer (Castle route) | Act I `start` is one object today; make it per route, or open those routes in Act II |
-| The player's sex and pronouns | pioneer, firebrand (Lee route) | DESIGN §1 says only that the player types a name. **Ask the owner** before writing these routes |
+| The player's sex and pronouns | pioneer, firebrand (Lee route) | Owner's answer (10 Nov 2026): no man/woman choice. The Pioneer camp is gender neutral; whether the character is treated as a woman politician follows from the quiz answers. Engine needs a quiz-derived flag for this |
 | No seat in the Commons | mandarin, business (Wilson route) | Replace `seat` with standing in Whitehall; no wilderness on defeat; a "minute" document type |
 | A whip's book | machine | A list of named members with loyalty scores, spent to win divisions |
 | Party per route | machine (Morrison route is Labour), middle and pioneer (cross-party) | Scenes need `if` by party flag |

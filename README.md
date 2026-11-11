@@ -59,6 +59,18 @@ Conditions (`if`, `requires`) are space-separated terms that must all hold; `a|b
 
 A choice can carry `roll: { stat, diff, pass, fail }` (chance = clamp((stat − diff + 50)/100, 5%, 95%), never shown), `death: { chance, text, headline }`, `doc`, `goto` and `historical`.
 
+## Counterfactual lives
+
+A rogue choice can take a life off the record. The effect `fork=<id>` records the moment (year and id), sets the flags `offmap` and `fork-<id>`, and stamps the outcome "History bends here". `TM.FORKS[id]` holds the invented history (`history`, plus `more: [{if, text}]` chapters chosen by flags), a `real` note, and optional act endings (`ends: {1: {if, head, text}}`). The epilogue shows "The history you made" before the side-by-side table.
+
+Rules (owner, 10 Nov 2026): great external events still happen on schedule, but an off-record life meets them from somewhere else, with less power over them. A rogue choice can end the life outright (`!life-over` with `end: true`). An off-record life has a hard, earned road back: winning it clears `offmap` and sets `returned`, which lets the historical scenes resume. Historical scenes that would pull an off-record life back by default carry `~!offmap`.
+
+First branch: `data/bulldog/fork-mamund.js`. Riding alone into a village at Malakand (1897) can end in capture by the Mamund; from there a Frontier career (the Khyber, the Bazar valley 1908, the Germans in Kabul 1915, Amritsar 1919, Qissa Khwani 1930), Viscount Hallifield as Prime Minister in May 1940 (fighting on or taking the Lisbon terms), and four roads back to the House (1898, 1923, 1935, 1938, 1941) and two to No. 10 (1942). A second fork, `renegade`, ends the life in the hills.
+
+## Your own move (live)
+
+In the claude.ai artifact the page can ask Claude through the `sample` capability (`js/live.js`). On ordinary scenes the player may type an action; Claude returns JSON (outcome, effects, optional roll, risk, optional fork). The engine caps every change (standing ±6, convictions ±3, nation ±5), rolls the dice itself, decides death from the stated risk, and records any fork as `live-<n>` in `s.liveForks`. Live moments are marked "written live, not from the record" in the epilogue. Opened from disk, the box never appears.
+
 ## Verification
 
 `data/facts.js` lists every claim a "what really happened" note depends on, as `research`, `corroborated` (second source found), `conflicting` or `unchecked`. The epilogue marks unchecked notes. Division figures and the Schuman Plan and hospitals hinges are to be sourced from Hansard before Act III.

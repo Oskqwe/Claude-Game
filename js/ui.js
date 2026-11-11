@@ -307,12 +307,30 @@
       const hint = locked ? `<span class="lock">Needs: ${esc(String(o.c.requires).replace(/[#!~]/g, '').replace(/-/g, ' '))}</span>` : '';
       return `<button class="choice" data-key="${KEYS[n]}" data-i="${o.i}" ${locked ? 'disabled' : ''}>${esc(TM.fill(o.c.label, s))}${hint}</button>`;
     }).join('');
-    setSheet(`<div class="stack">${sceneHead(sc, s)}${body}<div class="choices">${choices}</div></div>`);
+    const own = TM.Live && TM.Live.offered(sc) ? `<details class="own-move"><summary>Or do something of your own</summary>
+      <label class="muted" for="own-text">Write what you do, in a sentence or two. Claude writes what happens; the dice stay hidden.</label>
+      <textarea id="own-text" maxlength="240" placeholder="For example: I ride to Downing Street and demand to see the Prime Minister tonight."></textarea>
+      <div class="row"><button class="btn" id="own-go" type="button">Do it</button><span class="muted" id="own-msg"></span></div></details>` : '';
+    setSheet(`<div class="stack">${sceneHead(sc, s)}${body}<div class="choices">${choices}</div>${own}</div>`);
     document.querySelectorAll('.choice:not([disabled])').forEach((b) => b.addEventListener('click', () => {
+      if (TM.Live && TM.Live.busy) return;
       clearQt();
       TM.choose(s, +b.dataset.i);
       render();
     }));
+    if (own) $('#own-go').addEventListener('click', () => {
+      const t = $('#own-text').value.trim();
+      if (!t || TM.Live.busy) return;
+      $('#own-go').disabled = true; $('#own-text').disabled = true;
+      $('#own-msg').textContent = 'Claude is writing what happens…';
+      TM.Live.choose(s, t, (err) => {
+        if (err === null) return render();
+        const go = $('#own-go'), tx = $('#own-text'), msg = $('#own-msg');
+        if (go) go.disabled = false; if (tx) tx.disabled = false;
+        if (msg) msg.textContent = err || '';
+        if (TM.Live.off) render();
+      });
+    });
     if (isQt) {
       const secs = sc.courses[s.course].seconds || sc.seconds || 15;
       const card = document.querySelector('.qt');
@@ -331,6 +349,8 @@
     const label = p.died ? 'Read the notice' : more ? (sc.kind === 'qt' ? 'Next question' : sc.menu ? 'The next course' : 'Go on') : 'Continue';
     setSheet(`<div class="stack">${sceneHead(sc, s)}
       ${isLunch ? `<p class="course-label">${esc(sc.courses[s.course].course)}</p>` : ''}
+      ${p.live ? '<p class="muted" style="font-size:.85rem">Your own move, written live by Claude. Not from the record.</p>' : ''}
+      ${p.fork && TM.Live.forkDef(s, p.fork) ? `<div class="fork-note"><span class="stamp">History bends here</span><p>${esc(TM.Live.forkDef(s, p.fork).title)}. From this moment your life is no longer the one in the record books. The great events of the age will still come, but you will meet them from somewhere else.</p></div>` : ''}
       <div class="outcome prose"><p>${esc(p.result)}</p></div>
       ${docs}
       ${lastDiary && !p.died ? `<p class="diary-line">${esc(lastDiary.text)}</p>` : ''}
@@ -353,10 +373,21 @@
       const status = facts.some((f) => f.status === 'unchecked') ? 'unchecked' : facts.some((f) => f.status === 'conflicting') ? 'conflicting' : sc.check || 'research';
       const statusLabel = { unchecked: 'Not yet verified', conflicting: 'Sources disagree', corroborated: 'Checked: two sources', research: 'Source: Wikipedia' }[status] || status;
       rows.push(`<tr><td>${l.year}</td>
-        <td><div class="lbl">${esc(sc.title)}${l.course ? ` · <i>${esc(l.course)}</i>` : ''}</div>${esc(l.label)} <span class="${l.historical ? 'tag-hist' : 'tag-off'}">${l.historical ? 'as in history' : 'your own path'}</span><div class="muted" style="margin-top:4px">${esc(l.result)}</div></td>
+        <td><div class="lbl">${esc(sc.title)}${l.course ? ` · <i>${esc(l.course)}</i>` : ''}</div>${esc(l.label)} <span class="${l.historical ? 'tag-hist' : l.live ? 'tag-live' : 'tag-off'}">${l.historical ? 'as in history' : l.live ? (l.fork ? 'your own move · history bends here' : 'your own move, written live') : l.fork ? 'history bends here' : 'your own path'}</span><div class="muted" style="margin-top:4px">${esc(l.result)}</div></td>
         <td>${first ? `${esc(sc.real)}<div class="src">Basis: ${esc(sc.basis)} <span class="vstatus ${status}">${statusLabel}</span></div>` : '<span class="muted">(same occasion)</span>'}</td></tr>`);
     });
     return `<div class="compare-wrap"><table class="compare"><thead><tr><th>Year</th><th>Your life</th><th>What really happened</th></tr></thead><tbody>${rows.join('')}</tbody></table></div>`;
+  }
+
+  // The alternate history a rogue choice made: shown in the epilogue beside the real one.
+  function forkHistory(s) {
+    const forks = (s.forks || []).map((f) => Object.assign({ year: f.year }, TM.Live.forkDef(s, f.id))).filter((f) => f.title);
+    if (!forks.length) return '';
+    return `<hr class="rule"><h3>The history you made</h3>
+      <p class="muted">At these moments your life left the record. What follows is invented: a counterfactual history, set against what really happened.</p>
+      ${forks.map((f) => `<div class="fork-card"><span class="eyebrow">${f.year} · history bends${f.live ? ' · written live' : ''}</span><h4>${esc(f.title)}</h4>
+        <div class="prose"><p>${esc(TM.fill([f.history].concat((f.more || []).filter((m) => TM.check(s, m.if)).map((m) => m.text)).join(' '), s))}</p></div>
+        <p class="muted" style="margin-top:6px"><b>What really happened.</b> ${esc(f.real)}</p></div>`).join('')}`;
   }
 
   function diaryBook(s) {
@@ -374,26 +405,31 @@
     </dl>`;
   }
 
+  TM.ECHO = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin'], ['Mr St John Brodwell', 'St John Brodrick'], ['Sir William Walbrook', 'Sir William Walrond'], ['Lord Hugo Seyton', 'Lord Hugh Cecil'], ['Mr Lloyd Gwynne', 'David Lloyd George'], ['Mr Arthur Belford', 'Arthur Balfour'], ['Ivor Gest', 'Ivor Guest'], ['Mr H. H. Askwith', 'H. H. Asquith'], ['Miss Clemency Hosier', 'Clementine Hozier'], ['Brendan Bracknell', 'Brendan Bracken'], ['the Prof, Professor Lindqvist', 'Frederick Lindemann'], ['Major Desmond Martyn', 'Desmond Morton'], ['Roger Keys', 'Roger Keyes'], ['Duff Cowper', 'Duff Cooper'], ['Mr Stanley Baldock', 'Stanley Baldwin'], ['Mr Maynard Kaine', 'John Maynard Keynes'], ['Mr Antony Edgerton', 'Anthony Eden'], ['Mr MacDougal', 'Ramsay MacDonald'], ['Sir John Simmons', 'Sir John Simon'], ['Sir Herbert Samuels', 'Sir Herbert Samuel'], ['Sir Henry Tisdale', 'Sir Henry Tizard'], ['Lord Beaverhulme', 'Lord Beaverbrook'], ['Mr Nevil Chambers', 'Neville Chamberlain'], ['Viscount Hallifield', 'Lord Halifax'], ['Captain David Margrave', 'David Margesson'], ['Mr Clement Astley', 'Clement Attlee'], ['Mr Arthur Greenhalgh', 'Arthur Greenwood'], ['Sir William Beverley', 'Sir William Beveridge'], ['Nye Bowen', 'Aneurin Bevan']];
+
   function realNames() {
-    const pairs = [['Winstan Churchward', 'Winston Churchill'], ['Lord Randal (your father)', 'Lord Randolph Churchill'], ['Mrs Everleigh, "Woom"', 'Mrs Elizabeth Everest'], ['Lord Salisbourne', 'Lord Salisbury'], ['Joseph Chambers', 'Joseph Chamberlain'], ['Mr Gladwyn', 'W. E. Gladstone'], ['Robert Ascroft-Hale', 'Robert Ascroft'], ['James Maudsley', 'James Mawdsley'], ['Captain Middleham', 'Captain R. W. E. Middleton'], ['Leo Emery', 'Leo Amery'], ['Lord Milnerton', 'Alfred Milner'], ['Mr Garroway', 'J. L. Garvin'], ['Mr St John Brodwell', 'St John Brodrick'], ['Sir William Walbrook', 'Sir William Walrond'], ['Lord Hugo Seyton', 'Lord Hugh Cecil'], ['Mr Lloyd Gwynne', 'David Lloyd George'], ['Mr Arthur Belford', 'Arthur Balfour'], ['Ivor Gest', 'Ivor Guest'], ['Mr H. H. Askwith', 'H. H. Asquith'], ['Miss Clemency Hosier', 'Clementine Hozier'], ['Brendan Bracknell', 'Brendan Bracken'], ['the Prof, Professor Lindqvist', 'Frederick Lindemann'], ['Major Desmond Martyn', 'Desmond Morton'], ['Roger Keys', 'Roger Keyes'], ['Duff Cowper', 'Duff Cooper'], ['Mr Stanley Baldock', 'Stanley Baldwin'], ['Mr Maynard Kaine', 'John Maynard Keynes'], ['Mr Antony Edgerton', 'Anthony Eden'], ['Mr MacDougal', 'Ramsay MacDonald'], ['Sir John Simmons', 'Sir John Simon'], ['Sir Herbert Samuels', 'Sir Herbert Samuel'], ['Sir Henry Tisdale', 'Sir Henry Tizard'], ['Lord Beaverhulme', 'Lord Beaverbrook'], ['Mr Nevil Chambers', 'Neville Chamberlain'], ['Viscount Hallifield', 'Lord Halifax'], ['Captain David Margrave', 'David Margesson'], ['Mr Clement Astley', 'Clement Attlee'], ['Mr Arthur Greenhalgh', 'Arthur Greenwood'], ['Sir William Beverley', 'Sir William Beveridge'], ['Nye Bowen', 'Aneurin Bevan']];
+    const pairs = TM.ECHO;
     return `<p class="muted" style="font-size:.95rem">Names in play and the real people behind them: ${pairs.map(([a, b]) => `${esc(a)} = <b>${esc(b)}</b>`).join('; ')}.</p>`;
   }
 
   function actEnd() {
     const s = TM.state, act = TM.ACTS[s.camp][s.act];
     const next = TM.ACTS[s.camp][s.act + 1];
-    const playable = next && next.scenes && next.scenes.length;
+    const playable = next && next.scenes && next.scenes.length && !s.flags.includes('life-over');
     const mp = s.flags.includes('mp');
     const age = s.year - s.born;
-    const head = s.act === 1
+    let head = s.act === 1
       ? (mp ? 'The Member for the Borough' : 'Still outside the House')
       : s.act === 2 ? (mp ? 'On the eve of the storm' : 'Outside, as the storm comes')
       : (s.flags.includes('pm') ? 'Prime Minister, at the end' : s.flags.includes('was-pm') ? 'The old lion' : mp ? 'A Member to the last' : 'The life outside');
-    const body = s.act === 1
+    let body = s.act === 1
       ? (mp ? `${esc(s.first)} ${esc(s.last)} sits in the new Parliament, aged ${age}, with a famous name, a small income from books and lectures, and no patience at all.`
             : `${esc(s.first)} ${esc(s.last)} reaches the new century outside Parliament, aged ${age}, and means to be inside it before long.`)
       : s.act === 2 ? `${esc(s.first)} ${esc(s.last)} is ${age}, ${mp ? 'a Member of Parliament' : 'out of Parliament'}, ${esc(s.office || 'without office')}, and watching Germany.`
       : `October 1951. ${esc(s.first)} ${esc(s.last)} is ${age}${s.office && s.office !== 'None' ? ', ' + esc(s.office) : ''}. ${s.flags.includes('long-peace') ? 'Britain kept the peace of 1940, and Europe paid for it.' : s.flags.includes('peace-ends') ? 'Britain made peace in 1940 and went back to war in 1942.' : 'The war is won, the Empire is going, and the world is divided by a curtain of iron.'} Here the story of this life ends.`;
+    // A life that has left the record ends each act in its own words.
+    const fk = (s.forks || []).slice().reverse().map((f) => TM.FORKS && TM.FORKS[f.id]).find((f) => f && f.ends && f.ends[s.act] && TM.check(s, f.ends[s.act].if));
+    if (fk) { head = fk.ends[s.act].head; body = esc(TM.fill(fk.ends[s.act].text, s)); }
     const tail = playable ? `${esc(next.title)} begins in ${esc(next.span.split('–')[0])}.` : '';
     if (!playable) { s.ended = true; TM.save(); }
     setSheet(`<div class="stack">
@@ -403,6 +439,7 @@
       <div class="prose"><p class="drop">${body} ${tail}</p></div>
       ${summary(s)}
       ${playable ? `<div class="row"><button class="btn" id="nextAct">Go on to ${esc(next.title.split('·')[0].trim())}</button></div>` : ''}
+      ${playable ? '' : forkHistory(s)}
       ${playable ? '' : `<hr class="rule"><h3>Your life against the real one</h3>
       <p class="muted">Every scene is drawn from the real life its camp is built on. Notes marked "Not yet verified" still need a second source.</p>
       ${comparison(s)}
@@ -422,6 +459,7 @@
       ${TM.renderDoc(obit)}
       <div class="prose"><p>${esc(s.death.text)}</p></div>
       ${summary(s)}
+      ${forkHistory(s)}
       <hr class="rule"><h3>Your life against the real one</h3>
       ${comparison(s)}
       ${realNames()}
