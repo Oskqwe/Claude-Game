@@ -332,7 +332,7 @@
             diary: 'LSE. Lectured on the Poor Law. They took notes. Some of them may even read them.' },
           { label: 'Write to the papers attacking it as a poll tax on the poor', effects: 'state+1 loyalty-2 press+3 temper+1',
             result: 'The Labour left cheers your letters; the Labour leaders do not. It is a contributory scheme, you say, and the poor should not pay for their own relief. You are not entirely wrong.',
-            diary: 'Letter in the Daily Herald. "A poll tax on the poor." Strong. Too strong?' },
+            diary: 'Letter in the Labour Leader. "A poll tax on the poor." Strong. Too strong?' },
         ] },
 
       /* ═══════ The Great War ═══════ */
