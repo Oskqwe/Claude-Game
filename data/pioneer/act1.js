@@ -80,7 +80,7 @@
         venue: { plate: 'city', label: 'The magistrates\' court, Manchester' },
         text: 'Spring 1903. The new Education Act makes ratepayers pay for Church of England and Catholic schools, and thousands of Nonconformists are refusing to pay that part of their rates. Your father is one of them. The bailiffs have taken the parlour clock to sell at auction, and today he is in front of the magistrates. He has asked whether you want to come and watch. Your mother says a court is no place for a child.',
         basis: 'The Nonconformist "passive resistance" campaign against the Education Act 1902, in which thousands refused the school rate and had goods distrained.',
-        real: 'The Education Act 1902 put Church schools on the rates. Many Nonconformists refused to pay; tens of thousands were summonsed and some jailed. The campaign helped the Liberal landslide of 1906. Whether Wilkinson\'s father took part is not recorded; the scene is invented.',
+        real: 'The Education Act 1902 put Church schools on the rates. Many Nonconformists refused to pay; by 1904 over 37,000 summonses had been issued and some eighty resisters jailed. The campaign helped the Liberal landslide of 1906. Whether Wilkinson\'s father took part is not recorded; the scene is invented.',
         check: 'research', facts: ['passive-resistance'],
         choices: [
           { label: 'Go and sit in the gallery', effects: 'temper+2 state+1 @father+5', historical: true,
@@ -98,7 +98,7 @@
         venue: { plate: 'ballroom', label: 'The Free Trade Hall, Manchester' },
         text: 'Friday, 13 October 1905. The Free Trade Hall is packed for Sir Edward Gray and Mr Winstan Churchward, the Liberals who expect to govern after the election. You have squeezed into the gallery. Two young women stand up and unfurl a banner: Votes for Women. One asks whether a Liberal government will give women the vote. Nobody answers. The stewards drag them out, and the police are waiting.',
         basis: 'The Free Trade Hall meeting of 13 October 1905, at which Christabel Pankhurst and Annie Kenney of the WSPU questioned Sir Edward Grey, were ejected and arrested, and chose prison rather than pay their fines.',
-        real: 'At the Free Trade Hall on 13 October 1905 Christabel Pankhurst and Annie Kenney asked Sir Edward Grey whether a Liberal government would give women the vote. They were thrown out and arrested, and chose jail over fines: the beginning of militant suffrage. Churchill was also on the platform.',
+        real: 'At the Free Trade Hall on 13 October 1905 Christabel Pankhurst and Annie Kenney asked Sir Edward Grey whether a Liberal government would give women the vote. They were thrown out and arrested, and chose jail over fines: the beginning of militant suffrage. Churchill was also at the meeting.',
         check: 'research', facts: ['free-trade-hall-1905'],
         choices: [
           { label: 'Follow them out and join them', effects: 'temper+3 order-2 press+1 !woman #suffragette @pankridge+8',
@@ -114,13 +114,13 @@
 
       { id: 'election-1906-pion', year: 1906, title: 'Manchester turns',
         venue: { plate: 'city', label: 'Albert Square, Manchester' },
-        text: 'January 1906. The Prime Minister himself, Mr Arthur Belford, has lost his seat in Manchester East, and the whole city has gone Liberal, with a Labour man or two. Albert Square is full of people waiting for the results to go up on the Town Hall. You are fourteen and have spent three weeks addressing envelopes for the Liberals and selling the Labour Leader for the ILP. Both sides claim you.',
+        text: 'January 1906. The Prime Minister himself, Mr Arthur Belford, has lost his seat in Manchester East, and the city has swung to the Liberals, with a Labour man or two. Albert Square is full of people waiting for the results to go up on the Town Hall. You are fourteen and have spent three weeks addressing envelopes for the Liberals and selling the Labour Leader for the ILP. Both sides claim you.',
         basis: 'The general election of January 1906, in which Balfour lost Manchester East and the Liberals swept Manchester; Labour won 29 seats nationally.',
-        real: 'Balfour lost Manchester East in January 1906 in the Liberal landslide; the Liberals took almost every Manchester seat, and Churchill won Manchester North West. Labour won 29 seats across the country.',
+        real: 'Balfour lost Manchester East in January 1906 in the Liberal landslide; Churchill won Manchester North West, and Labour won 29 seats across the country.',
         check: 'research', facts: ['election-1906-labour', 'manchester-1906'],
         choices: [
           { label: 'Cheer the Labour men loudest', effects: 'state+2 loyalty-1 @father+2', historical: true,
-            result: 'A Labour man has won at Gorton. You cheer until you are hoarse, and an ILP man in a red tie gives you a pamphlet on the right to work.',
+            result: 'A Labour man, an old mill-hand, has won in North East Manchester. You cheer until you are hoarse, and an ILP man in a red tie gives you a pamphlet on the right to work.',
             diary: 'Labour won Gorton! A pamphlet.' },
           { label: 'Stand with the Liberals: they will do the work', effects: 'order+1 cap+2',
             result: 'The Liberal agent thanks you for the envelopes and says there will be work for clever young people in the new government\'s causes. He takes your name.',
@@ -134,7 +134,7 @@
         venue: { plate: 'school', label: 'Ardwick Higher Elementary Grade School' },
         text: 'Autumn 1906. You won a scholarship to this school at eleven, and now you help the teacher with the little ones. A girl of seven in your class faints at her desk; she has had nothing to eat since yesterday. A new Act lets councils feed hungry schoolchildren, but Manchester has not decided whether to use it. Some councillors say feeding children will sap their parents\' independence.',
         basis: 'The Education (Provision of Meals) Act 1906, which allowed local authorities to provide school meals; Wilkinson won a scholarship to Ardwick Higher Elementary Grade School at eleven.',
-        real: 'The Education (Provision of Meals) Act 1906 let councils feed needy schoolchildren but did not compel them; many were slow to act. Wilkinson won a scholarship at eleven to Ardwick Higher Elementary Grade School and later trained as a teacher.',
+        real: 'The Education (Provision of Meals) Act 1906, pressed by Margaret McMillan and Fred Jowett, let councils provide meals for needy schoolchildren. Wilkinson won a scholarship at eleven to Ardwick Higher Elementary Grade School and later trained as a teacher.',
         check: 'research', facts: ['school-meals-1906', 'wilkinson-early'],
         choices: [
           { label: 'Write to the education committee', effects: 'cap+2 state+2 press+1', historical: true,
@@ -194,7 +194,7 @@
         venue: { plate: 'city', label: 'The road to London' },
         text: 'July 1913. You are a paid organiser for the National Union of Women\'s Suffrage Societies, the law-abiding wing of the movement, and you are marching the Pilgrimage: women walking from every corner of England to Hyde Park, to show the government that suffrage is not only smashed windows. In a Midlands market town the crowd has turned ugly. Someone has thrown a dead rat at the banner. You have the platform.',
         basis: 'The NUWSS Suffrage Pilgrimage of June–July 1913; Wilkinson became a paid NUWSS organiser in June 1913 and helped organise the Pilgrimage.',
-        real: 'In the summer of 1913 thousands of NUWSS supporters walked to London on the Suffrage Pilgrimage, ending in a rally of some 50,000 in Hyde Park on 26 July. Marchers were often abused and attacked on the road. Wilkinson was a paid NUWSS organiser from June 1913.',
+        real: 'In the summer of 1913 NUWSS supporters walked to London on the Suffrage Pilgrimage, which culminated in a rally of 50,000 in Hyde Park on 26 July. Wilkinson was a paid NUWSS organiser from June 1913.',
         check: 'research', facts: ['wilkinson-early', 'pilgrimage-1913'],
         choices: [
           { label: 'Speak on, and win them round', effects: 'press+4 steel+2 #orator', historical: true,
@@ -232,7 +232,7 @@
         venue: { plate: 'city', label: 'The Cannon Street Hotel, London' },
         text: 'July 1920. Russia has had its revolution and survived. In a London hotel the British socialists are founding a Communist Party, and you have come with half the Manchester left. Harry Pollard, a boilermaker, says the Labour Party is finished and the future belongs to Moscow. The Labour Party says no member of the new party may stand as Labour. You love Labour. You also want a revolution.',
         basis: 'The founding of the Communist Party of Great Britain in the summer of 1920, of which Wilkinson was a founder member.',
-        real: 'The CPGB was founded at the Cannon Street Hotel in London on 31 July – 1 August 1920. Wilkinson was a founder member and visited Moscow in 1921. She left the party in 1924, when Labour barred Communists from its candidates\' lists.',
+        real: 'The CPGB was founded at the Cannon Street Hotel in London on 31 July 1920. Wilkinson was a founder member and visited Moscow in 1921. She left the party in 1924, when Labour barred Communists from its candidates\' lists.',
         check: 'research', facts: ['wilkinson-cpgb'],
         choices: [
           { label: 'Join, and keep your Labour card', effects: 'state+3 order-3 loyalty-2 !cpgb', historical: true,
@@ -288,7 +288,7 @@
         venue: { plate: 'sickroom', label: 'The London School of Medicine for Women, Hunter Street' },
         text: 'October 1910. The only medical school in London that will take you without question is the one founded for women; the great hospital schools mostly will not. The anatomy demonstrator is a woman surgeon who trained in Paris because London would not have her. Your first cadaver is a pauper from the workhouse infirmary, a woman of forty who looks seventy. Nobody claimed her body.',
         basis: 'Women\'s medical education before 1914: the London School of Medicine for Women was the main route; most London hospital schools excluded women until the war. Summerskill trained at King\'s College and Charing Cross, one of the earliest women admitted there.',
-        real: 'Before the First World War most London medical schools refused women; the London School of Medicine for Women, attached to the Royal Free, trained most British women doctors. Several schools, including Charing Cross, opened to women during the war. Edith Summerskill qualified in 1924.',
+        real: 'The London School of Medicine for Women, linked to the Royal Free Hospital, was the first medical school in Britain to train women as doctors. Edith Summerskill trained at King\'s College and Charing Cross, one of the earliest women admitted there.',
         check: 'unchecked', facts: ['summerskill-early', 'lsmw'],
         choices: [
           { label: 'Learn everything the pauper\'s body can teach', effects: 'cap+4 steel+2', historical: true,
@@ -325,7 +325,7 @@
         venue: { plate: 'sickroom', label: 'A child welfare clinic, Tottenham' },
         text: '1920. Qualified, married to a doctor, and working in a child welfare clinic in north London, you see the same thing every week: babies with tuberculosis of the bones and glands, from milk drawn from infected cows and sold unpasteurised in the open churn. The dairy trade says pasteurisation will ruin the farmers and destroy the goodness of the milk. The council\'s medical officer will not touch it.',
         basis: 'Summerskill\'s campaign for clean, tuberculin-tested and pasteurised milk, rooted in her work as a doctor in north London.',
-        real: 'Bovine tuberculosis from untreated milk killed and crippled thousands of British children a year between the wars. Summerskill, a doctor in north London, campaigned for compulsory pasteurisation, which was resisted by the dairy trade and came only gradually.',
+        real: 'Between 1912 and 1937 some 65,000 people in England and Wales died of tuberculosis caught from milk. Summerskill, a doctor in north London, became a champion of clean milk; the Clean Milk Act came in 1949.',
         check: 'unchecked', facts: ['summerskill-early', 'milk-tb'],
         choices: [
           { label: 'Stand for the council, and fight it there', effects: 'state+3 cap+2 fav+1', historical: true,
@@ -344,7 +344,7 @@
         venue: { plate: 'mill', label: 'The Liverpool docks' },
         text: '1908. Miss Rathmore, a tall, shabby, formidable woman of a great shipowning family, is investigating how dock labourers live on casual work. She has you counting: hours stood at the stand waiting to be picked, days worked, shillings earned, what the wives buy. Her own family owns ships that use these men. She says what ought to be done can be done. You are not sure she knows what it costs.',
         basis: 'Eleanor Rathbone\'s study of casual dock labour in Liverpool (her report of 1903–04 and later work); her family motto, "What ought to be done, can be done."',
-        real: 'Rathbone published an inquiry into the conditions of dock labour in Liverpool in 1904 and worked with her father on social questions. The family motto was "What ought to be done, can be done." The assistant here is invented.',
+        real: 'Rathbone published a report on the conditions of dock labour in Liverpool in 1903 and worked with her father on social questions. The family motto was "What ought to be done, can be done." The assistant here is invented.',
         check: 'research', facts: ['rathbone-early'],
         choices: [
           { label: 'Count everything, especially what the wives spend', effects: 'cap+4 state+2 @rathmore+8', historical: true,
@@ -380,7 +380,7 @@
         venue: { plate: 'whitehall', label: 'The Insurance Commission, Liverpool' },
         text: 'July 1912. The National Insurance Act comes into force, and the Liberals need people to explain it: fourpence a week from the worker, threepence from the employer, twopence from the state, for doctoring and sick pay. The doctors are threatening to boycott it. Housewives are told it will not cover them; the insurance covers only the earners. Miss Rathmore says it misses half the nation: the mothers.',
         basis: 'The National Insurance Act 1911, in force from July 1912, which covered workers but not their dependants; the doctors\' initial resistance; Rathbone\'s argument for support paid to mothers.',
-        real: 'National Insurance health benefits began in January 1913, contributions in July 1912. Wives and children not in work were not covered for doctoring until the NHS in 1948. Rathbone developed the case for family allowances paid to mothers from about 1917.',
+        real: 'National Insurance health benefits began in January 1913, contributions in July 1912. Wives and children not in work were not covered for doctoring until the NHS in 1948. Rathbone campaigned for family allowances paid to mothers from 1918 onwards.',
         check: 'research', facts: ['national-insurance-1911', 'rathbone-early'],
         choices: [
           { label: 'Explain it, and campaign to extend it', effects: 'state+3 cap+2 @rathmore+5', historical: true,
@@ -409,7 +409,7 @@
               pass: { effects: '!mp seat+10 rep+3 set:seat=Birkenhead_East office=Member_for_Birkenhead_East', result: 'You win, one of the first newcomers of the new franchise in a House still almost all men. The old Liberals call you a coalition hack.', diary: 'Won with the coupon. A hack, they say.' },
               fail: { effects: 'rep-1', result: 'Even with the coupon you lose to a Labour man. The tide is turning.', diary: 'Lost even with the coupon.' } } },
           { label: 'Stand down and work for family endowment', effects: 'state+3 cap+2 @rathmore+6',
-            result: 'You join Miss Rathmore\'s Family Endowment Committee: an allowance for every child, paid to the mother. It is the cause of your life, or it may be.',
+            result: 'You join Miss Rathmore\'s Family Endowment Society: an allowance for every child, paid to the mother. It is the cause of your life, or it may be.',
             diary: 'Family endowment. Paid to the mother.' },
         ] },
 
@@ -436,7 +436,7 @@
         venue: { plate: 'mill', label: 'A National Shell Filling Factory' },
         text: '1916. You are a welfare supervisor in a shell-filling factory: eight thousand women handling TNT, their skin turned yellow, the canaries, the papers call them. Some are dying of toxic jaundice. The management wants production; the Ministry of Munitions wants production and welfare both. A girl collapsed on the line this morning. The doctor says she should not come back. She says she needs the money.',
         basis: 'The work of women welfare supervisors in munitions factories during the First World War, and TNT poisoning among the "munitionettes" or "canaries".',
-        real: 'Hundreds of thousands of women worked in munitions; TNT poisoning turned their skin yellow, and toxic jaundice killed over a hundred. The Ministry of Munitions appointed women welfare supervisors. Many future Conservative and Labour women politicians did war welfare work.',
+        real: 'Hundreds of thousands of women worked in munitions; TNT turned their skin yellow, and of some four hundred cases of toxic jaundice, about a hundred were fatal. Women were employed as supervisors of the women workers in many factories. Many future Conservative and Labour women politicians did war welfare work.',
         check: 'research', facts: ['munitions-tnt'],
         choices: [
           { label: 'Send her home on full pay, and fight for it', effects: 'state+2 steel+2 fav-1 rep+2', historical: true,
@@ -490,8 +490,8 @@
       { id: 'influenza-1918', year: 1918, title: 'The influenza',
         venue: { plate: 'sickroom', label: 'A sickroom in {city}' },
         text: 'November 1918. The war is ending, and a new influenza is killing young people in their twenties in days, faster than the war did. The schools are closed, the undertakers have run out of coffins, and the doctors have nothing to give. Your neighbour\'s family are all down with it, three children and their mother, and nobody will go into the house.',
-        basis: 'The influenza pandemic of 1918–19, which killed about 228,000 people in Britain, with its peak in the autumn of 1918.',
-        real: 'The 1918–19 influenza pandemic killed about 228,000 people in Britain, unusually many of them young adults. Schools and cinemas closed in many towns. This scene is invented.',
+        basis: 'The influenza pandemic of 1918–19, which killed hundreds of thousands in Britain, with its peak in the autumn of 1918.',
+        real: 'The 1918–19 influenza pandemic killed hundreds of thousands of people in Britain, unusually many of them young adults. Schools and cinemas closed in many towns. This scene is invented.',
         check: 'research', facts: ['influenza-1918'],
         choices: [
           { label: 'Go in and nurse them', effects: 'state+2 rep+2 health-3', historical: true,
