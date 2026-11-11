@@ -17,6 +17,11 @@
     violet: { name: 'Miss Violet Millar', role: 'A friend\'s sister, met in Italy' },
   });
 
+  // The Haileybury spine (DESIGN §8) is the historical route; the other four routes come from
+  // data/major/act1-routes.js and set a route flag at "What the money allows" (1896).
+  const HAIL = TM.MAJOR_HAIL = '~!route-clerk ~!route-teacher ~!route-leeds ~!route-pit';
+  TM.VARDEF = Object.assign(TM.VARDEF || {}, { major: { seat: 'Limehouse', borough: 'Stepney', wife: 'Violet', region: 'East London', council: 'the London County Council' } });
+
   const DIES_GALLIPOLI = { headline: 'Death of Lieutenant {first} {last}', text: 'You died of dysentery on the beach at Helles in the summer of 1915, aged 32.' };
 
   TM.ACTS.major[1] = {
@@ -26,8 +31,8 @@
     intro: 'You were born in January 1883 in a large, comfortable house in Putney, the seventh of eight children. Your father is a City solicitor, a Liberal, a churchgoer and a kind man. Your mother reads to you every evening. There are servants, a governess, family prayers and a garden down to the hedge. You are small, shy and clever, and you say very little.',
     continues: 'Act II of this life, the climb from Limehouse to the leadership, is still being written, so this life ends here for now.',
     end: (s) => s.flags.includes('mp')
-      ? { head: 'The Member for Limehouse', text: 'November 1922. {first} {last} takes his seat among a hundred and forty Labour Members, aged ' + (s.year - s.born) + ', with a war record, a mayoralty, a new wife and no gift for speeches at all. Nobody expects much of him.' }
-      : { head: 'Still outside the House', text: '{first} {last} ends 1922 outside Parliament, aged ' + (s.year - s.born) + '. Stepney knows him. Westminster does not, yet.' },
+      ? { head: 'The Member for {seat}', text: 'November 1922. {first} {last} takes his seat among a hundred and forty Labour Members, aged ' + (s.year - s.born) + (TM.check(s, HAIL) ? ', with a war record, a mayoralty, a new wife and no gift for speeches at all.' : ', one of the new men the war and the franchise have sent to Westminster, with no gift for speeches at all.') + ' Nobody expects much of him.' }
+      : { head: 'Still outside the House', text: '{first} {last} ends 1922 outside Parliament, aged ' + (s.year - s.born) + '. {borough} knows him. Westminster does not, yet.' },
     start: {
       born: 1883,
       year: 1889,
@@ -133,7 +138,7 @@
         ] },
 
       /* ═══════ Haileybury ═══════ */
-      { id: 'haileybury-1896', year: 1896, title: 'The old East India College',
+      { id: 'haileybury-1896', year: 1896, title: 'The old East India College', if: HAIL,
         venue: { plate: 'school', label: 'Haileybury, Hertfordshire' },
         text: 'September 1896. Haileybury was built to train young men for the East India Company, and it still sends its boys to govern India: the quadrangle is the largest in England and the chapel is full of memorials to men who died in the Mutiny. You are thirteen, small, shy and a long way from home. On the first evening a prefect asks each new boy what he is good at.',
         basis: 'Attlee entered Haileybury in 1896; the school had been the East India College and kept a strong imperial and military tradition.',
@@ -151,7 +156,7 @@
             diary: 'Joined the corps. Drill is easy if you pay attention.' },
         ] },
 
-      { id: 'jubilee-1897', year: 1897, title: 'The Diamond Jubilee',
+      { id: 'jubilee-1897', year: 1897, title: 'The Diamond Jubilee', if: HAIL,
         venue: { plate: 'harrow', label: 'The quadrangle, Haileybury' },
         text: 'June 1897. Sixty years of the Queen. In London, troops from every corner of the Empire march past St Paul\'s: Sikhs and Dyaks, Canadian Hussars and Zaptiehs from Cyprus. At Haileybury there is a half-holiday, a bonfire, and a sermon on the white man\'s duty to the subject races. The Master says some of you will govern millions. A boy in your house says the Empire is just a racket for selling cotton.',
         basis: 'Queen Victoria\'s Diamond Jubilee, 22 June 1897, the high point of imperial celebration.',
@@ -169,7 +174,7 @@
             diary: 'Read Clive while the others sang. I prefer my Empire in print.' },
         ] },
 
-      { id: 'mafeking-1900', year: 1900, title: 'Mafeking night',
+      { id: 'mafeking-1900', year: 1900, title: 'Mafeking night', if: HAIL,
         venue: { plate: 'school', label: 'Haileybury' },
         text: 'May 1900. Mafeking is relieved after seven months, and the news reaches the school by telegraph in the evening. In London the crowds are already out, singing. The Master, who thinks such scenes vulgar, orders the school to bed at the usual hour. You are seventeen, a senior boy, and the juniors are watching to see what the seniors will do. Someone has found a drum.',
         basis: 'Mafeking night, 18 May 1900, at Haileybury; biographers record that the school celebrated against the Master\'s orders and was punished.',
@@ -189,7 +194,7 @@
               fail: { effects: 'rep-1', result: 'He refuses, politely. The school marches anyway, and you are caned with the rest, having had the worst of both.', diary: 'Asked, was refused, marched, was caned. The worst of both worlds.' } } },
         ] },
 
-      { id: 'oxford-1902', year: 1902, title: 'University College',
+      { id: 'oxford-1902', year: 1902, title: 'University College', if: HAIL,
         venue: { plate: 'school', label: 'University College, Oxford' },
         text: 'Oxford. You read Modern History at University College, love the Italian Renaissance and the Tudors, and row a little. Your politics, if anyone asked, are those of a sound young Tory and imperialist. Nobody does ask: you have never spoken at the Union. Tonight there is a debate on Imperial preference. A friend says you could get on the paper if you wanted. Your tutor says a second-class degree is within reach if you work.',
         basis: 'Attlee at University College, Oxford, 1901–04: a second in Modern History; by his own account an imperialist conservative who did not speak at the Union.',
@@ -209,7 +214,7 @@
         ] },
 
       /* ═══════ Stepney ═══════ */
-      { id: 'club-1905', year: 1905, title: 'Haileybury House',
+      { id: 'club-1905', year: 1905, title: 'Haileybury House', if: HAIL,
         venue: { plate: 'mill', label: 'Haileybury House, Stepney' },
         text: 'October 1905. Your old school runs a boys\' club in Stepney, and you and your younger brother have been asked to look it over. It is a long ride east on the Underground. The streets are full of children with no boots. In the club room forty boys, packers and van boys and errand boys, are boxing, playing draughts and singing. One asks if you are a toff come to save them. They are waiting to see if you come back.',
         basis: 'Attlee\'s first visits to the Haileybury boys\' club in Stepney in 1905–06.',
@@ -227,7 +232,7 @@
             diary: 'Asked the boy. He said: a proper job for his father. Charity is not that.' },
         ] },
 
-      { id: 'bar-1906', year: 1906, title: 'Called to the Bar',
+      { id: 'bar-1906', year: 1906, title: 'Called to the Bar', if: HAIL,
         venue: { plate: 'whitehall', label: 'Chambers in Lincoln\'s Inn' },
         text: 'March 1906. You are called to the Bar by the Inner Temple, through your father\'s connections, and given a seat in good chambers. The briefs do not come. In three years you will earn almost nothing. Your father, a past President of the Law Society, is patient. You sit in chambers reading and walk out to Stepney in the evenings. A junior clerk hints that a little more effort in the right quarters would bring work.',
         basis: 'Attlee was called to the Bar in March 1906 and practised briefly without enthusiasm.',
@@ -246,7 +251,7 @@
             diary: 'Poor man\'s lawyer night. Mrs Doyle\'s landlord is within his rights. That is the trouble.' },
         ] },
 
-      { id: 'manager-1907', year: 1907, title: 'The manager\'s room',
+      { id: 'manager-1907', year: 1907, title: 'The manager\'s room', if: HAIL,
         venue: { plate: 'mill', label: 'Haileybury House, Stepney' }, if: '!stepney',
         text: 'Autumn 1907. The manager of Haileybury House has resigned, and you are asked to take his place: a room above the club, fifty pounds a year, and responsibility for two hundred boys. You live in Stepney now. You have read Ruskin and William Morris, and the Webbers\' books. On Sunday mornings men stand on boxes at the street corners. Some say charity is the answer, some the Fabians, some the Independent Labour Party.',
         basis: 'Attlee became manager of Haileybury House in 1907 and joined the ILP in 1908.',
@@ -265,7 +270,7 @@
             diary: 'Camp at Rottingdean. Forty boys who had never seen the sea.' },
         ] },
 
-      { id: 'father-1908', year: 1908, title: 'Four hundred a year',
+      { id: 'father-1908', year: 1908, title: 'Four hundred a year', if: HAIL,
         venue: { plate: 'bedside', label: 'The house in Putney' },
         text: 'November 1908. Your father has died suddenly, of a heart attack. He was kind to everyone and was proud of you, though you never gave him much reason. The will is read in the drawing room: the house to your mother, and to you an income of four hundred pounds a year, enough to live on without earning a penny. Your brothers look at you. Tom says now you can do what you like.',
         basis: 'Henry Attlee died in November 1908 and left Clement an income of £400 a year, which let him give up the Bar.',
@@ -284,7 +289,7 @@
             diary: 'The new gym is open. They spelt my name wrong. I shall leave it.' },
         ] },
 
-      { id: 'webber-1909', year: 1909, title: 'Tea with the Webbers', kind: 'lunch',
+      { id: 'webber-1909', year: 1909, title: 'Tea with the Webbers', if: HAIL, kind: 'lunch',
         venue: { plate: 'club', label: '41 Grosvenor Road, Westminster' },
         guests: ['Mrs Beatrice Webber, social investigator', 'Mr Sidney Webber, her husband', 'Two young Fabians, eager'],
         menu: ['Weak tea', 'Plain biscuits', 'A cold supper'],
@@ -312,7 +317,7 @@
             ] },
         ] },
 
-      { id: 'insurance-1911', year: 1911, title: 'Explaining the Insurance Act',
+      { id: 'insurance-1911', year: 1911, title: 'Explaining the Insurance Act', if: HAIL,
         venue: { plate: 'city', label: 'Toynbee Hall, Whitechapel' },
         text: '1911. The Chancellor, Mr Lloyd Gwynne, has carried his National Insurance Act: fourpence a week from the worker, threepence from the employer, twopence from the State, and sickness pay and a panel doctor in return. Nobody in Whitechapel understands it, and the doctors and the friendly societies are against it. Lecturers are wanted to go round the halls explaining it. The London School of Economics is also looking for a tutor.',
         basis: 'Attlee\'s work after Toynbee Hall: lecturing on the 1911 National Insurance Act, then the LSE post (1912 or 1913).',
@@ -331,7 +336,7 @@
         ] },
 
       /* ═══════ The Great War ═══════ */
-      { id: 'war-1914', year: 1914, title: 'Tom\'s conscience',
+      { id: 'war-1914', year: 1914, title: 'Tom\'s conscience', if: HAIL,
         venue: { plate: 'city', label: 'The family house, Putney' },
         text: 'August 1914. War. You are thirty-one, a socialist and a lecturer, and you think the war a capitalist quarrel that the workers must nonetheless win. Your brother Tom, a Christian pacifist, will not fight and says so. Your younger brother is already in uniform. The recruiting offices are full. Your ILP branch has voted against the war. Tom asks you, quietly, which side you are on.',
         basis: 'Attlee, a socialist, enlisted in 1914 although his ILP branch opposed the war; his brother Tom was a conscientious objector who was imprisoned.',
@@ -430,7 +435,7 @@
         ] },
 
       /* ═══════ After the war: Stepney ═══════ */
-      { id: 'mayor-1919', year: 1919, title: 'The Mayor of Stepney',
+      { id: 'mayor-1919', year: 1919, title: 'The Mayor of Stepney', if: HAIL,
         venue: { plate: 'city', label: 'Stepney Town Hall' },
         text: 'November 1919. Labour has swept the Stepney borough council: forty-three seats of sixty. You did not stand, but the new councillors want you as their Mayor, because they trust you, and because a quiet man in a good suit reassures everyone else. The borough has the worst housing in London, babies dying of the heat in summer, and thousands of men coming home to no work. What will you do first?',
         basis: 'Attlee was made Mayor of Stepney in 1919 by the Labour councillors; the council attacked slum landlords and infant mortality.',
@@ -449,7 +454,7 @@
               fail: { effects: 'rep-2', result: 'The police turn the march back at Aldgate. You are called a Bolshevik in the Morning Post. The men go home with nothing.', diary: 'Turned back at Aldgate. Bolshevik, says the Morning Post. I am a Major.' } } },
         ] },
 
-      { id: 'poplar-1921', year: 1921, title: 'Next door, in Poplar',
+      { id: 'poplar-1921', year: 1921, title: 'Next door, in Poplar', if: HAIL,
         venue: { plate: 'mill', label: 'Bow Road, Poplar' },
         text: 'September 1921. The neighbouring borough of Poplar has refused to collect the rates it owes to the London County Council, because a poor borough must pay for its own poor while rich Westminster pays almost nothing for its own. Mr Lansdown and twenty-nine Poplar councillors have been sent to prison for it. Crowds gather outside Brixton every night. Your own councillors want Stepney to join the revolt.',
         basis: 'The Poplar rates rebellion of 1921, led by George Lansbury; thirty councillors were imprisoned. Stepney\'s Labour council faced the same question.',
@@ -468,7 +473,7 @@
             diary: 'The Times approves of me. A bad sign.' },
         ] },
 
-      { id: 'italy-1921', year: 1921, title: 'An Italian summer',
+      { id: 'italy-1921', year: 1921, title: 'An Italian summer', if: HAIL,
         venue: { plate: 'ballroom', label: 'Florence and Siena' },
         text: 'Summer 1921. You have been persuaded to take a holiday in Italy with an Oxford friend, Cedric, his mother and his young sister Violet. She is twenty-five, tall, lively and fond of tennis, and has no interest in politics at all. You are thirty-eight, a bachelor, very shy and very busy. In Siena she asks you, laughing, whether you ever talk about anything except housing. You find, to your alarm, that you want to.',
         basis: 'Attlee met Violet Millar, his friend Cedric\'s sister, on holiday in Italy in the summer of 1921; they married in January 1922.',
@@ -487,7 +492,7 @@
             diary: 'Did not go to Italy. Housing committee. Very dull. Probably right.' },
         ] },
 
-      { id: 'limehouse-1922', year: 1922, title: 'Limehouse',
+      { id: 'limehouse-1922', year: 1922, title: 'Limehouse', if: HAIL,
         venue: { plate: 'mill', label: 'Limehouse, Stepney' },
         text: 'November 1922. The coalition has fallen, and there is a general election. Labour has chosen you to fight Limehouse: docks, lascars\' boarding houses, Chinese laundries and the worst overcrowding in London. The sitting Liberal is a rich, decent man. You have no gift for speeches, but every family in the borough has had a notice served on its landlord or a pint of milk for its baby by your doing. Polling day is wet.',
         basis: 'Attlee won Limehouse at the 1922 general election, defeating the sitting Liberal Member.',

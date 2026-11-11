@@ -46,7 +46,7 @@
       ? { head: 'Prime Minister, at the end', text: 'October 1951. {first} {last} is ' + (s.year - s.born) + '. In six years his government has built a welfare state, nationalised a fifth of the economy, given India its freedom and armed Britain for the cold war. He goes to the Palace to resign, and then home by train.' }
       : s.flags.includes('mp')
         ? { head: 'A Member to the last', text: 'October 1951. {first} {last} is ' + (s.year - s.born) + ', ' + (s.office && s.office !== 'None' ? s.office : 'a Member of Parliament') + '. Here the story of this life ends.' }
-        : { head: 'The life outside', text: 'October 1951. {first} {last} is ' + (s.year - s.born) + ' and outside Parliament, a man who might have been somebody, and was somebody to Stepney. Here the story of this life ends.' },
+        : { head: 'The life outside', text: 'October 1951. {first} {last} is ' + (s.year - s.born) + ' and outside Parliament, a man who might have been somebody, and was somebody to {borough}. Here the story of this life ends.' },
 
     scenes: [
       /* ═══════ The leader's road ═══════ */
@@ -324,8 +324,8 @@
         check: 'research', facts: ['attlee-1945'],
         choices: [
           { label: 'Go to the Palace', effects: 'steel+2 loyalty+1 !pm office=Prime_Minister @bevis+6 @morrow-6', historical: true,
-            result: 'Violet drives you to Buckingham Palace in the family Standard. The King, who barely knows you, asks you to form a government. You are Prime Minister, with the largest majority Labour has ever had.',
-            diary: 'Prime Minister. Violet drove. The King was shy. So was I.' },
+            result: '{wife} drives you to Buckingham Palace in the family Standard. The King, who barely knows you, asks you to form a government. You are Prime Minister, with the largest majority Labour has ever had.',
+            diary: 'Prime Minister. {wife} drove. The King was shy. So was I.' },
           { label: 'Let the new Members vote first', effects: 'loyalty+3 temper-1',
             roll: { stat: 'favour', diff: 35,
               pass: { effects: '!pm office=Prime_Minister fav+5', result: 'The new Members vote, and you win easily. You go to the Palace a day later, stronger.', diary: 'They voted. I won. PM.' },
@@ -427,13 +427,13 @@
 
       { id: 'docks-1949', year: 1949, title: 'Troops in the docks', if: '!pm',
         venue: { plate: 'mill', label: 'The Royal Docks, July 1949' },
-        text: 'July 1949. An unofficial strike in support of Canadian seamen has closed the London docks. Food is rotting in the holds. You believe the Communists are behind it. You can send in troops to unload the ships, as a Labour government, against dockers, in the East End where you were Mayor. And the pound is weakening again; Crisp will soon need to devalue it.',
+        text: 'July 1949. An unofficial strike in support of Canadian seamen has closed the London docks. Food is rotting in the holds. You believe the Communists are behind it. You can send in troops to unload the ships, as a Labour government, against dockers, in the East End. And the pound is weakening again; Crisp will soon need to devalue it.',
         basis: 'The London dock strike of 1949, when the government sent in about 13,000 troops, and the devaluation of September 1949.',
         real: 'In July 1949 the government declared a state of emergency and sent about 13,000 troops into the London docks. In September the pound was devalued from $4.03 to $2.80.',
         check: 'research', facts: ['attlee-ministry'],
         choices: [
           { label: 'Send in the troops', effects: 'order+3 steel+2 loyalty-1', historical: true,
-            result: 'Thirteen thousand soldiers unload the ships. The strike collapses. In Stepney there are men who never speak to you again.',
+            result: 'Thirteen thousand soldiers unload the ships. The strike collapses. In the East End there are men who never speak to you again.',
             diary: 'Troops in the docks. My docks. It had to be done.' },
           { label: 'Go to the dockers yourself', effects: 'state+1 steel+1 cap+2 rep+1',
             roll: { stat: 'reputation', diff: 55,
@@ -482,7 +482,7 @@
 
       { id: 'election-1951-major', year: 1951, title: 'The election you need not have called', if: '!pm',
         venue: { plate: 'mill', label: 'A tour by car, October 1951' },
-        text: 'October 1951. You are tired, your majority is six, the ministers are worn out and the King is to go on a long tour of the Commonwealth. You could hold on another year. You have decided instead to go to the country. Violet drives you round the constituencies in the family car, and you smoke your pipe in the passenger seat and do the crossword.',
+        text: 'October 1951. You are tired, your majority is six, the ministers are worn out and the King is to go on a long tour of the Commonwealth. You could hold on another year. You have decided instead to go to the country. {wife} drives you round the constituencies in the family car, and you smoke your pipe in the passenger seat and do the crossword.',
         basis: 'Attlee called the October 1951 general election; Labour won more votes but fewer seats.',
         real: 'At the October 1951 election Labour won more votes than the Conservatives, the most ever won by a British party until then, but fewer seats. Churchill returned to office with a majority of 17.',
         check: 'research', facts: ['attlee-ministry'],
@@ -559,7 +559,7 @@
         ] },
 
       /* ═══════ Outside the House ═══════ */
-      { id: 'out-warden-1940', year: 1940, title: 'The warden\'s post in Stepney', if: OUT,
+      { id: 'out-warden-1940', year: 1940, title: 'The warden\'s post in Stepney', if: OUT + ' ' + TM.MAJOR_HAIL,
         venue: { plate: 'mill', label: 'An ARP post, Stepney' },
         text: 'September 1940. The bombers have come to the East End: the docks are burning, and Stepney, your old borough, is being destroyed street by street. You are fifty-seven, a senior warden. The public shelters are dreadful; the Tilbury shelter under the railway arches holds thousands in filth. People are forcing their way into the Underground stations. The authorities say they must be kept out.',
         basis: 'The Blitz in Stepney, September 1940; the Tilbury shelter and the occupation of the Underground.',
@@ -579,8 +579,8 @@
         ] },
 
       { id: 'out-1945', year: 1945, title: 'The landslide, from outside', if: OUT + ' ~!fork-terms40',
-        venue: { plate: 'mill', label: 'East London, July 1945' },
-        text: 'July 1945. A general election at last, ten years since the last one. Labour is confident. An East End seat is looking for a candidate who knows the place, and your name has been put forward. You are sixty-two. Younger men back from the forces want it too.',
+        venue: { plate: 'mill', label: '{region}, July 1945' },
+        text: 'July 1945. A general election at last, ten years since the last one. Labour is confident. A seat in {region} is looking for a candidate who knows the place, and your name has been put forward. You are sixty-two. Younger men back from the forces want it too.',
         basis: 'The 1945 general election, which brought many new Labour Members into the House.',
         real: 'Labour won 393 seats in July 1945; many new Members were elected for the first time.',
         check: 'research', facts: ['attlee-1945'],
@@ -589,14 +589,14 @@
             roll: { stat: 'reputation', diff: 25,
               pass: { effects: '!mp rep+3 office=Member_of_Parliament', result: 'Elected with a majority of twenty thousand. At sixty-two, you are a new boy.', diary: 'Elected. A new boy at 62.' },
               fail: { effects: 'rep-1', result: 'A young major back from Italy is chosen. You campaign for him.', diary: 'Not chosen. Campaigned for the major.' } } },
-          { label: 'Stay in Stepney and rebuild it', effects: 'state+2 reform+2',
-            result: 'Stepney needs houses more than it needs another Member. You chair the rebuilding committee.',
-            diary: 'Prefabs in Stepney. 400 this year.' },
+          { label: 'Stay in {borough} and rebuild it', effects: 'state+2 reform+2',
+            result: '{borough} needs houses more than it needs another Member. You chair the rebuilding committee.',
+            diary: 'Prefabs in {borough}. 400 this year.' },
         ] },
 
       { id: 'out-nhs-1948', year: 1948, title: 'The appointed day', if: OUT,
-        venue: { plate: 'city', label: 'A surgery in Stepney, 5 July 1948' },
-        text: '5 July 1948. Today the National Health Service begins: doctors, hospitals, dentists, spectacles, free to everyone. The queue outside the Stepney surgery goes round the corner. Old women who have never seen a dentist are waiting for teeth. You remember Mrs Kelly\'s ceiling and the free milk of 1920. The doctor, who fought it, asks you to help keep order.',
+        venue: { plate: 'city', label: 'A surgery in {borough}, 5 July 1948' },
+        text: '5 July 1948. Today the National Health Service begins: doctors, hospitals, dentists, spectacles, free to everyone. The queue outside the {borough} surgery goes round the corner. Old women who have never seen a dentist are waiting for teeth. The doctor, who fought it, asks you to help keep order.',
         basis: 'The NHS appointed day, 5 July 1948.',
         real: 'The National Health Service began on 5 July 1948. Demand for spectacles and dentures in the first year far exceeded estimates.',
         check: 'research', facts: ['attlee-ministry'],

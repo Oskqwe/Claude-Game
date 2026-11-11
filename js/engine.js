@@ -62,7 +62,13 @@
       .replace(/\{first\}/g, s ? s.first : '')
       .replace(/\{last\}/g, s ? s.last : '')
       .replace(/\{full\}/g, s ? s.first + ' ' + s.last : '')
-      .replace(/\{age\}/g, s ? String(s.year - s.born) : '');
+      .replace(/\{age\}/g, s ? String(s.year - s.born) : '')
+      // Life-specific words a route sets with set:key=Value (e.g. {seat}, {borough}, {wife}),
+      // falling back to the camp's defaults in TM.VARDEF.
+      .replace(/\{(\w+)\}/g, (all, k) => {
+        const v = (s && s.vars && s.vars[k]) || (s && TM.VARDEF && TM.VARDEF[s.camp] && TM.VARDEF[s.camp][k]);
+        return v == null ? all : v;
+      });
   };
 
   /* ---------- Reading values ---------- */
@@ -90,7 +96,8 @@
        @woom+10                                relationship (−100…+100)
        #trench-veteran   -#shy                 add / remove trait
        !crossed-floor    -!crossed-floor       set / clear flag
-       office=Second_Lieutenant                office (underscores become spaces)
+       office=Second_Lieutenant                office (underscores become spaces; {vars} filled)
+       set:seat=Sheffield_Hillsborough         a life-specific word, read in text as {seat}
        year=1895                               move the calendar
   */
   TM.applyEffects = function (s, str, delta) {
@@ -121,8 +128,11 @@
           delta.fork = m[1];
         }
         for (const f of ['offmap', 'fork-' + m[1]]) if (!s.flags.includes(f)) s.flags.push(f);
+      } else if ((m = tok.match(/^set:(\w+)=(.+)$/))) {
+        s.vars = s.vars || {};
+        s.vars[m[1]] = m[2].replace(/_/g, ' ');
       } else if ((m = tok.match(/^office=(.+)$/))) {
-        s.office = m[1].replace(/_/g, ' ');
+        s.office = TM.fill(m[1].replace(/_/g, ' '), s);
         delta.office = s.office;
       } else if ((m = tok.match(/^year=(\d{4})$/))) {
         s.year = +m[1];
