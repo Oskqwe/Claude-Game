@@ -135,3 +135,18 @@ Tonypandy, the Tredegar riot). Set piece: lunch with Lord Beaverhulme, 1940. Rog
 Crisp in 1939 (`fork=popular39`), losing the whip in 1944 (`fork=whip44`), and the hospitals left with the
 councils (`world=townhall45`, the town hall health service). Lives outside the House get the first morning
 of the NHS. Facts are in data/facts.js under "The Firebrand".
+
+## The Pioneer (camp 6)
+
+`data/pioneer/act1.js`, `act2.js`, `act3.js`: a full life, 1891–1951, after Ellen Wilkinson (Manchester:
+the suffrage pilgrimage, the shop workers' union, Middlesbrough East, Spain, Jarrow, the shelters, Education),
+with routes from Edith Summerskill (medicine: Fulham West, Women's Home Defence, the Ministry of Food, clean
+milk, National Insurance), Eleanor Rathbone and Megan Lloyd George (the Liberal: Liverpool, Anglesey, the
+refugees, internment, family allowances to the mother) and Thelma Cazalet-Keir and Mavis Tate (the Tory:
+Islington East, Frome, Cliveden, the equal-pay vote of 1944, Buchenwald), chosen at "Sixteen" (1907).
+There is no man/woman choice: the life reads as a woman's if the player backs the suffragettes in the quiz
+or in Act I (flag `woman`), and woman-specific scenes are gated on it. Rogue forks: the Communist Party in
+1924 (`fork=cpgb24`), jail in Oviedo in 1934 (`fork=oviedo34`), detention under 18B for a Right Club member
+(`fork=detained40`), and equal pay surviving the confidence vote (`world=equalpay44`). Set pieces: lunch at
+Cliveden (1937) and tea on the Terrace (1946). The winter of 1947 is a real health risk for a minister.
+Facts are in data/facts.js under "The Pioneer".
