@@ -67,6 +67,8 @@ Rules (owner, 10 Nov 2026): great external events still happen on schedule, but 
 
 First branch: `data/bulldog/fork-mamund.js`. Riding alone into a village at Malakand (1897) can end in capture by the Mamund; from there a Frontier career (the Khyber, the Bazar valley 1908, the Germans in Kabul 1915, Amritsar 1919, Qissa Khwani 1930), Viscount Hallifield as Prime Minister in May 1940 (fighting on or taking the Lisbon terms), and four roads back to the House (1898, 1923, 1935, 1938, 1941) and two to No. 10 (1942). A second fork, `renegade`, ends the life in the hills.
 
+More forks (`data/bulldog/forks.js`): `bankrupt` (buying on the way down in 1929; a bankrupt cannot sit in the Commons, and an undischarged one cannot stand) and `changi` (staying in Singapore in 1942: Changi, the Burma railway, liberation). `world=<id>` records a bend in history that leaves the character on the record: the Peace of 1940, Hallifield's premiership with the player as Minister of Defence, Trondheim taken from the sea. Winning a seat clears `offmap` automatically and sets `returned`.
+
 ## Your own move (live)
 
 In the claude.ai artifact the page can ask Claude through the `sample` capability (`js/live.js`). On ordinary scenes the player may type an action; Claude returns JSON (outcome, effects, optional roll, risk, optional fork). The engine caps every change (standing ±6, convictions ±3, nation ±5), rolls the dice itself, decides death from the stated risk, and records any fork as `live-<n>` in `s.liveForks`. Live moments are marked "written live, not from the record" in the epilogue. Opened from disk, the box never appears.

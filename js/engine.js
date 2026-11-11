@@ -108,6 +108,11 @@
         s.flags = s.flags.filter((f) => f !== m[1]);
       } else if ((m = tok.match(/^!(.+)$/))) {
         if (!s.flags.includes(m[1])) s.flags.push(m[1]);
+      } else if ((m = tok.match(/^world=([\w-]+)$/))) {
+        // History bends around the character, who stays on the record (e.g. the Peace of 1940).
+        s.forks = s.forks || [];
+        if (!s.forks.some((f) => f.id === m[1])) { s.forks.push({ id: m[1], year: s.year, world: true }); delta.fork = m[1]; }
+        if (!s.flags.includes('fork-' + m[1])) s.flags.push('fork-' + m[1]);
       } else if ((m = tok.match(/^fork=([\w-]+)$/))) {
         // A rogue choice: the life leaves recorded history. Recorded once; marks the life off the map.
         s.forks = s.forks || [];
@@ -140,6 +145,11 @@
           delta.nation[k] = (delta.nation[k] || 0) + n;
         } else console.warn('Unknown effect key', tok);
       } else console.warn('Unparsed effect', tok);
+    }
+    // Winning a seat brings an off-record life back onto the record.
+    if (s.flags.includes('offmap') && s.flags.includes('mp')) {
+      s.flags = s.flags.filter((f) => f !== 'offmap');
+      if (!s.flags.includes('returned')) s.flags.push('returned');
     }
     return delta;
   };

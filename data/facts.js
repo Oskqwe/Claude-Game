@@ -214,5 +214,11 @@
     "halifax-may-1940": {"status": "corroborated", "claim": "Halifax effectively declined the premiership around 9 May 1940; on 27 May he pressed for Italian mediation; Churchill, backed by Attlee, Greenwood and Sinclair, refused; the outer Cabinet backed fighting on, 28 May.", "sources": ["https://en.wikipedia.org/wiki/May_1940_War_Cabinet_crisis", "https://en.wikipedia.org/wiki/Edward_Wood,_1st_Earl_of_Halifax"]},
     "independents-1942": {"status": "research", "claim": "Independents won Grantham (25 March 1942), Rugby and Wallasey (29 April 1942). One source so far.", "sources": ["https://en.wikipedia.org/wiki/List_of_United_Kingdom_by-elections_(1931%E2%80%931950)"]},
     "nwfp-1947": {"status": "corroborated", "claim": "NWFP referendum July 1947 (polling from 6 July, results 20 July): 289,244 for Pakistan, 2,874 for India, turnout 51%; boycotted by the Khudai Khidmatgar.", "sources": ["https://en.wikipedia.org/wiki/1947_North-West_Frontier_Province_referendum", "https://en.wikipedia.org/wiki/North-West_Frontier_Province"]},
+    "bankrupt-mp": {"status": "unchecked", "claim": "A Member adjudged bankrupt lost his seat unless the bankruptcy was annulled or discharged within six months; Horatio Bottomley resigned his seat on bankruptcy in 1912.", "sources": []},
+    "reichstag-1932": {"status": "unchecked", "claim": "At the Reichstag election of July 1932 the Nazis became the largest party.", "sources": []},
+    "election-1935": {"status": "unchecked", "claim": "General election 14 November 1935; Italy invaded Abyssinia in October 1935; Germany announced the Luftwaffe and conscription in March 1935; Churchill held Epping and was not offered office.", "sources": []},
+    "singapore-1942": {"status": "unchecked", "claim": "Singapore surrendered on 15 February 1942 (about 80,000 Allied troops captured); British civilians were interned in Changi gaol; Duff Cooper left Singapore in January 1942.", "sources": []},
+    "f-force-1943": {"status": "unchecked", "claim": "F Force, about 7,000 prisoners, left Changi in April 1943 for the Burma–Thailand railway after being told the camps would be healthier; over 3,000 died (about 44 per cent).", "sources": []},
+    "singapore-1945": {"status": "unchecked", "claim": "Japan surrendered on 15 August 1945; British forces reoccupied Singapore on 5 September 1945.", "sources": []},
   };
 })();
