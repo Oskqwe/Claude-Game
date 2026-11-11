@@ -89,3 +89,11 @@ of each in a quiz question, scene, lunch course or outcome is underlined with do
 opens a small card (`gl()` and `glossOpen()` in `js/ui.js`). Explainers say only what was known at the
 time, keep echo names, and are never attached to invented alternate-history events. Run
 `node tools/glosscov.js "$PWD"` to list scenes with no explainer.
+
+## The Quiet Major (camp 2)
+
+`data/major/act1.js`: Act I, 1889–1922, playable. It opens with five everyday scenes from 1889 to 1896
+(the dock strike, the 1892 election, the governess, the great frost, the Armenian meetings) before Haileybury,
+Stepney, the Webbers, the war and Limehouse. Branches: the officer (Helles, Suvla, Hanna), the objector
+(the tribunal and prison) and the ambulance driver. Acts II and III are still to come; `act.continues`
+says so on the end screen. Facts are in data/facts.js under "The Quiet Major".

@@ -19,7 +19,7 @@
       vector: v(5, 9, -3, 10, -7, 10),
       line: 'Born to the purple and short of money. Soldier, scribbler, turncoat, and the last man standing when the lights go out.',
       figures: ['Winstan Churchward', 'Brendan Bracknell', 'the Prof (Lindqvist)', 'Desmond Martyn', 'Sir Roger Keys', 'Leo Emery', 'Duff Cowper'] },
-    { id: 'major', name: 'The Quiet Major', built: false, divergence: 'Mild to moderate',
+    { id: 'major', name: 'The Quiet Major', built: true, divergence: 'Mild to moderate',
       vector: v(-6, -4, 7, 5, 8, -8),
       line: 'A Putney solicitor\'s son who found his faith in a Stepney boys\' club. Says little; outlasts everyone.',
       figures: ['Clement Astley', 'Arthur Greenhalgh', 'James Chilton Eade', 'A. V. Alderman', 'Jim Griffin'] },
