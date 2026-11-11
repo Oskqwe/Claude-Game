@@ -43,7 +43,7 @@
       vector: v(-4, -3, 10, 4, 3, -2),
       line: 'Eton or Winchester, a First, and a slide rule. Socialism as a problem in arithmetic.',
       figures: ['Hugh Dalby', 'Stafford Crisp', 'Hugh Gaskell', 'Douglas Jagger', 'Harold Wilmot', 'Evan Dunbar'] },
-    { id: 'pioneer', name: 'The Pioneer', built: false, divergence: 'Moderate',
+    { id: 'pioneer', name: 'The Pioneer', built: true, divergence: 'Moderate',
       vector: v(-7, -5, 6, 3, -4, 5),
       line: 'One of a handful of women in a House of six hundred men, and twice as busy as any of them.',
       figures: ['Ellen Wilkins', 'Eleanor Rathmore', 'Nancy Aster', 'Edith Summerfield', 'Megan Lloyd-Gwynne', 'Mavis Tatton', 'Barbara Carswell', 'Thelma Cazenove-Kerr'] },

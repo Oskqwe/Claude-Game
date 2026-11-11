@@ -8,7 +8,9 @@
   TM.act = function (s) {
     s = s || TM.state;
     const camp = TM.ACTS[s.camp];
-    return camp ? camp[s.act] : null;
+    const act = camp ? camp[s.act] : null;
+    if (act && !act._sorted && TM.sortAct) TM.sortAct(act);
+    return act;
   };
   TM.scene = function (s) {
     s = s || TM.state;
@@ -23,8 +25,18 @@
     return null;
   }
 
+  // Scenes play in date order. Route blocks and shared hinges are written in separate runs of the array,
+  // so each act is sorted once, stably, by t (if given) or year; scenes of the same date keep their order.
+  TM.sortAct = function (act) {
+    if (!act || act._sorted || !act.scenes) return;
+    const key = (x) => (x.t != null ? x.t : x.year || 0);
+    act.scenes = act.scenes.map((x, i) => [x, i]).sort((a, b) => key(a[0]) - key(b[0]) || a[1] - b[1]).map((p) => p[0]);
+    act._sorted = true;
+  };
+
   TM.startAct = function (s, actNo) {
     const act = TM.ACTS[s.camp][actNo];
+    TM.sortAct(act);
     s.act = actNo;
     s.course = 0;
     s.pending = null;
