@@ -27,7 +27,7 @@
       vector: v(7, 4, -2, -8, 6, -7),
       line: 'Birmingham metal, a ledger mind, and the conviction that any war can be avoided by a reasonable man.',
       figures: ['Nevil Chambers', 'Viscount Hallifield', 'Sir Samuel Hoad', 'Sir John Simmons', 'Sir Kingsley Ward', 'Sir Horace Wilton'] },
-    { id: 'docker', name: 'The Docker', built: false, divergence: 'Moderate',
+    { id: 'docker', name: 'The Docker', built: true, divergence: 'Moderate',
       vector: v(-7, 2, 6, 8, 7, 1),
       line: 'Farm boy at eleven, drayman at eighteen, master of a million union cards by forty.',
       figures: ['Ernie Bevis', 'George Isaacson', 'Jim Gallagher', 'Jack Lawton', 'George Tomkinson'] },
