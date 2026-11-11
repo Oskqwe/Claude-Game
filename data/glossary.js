@@ -667,7 +667,7 @@
     { id: 'refugee-committee', m: 'Parliamentary Committee on Refugees', title: 'Getting refugees in', date: '1933–39',
       text: 'Britain had no refugee law. A refugee from Nazi Germany or Austria needed a visa, and usually a British guarantor promising that they would not be a charge on public funds. Voluntary committees found guarantors and jobs; Members of Parliament took individual cases to the Home Office.' },
     { id: 'cliveden-set', m: 'Cliveden set', title: 'The Cliveden set', date: '1937',
-      text: 'Cliveden, above the Thames in Buckinghamshire, was the country house of Mr and Mrs Aster, who entertained politicians, editors and diplomats there. In 1937 a left-wing newsletter accused the circle of steering foreign policy towards an understanding with Hitler. The name stuck.' },
+      text: 'Cliveden, above the Thames in Buckinghamshire, was the country house of Mr and Mrs Aster, who entertained politicians, editors and diplomats there. From 1936 a left-wing newsletter accused the circle of steering foreign policy towards an understanding with Hitler. The name stuck.' },
     { id: 'election-1935', m: 'rearmament and peace at once', title: 'The election of 1935', date: '14 November 1935',
       text: 'The National Government under Mr Baldock went to the country promising support for the League of Nations together with a measured rearmament. It won a large majority. Labour recovered to 154 seats from its rout of 1931.' },
     { id: 'basque-children', m: 'Basque children', title: 'The Basque children', date: 'May 1937',

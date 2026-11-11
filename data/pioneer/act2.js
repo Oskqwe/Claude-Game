@@ -271,7 +271,7 @@
         venue: { plate: 'whitehall', label: 'The Home Office, Whitehall' },
         text: 'November 1938. After the burning of the synagogues the queues outside the British consulates in Vienna and Berlin run round the block. Miss Rathmore has set up a Parliamentary Committee on Refugees, with Members from every party, and you are its workhorse: case files, guarantees, visas, and the Home Office officials who must be persuaded one by one. A family of six in Vienna has a guarantor for four.',
         basis: 'Eleanor Rathbone\'s Parliamentary Committee on Refugees, founded in late 1938, which pressed the Home Office case by case to admit refugees from Nazi Germany and Austria.',
-        real: 'Rathbone founded the Parliamentary Committee on Refugees in 1938 and worked relentlessly on individual cases. After Kristallnacht Britain admitted nearly 10,000 children on the Kindertransport, each with a guarantee, and thousands of adults; many more were refused.',
+        real: 'Rathbone founded the Parliamentary Committee on Refugees in 1938 and worked relentlessly on individual cases. After Kristallnacht Britain admitted about 10,000 children on the Kindertransport, each with a guarantee, and thousands of adults; many more were refused.',
         check: 'research', facts: ['rathbone-early', 'kristallnacht-1938'],
         choices: [
           { label: 'Find the money for the last two yourself', effects: 'money-6 state+2 #refugees @rathmore+5', historical: true,
@@ -313,7 +313,7 @@
         menu: ['Germany', 'The women\'s vote', 'America'],
         text: 'Spring 1937. Mrs Aster\'s great house above the Thames, and a Sunday luncheon for thirty: ministers, editors, an archbishop, Americans. The talk, as always this year, is of Germany: whether Hitler can be reasoned with. A left-wing paper has started calling this circle the Cliveden set, and says it runs British foreign policy from the dining table. Mrs Aster thinks that is very funny.',
         basis: 'The "Cliveden set" of the later 1930s, the circle around the Astors accused by the left-wing press of shaping appeasement; Astor\'s hospitality to Members of all parties.',
-        real: 'Claud Cockburn\'s newsletter The Week coined the "Cliveden set" in 1937 for the Astors\' circle, which included the editor of The Times and Lord Lothian, and was associated with appeasement. Its influence was exaggerated, but the label stuck. Nancy Astor later voted against Chamberlain in May 1940.',
+        real: 'Claud Cockburn\'s newsletter The Week coined the "Cliveden set" for the Astors\' circle, by his own account in 1936; Reynolds News put it in print in November 1937. The circle included the editor of The Times and Lord Lothian, and was associated with appeasement. Its influence was exaggerated, but the label stuck. Nancy Astor later voted against Chamberlain in May 1940.',
         check: 'unchecked', facts: ['cliveden-set', 'astor-1919'],
         courses: [
           { course: 'Germany', text: 'Over the soup, Lord Lowther says Hitler only wants what Germany lost at Versailles, and that he found the Führer a reasonable man.',
