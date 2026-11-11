@@ -80,3 +80,12 @@ In the claude.ai artifact the page can ask Claude through the `sample` capabilit
 ## Verification
 
 `data/facts.js` lists every claim a "what really happened" note depends on, as `research`, `corroborated` (second source found), `conflicting` or `unchecked`. The epilogue marks unchecked notes. Division figures and the Schuman Plan and hospitals hinges are to be sourced from Hansard before Act III.
+
+## Event explainers
+
+`data/glossary.js` holds about 150 short explainers for the real events, places and institutions
+the game mentions (Mafeking night, Black Week, the coupon election, the Blitz...). The first mention
+of each in a quiz question, scene, lunch course or outcome is underlined with dots, and tapping it
+opens a small card (`gl()` and `glossOpen()` in `js/ui.js`). Explainers say only what was known at the
+time, keep echo names, and are never attached to invented alternate-history events. Run
+`node glosscov.js <repo>` from the scratchpad tools to list scenes with no explainer.

@@ -9,6 +9,43 @@
 
   /* ───────── Shell ───────── */
 
+  // Pop-out explainers (data/glossary.js): link the first mention of each real event in a text.
+  function gl(text) {
+    text = String(text == null ? '' : text);
+    if (!TM.GLOSS) return esc(text);
+    const hits = [];
+    for (const g of TM.GLOSS) {
+      const m = g.re.exec(text);
+      if (m && !hits.some((h) => m.index < h.end && h.start < m.index + m[0].length)) hits.push({ g, start: m.index, end: m.index + m[0].length });
+    }
+    hits.sort((a, b) => a.start - b.start);
+    let out = '', at = 0;
+    for (const h of hits) {
+      out += esc(text.slice(at, h.start)) + `<button type="button" class="gloss" data-gloss="${h.g.id}" aria-haspopup="dialog">${esc(text.slice(h.start, h.end))}</button>`;
+      at = h.end;
+    }
+    return out + esc(text.slice(at));
+  }
+  function glossOpen(id, from) {
+    const g = TM.glossFind(id); if (!g) return;
+    let pop = $('#gloss-pop');
+    if (!pop) { pop = document.createElement('div'); pop.id = 'gloss-pop'; pop.setAttribute('role', 'dialog'); document.body.appendChild(pop); }
+    pop.innerHTML = `<div class="gloss-card"><div class="row" style="justify-content:space-between;align-items:baseline"><span class="eyebrow">${esc(g.date || 'Explainer')}</span><button type="button" class="gloss-x" aria-label="Close">×</button></div><h4>${esc(g.title)}</h4><p>${esc(g.text)}</p></div>`;
+    pop.hidden = false;
+    const r = from.getBoundingClientRect(), w = Math.min(360, window.innerWidth - 32);
+    pop.style.width = w + 'px';
+    pop.style.left = Math.max(16, Math.min(r.left + window.scrollX, window.scrollX + window.innerWidth - w - 16)) + 'px';
+    pop.style.top = (r.bottom + window.scrollY + 8) + 'px';
+    pop.querySelector('.gloss-x').focus();
+  }
+  document.addEventListener('click', (e) => {
+    const b = e.target.closest && e.target.closest('.gloss');
+    if (b) { e.preventDefault(); e.stopPropagation(); glossOpen(b.dataset.gloss, b); return; }
+    const pop = $('#gloss-pop');
+    if (pop && !pop.hidden && (!pop.contains(e.target) || e.target.closest('.gloss-x'))) pop.hidden = true;
+  }, true);
+  document.addEventListener('keydown', (e) => { const pop = $('#gloss-pop'); if (e.key === 'Escape' && pop) pop.hidden = true; });
+
   function setSheet(html, solo) {
     const sheet = $('#sheet');
     sheet.innerHTML = html;
@@ -145,7 +182,7 @@
       <div class="stack">
         <div class="row" style="justify-content:space-between"><span class="eyebrow">The examination · Question ${q.i + 1} of ${TM.QUIZ.length}</span><span class="stamp">Confidential</span></div>
         <div class="ticks" aria-hidden="true">${ticks}</div>
-        <h2>${esc(item.q)}</h2>
+        <h2>${gl(item.q)}</h2>
         <div class="choices">${item.a.map((o, i) => `<button class="choice" data-key="${KEYS[i]}" data-i="${i}">${esc(o[0])}</button>`).join('')}</div>
         <div class="row">${q.i > 0 ? '<button class="btn ghost" id="q-back" type="button">Back</button>' : ''}<span class="muted">Answer as yourself. There are no right answers, only kinds of politician.</span></div>
       </div>`, true);
@@ -246,7 +283,7 @@
         <div class="qt-top"><span class="qt-no">Question ${s.course + 1} of ${sc.courses.length}</span>
           <span class="qt-from">${esc(TM.fill(q.course, s))}</span></div>
         <ol class="qt-pips">${sc.courses.map((_, i) => `<li class="${i < s.course ? 'done' : i === s.course ? 'now' : ''}"></li>`).join('')}</ol>
-        <p class="qt-q">${esc(TM.fill(q.text, s))}</p>
+        <p class="qt-q">${gl(TM.fill(q.text, s))}</p>
         <div class="qt-fuse" aria-hidden="true"><span style="animation-duration:${secs}s"></span></div>
         <p class="qt-hint muted">The House will not wait: ${secs} seconds.</p>
       </div>`;
@@ -256,7 +293,7 @@
   let qtCalled = null;
   function qtIntro(sc, s) {
     setSheet(`<div class="stack">${sceneHead(sc, s)}
-      <div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>
+      <div class="prose"><p class="drop">${gl(TM.fill(sc.text, s))}</p></div>
       <div class="table-card"><div class="placecard"><h4>In the Chamber</h4><ul>${(sc.guests || []).map((g) => `<li>${esc(TM.fill(g, s))}</li>`).join('')}<li>${esc(s.first)} ${esc(s.last)}</li></ul></div>
         <div class="menu"><h4>Order Paper</h4><ol>${sc.courses.map((c) => `<li>${esc(TM.fill(c.course, s))}</li>`).join('')}</ol></div></div>
       <p class="muted">${sc.courses.length} questions, one after another. Each has a clock; if it runs out, the House moves on without you.</p>
@@ -273,7 +310,7 @@
     const mate = (sc.companions || []).find((c) => TM.check(s, c.if)) || null;
     const who = (mate ? [mate.name] : []).concat(people.map((n) => n.name));
     setSheet(`<div class="stack">${sceneHead(sc, s)}
-      <div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>
+      <div class="prose"><p class="drop">${gl(TM.fill(sc.text, s))}</p></div>
       <div class="lobby-gate"><div style="flex:1;min-width:200px"><span class="eyebrow">${mate ? 'Walking with you' : spots.length && !people.length ? 'Choose your place' : 'Here now'}</span>
         <p style="margin:4px 0 0">${who.length ? who.map(esc).join(', ') : spots.map((x) => esc(x.name)).join(' · ')}</p></div>
         <button class="btn" id="walk">${esc(sc.enter || 'Walk in')}</button></div>
@@ -299,9 +336,9 @@
     const opts = TM.choices(s);
     const entryDoc = sc.doc && s.course === 0 ? TM.renderDoc(Object.fromEntries(Object.entries(sc.doc).map(([k, v]) => [k, typeof v === 'string' ? TM.fill(v, s) : v]))) : '';
     const body = isQt ? qtCard(sc, s) : isLunch
-      ? `${s.course === 0 ? `<div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>` : ''}${lunchCard(sc, s)}
-         <p class="course-label">${esc(sc.courses[s.course].course)}</p><div class="prose"><p>${esc(TM.fill(sc.courses[s.course].text, s))}</p></div>`
-      : `<div class="prose"><p class="drop">${esc(TM.fill(sc.text, s))}</p></div>${entryDoc}`;
+      ? `${s.course === 0 ? `<div class="prose"><p class="drop">${gl(TM.fill(sc.text, s))}</p></div>` : ''}${lunchCard(sc, s)}
+         <p class="course-label">${esc(sc.courses[s.course].course)}</p><div class="prose"><p>${gl(TM.fill(sc.courses[s.course].text, s))}</p></div>`
+      : `<div class="prose"><p class="drop">${gl(TM.fill(sc.text, s))}</p></div>${entryDoc}`;
     const choices = opts.map((o, n) => {
       const locked = !o.ok;
       const hint = locked ? `<span class="lock">Needs: ${esc(String(o.c.requires).replace(/[#!~]/g, '').replace(/-/g, ' '))}</span>` : '';
@@ -351,7 +388,7 @@
       ${isLunch ? `<p class="course-label">${esc(sc.courses[s.course].course)}</p>` : ''}
       ${p.live ? '<p class="muted" style="font-size:.85rem">Your own move, written live by Claude. Not from the record.</p>' : ''}
       ${p.fork && TM.Live.forkDef(s, p.fork) ? `<div class="fork-note"><span class="stamp">History bends here</span><p>${esc(TM.Live.forkDef(s, p.fork).title)}. From this moment your life is no longer the one in the record books. The great events of the age will still come, but you will meet them from somewhere else.</p></div>` : ''}
-      <div class="outcome prose"><p>${esc(p.result)}</p></div>
+      <div class="outcome prose"><p>${gl(p.result)}</p></div>
       ${docs}
       ${lastDiary && !p.died ? `<p class="diary-line">${esc(lastDiary.text)}</p>` : ''}
       <div class="row"><button class="btn" id="next">${label}</button></div></div>`);

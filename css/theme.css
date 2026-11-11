@@ -420,3 +420,15 @@ body.in-lobby { overflow: hidden; }
 .own-move .muted { font-size: .85rem; }
 .compare .tag-live { color: var(--ink-soft); font-family: var(--f-type); font-size: .7rem; }
 .fork-note .stamp { justify-self: start; }
+
+/* Pop-out explainers for real events (data/glossary.js) */
+.gloss { display: inline; font: inherit; color: inherit; background: none; border: 0; padding: 0; margin: 0; cursor: help;
+  text-decoration: underline dotted; text-decoration-thickness: 1.5px; text-underline-offset: 3px; text-decoration-color: var(--seal, currentColor); }
+.gloss:hover, .gloss:focus-visible { text-decoration-style: solid; outline: none; }
+#gloss-pop { position: absolute; z-index: 50; }
+#gloss-pop[hidden] { display: none; }
+.gloss-card { background: var(--paper); color: var(--ink); border: 1px solid var(--rule); border-radius: 3px; padding: 12px 16px 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.35); font-size: .95rem; line-height: 1.45; }
+.gloss-card h4 { margin: 2px 0 6px; font-size: 1.05rem; }
+.gloss-card p { margin: 0; }
+.gloss-x { background: none; border: 0; color: var(--ink-soft); font-size: 1.3rem; line-height: 1; cursor: pointer; padding: 0 2px; }
