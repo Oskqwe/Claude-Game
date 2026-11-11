@@ -110,3 +110,15 @@ the pupil-teacher and the ranks (Ede), Hunslet and the research department (Gree
 and the Labour College (Griffiths). Each route sets `{seat}`, `{borough}`, `{region}`, `{council}` and `{wife}`
 (the `set:key=Value` effect; `TM.fill` reads them, with camp defaults in `TM.VARDEF`). `data/major/routes-later.js`
 adds each route's episodes in Acts II and III, and a Home Guard scene for players outside the House.
+
+## The Docker (camp 4)
+
+`data/docker/act1.js`, `act2.js`, `act3.js`: a full life, 1887–1951, after Ernest Bevin (Ernie Bevis), with
+routes from Jack Lawson (the Durham pit), George Tomlinson (the Lancashire mill) and George Isaacs (the
+Finsbury print shop), chosen at "Twelve years old" (1893). Five everyday scenes open the life (the Jubilee tea,
+a mother's death, news of the dock strike, the school pence, the labourers' meeting). Set piece: the Shaw
+Inquiry of 1920 ("the Dockers' KC") as a three-course scene. A `@members` relationship stands for the rank and
+file. Rogue forks: the 1911 street fight (`fork=riot11`), the General Strike not called off (`fork=strike26`),
+no British bomb (`world=nobomb46`) and the 1947 plot succeeding (`world=pm47`). Lives outside office get a
+citizen's war: fire-watching in the Blitz, the 1945 vote, nationalisation. Facts are in data/facts.js under
+"The Docker".
