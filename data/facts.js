@@ -9,6 +9,16 @@
   const TM = (window.TM = window.TM || {});
 
   TM.FACTS = {
+    'franchise-1884': { status: 'corroborated', claim: 'Hyde Park demonstration of 21 July 1884 against the Lords\' rejection of the Franchise Bill; Third Reform Act passed 1884; 1885 election the first on the new franchise.',
+      sources: ['https://spartacus-educational.com/PR1884.htm', 'https://api.parliament.uk/historic-hansard/commons/1884/jul/21/law-and-police-metropolis-the-reform', 'https://archive.spectator.co.uk/article/2nd-august-1884/7/past-reform-demonstrations'] },
+    'gordon-1885': { status: 'corroborated', claim: 'Khartoum fell 26 January 1885; Gordon killed; relief steamers arrived two days later; news reached London 5 February 1885.',
+      sources: ['https://bfirst.news/news/16241/news-of-the-fall-of-khartoum-reaches-london', 'https://attackingthedevil.co.uk/related-texts/the-death-of-general-gordon-at-khartoum-1885/', 'https://encyclopedia.com/history/encyclopedias-almanacs-transcripts-and-maps/charles-george-gordon'] },
+    'primrose-league': { status: 'corroborated', claim: 'Primrose League founded 1883 in Disraeli\'s memory, Lord Randolph Churchill among the founders; fêtes and entertainments for rural voters.',
+      sources: ['https://en.wikipedia.org/wiki/Primrose_League', 'https://www.britishempire.co.uk/article/primroseleague.htm'] },
+    'west-end-riots': { status: 'corroborated', claim: 'West End riots, 8 February 1886: crowd from an unemployed meeting in Trafalgar Square jeered from Pall Mall clubs, broke windows and looted in St James\'s Street and Piccadilly; the Commissioner resigned.',
+      sources: ['https://en.wikipedia.org/wiki/West_End_Riots', 'https://pasttense.co.uk/2019/02/08/today-in-london-riotous-history-1886-unemployed-riot-in-the-west-end/'] },
+    'randal-resigns': { status: 'corroborated', claim: 'Lord Randolph Churchill, Chancellor and Leader of the Commons from mid-1886, resigned in late December 1886 over the Army and Navy estimates; Salisbury accepted; never held office again.',
+      sources: ['https://www.britannica.com/print/article/117261', 'https://archive.spectator.co.uk/article/25th-december-1886/1/news-of-the-week', 'https://api.parliament.uk/historic-hansard/commons/1887/jan/27/personal-explanation'] },
     'ascot-hat': { status: 'unchecked', claim: 'Kicked the Headmaster\'s straw hat to pieces at St George\'s, Ascot.', sources: [] },
     'pneumonia-1886': { status: 'unchecked', claim: 'Near-fatal pneumonia at Hove, March 1886; Dr Robson Roose attended.', sources: [] },
     'harrow-paper': { status: 'corroborated', claim: 'Left the Harrow Latin entrance paper almost blank; admitted by Welldon to the bottom form.',
