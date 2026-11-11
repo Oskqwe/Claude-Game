@@ -41,7 +41,6 @@
     title: 'Act I · The Making',
     span: '1887–1924',
     regen: 3,
-    continues: 'Acts II and III of this life are still being written, so this life ends here for now.',
     intro: 'You were born in August 1887 at Neath, in South Wales, but you have grown up in the cloisters of Windsor Castle. Your father is a canon of St George\'s Chapel, a royal chaplain who once tutored the Queen\'s grandsons, and a Tory who speaks his mind. The Prince of Wales calls at the house. You are loud, clever, clumsy and ten years old, and you assume that the world will listen.',
     end: (s) => {
       const age = s.year - s.born;

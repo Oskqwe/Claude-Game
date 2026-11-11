@@ -39,7 +39,6 @@
     title: 'Act II · The Plans',
     span: '1924–1938',
     regen: 2,
-    continues: 'Act III of this life, from Munich to 1951, is still being written, so this life ends here for now.',
     intro: 'Labour has governed for nine months and been thrown out. The trade union men who run the party think economists are a luxury; the economists think the trade union men have no plan. Unemployment will not fall below a million for fifteen years. Somebody will have to work out what a Labour government should actually do with power, down to the last pound. It might as well be you.',
     end: (s) => {
       const age = s.year - s.born;

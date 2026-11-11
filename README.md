@@ -150,3 +150,17 @@ or in Act I (flag `woman`), and woman-specific scenes are gated on it. Rogue for
 (`fork=detained40`), and equal pay surviving the confidence vote (`world=equalpay44`). Set pieces: lunch at
 Cliveden (1937) and tea on the Terrace (1946). The winter of 1947 is a real health risk for a minister.
 Facts are in data/facts.js under "The Pioneer".
+
+## The Planner (camp 7)
+
+`data/planner/act1.js`, `act2.js`, `act3.js`: a full life, 1887–1951, after Hugh Dalton (Hugh Dalby: Windsor,
+King's and Rupert Brooke, Caporetto, Peckham, the Foreign Office, the XYZ Club, Practical Socialism, the arms
+estimates, Economic Warfare, the Treasury, cheap money, convertibility, the budget leak), with routes from
+Stafford Cripps (Crisp: the patent Bar, the Socialist League, Moscow, India, Aircraft Production, austerity),
+Hugh Gaitskell and Evan Durbin (the WEA tutor: 1926, Vienna, Leeds South, the fuel crisis, the 1951 charges)
+and Harold Wilson (Wilmot: a younger life, born 1916, via the `born=` effect; the Board of Trade at 31, the
+bonfire of controls, resignation with Bowen), chosen at "After school" (1906). Set piece: lunch with Maynard
+Kaine at the Reform, 1945. Rogue forks: shell shock after Caporetto (`fork=shellshock17`), following
+MacDougal in 1931 (`fork=national31`), the Karl-Marx-Hof (`fork=vienna34`), the Delhi offer
+(`fork=india42`), and keeping quiet on budget day (`world=noleak47`). Facts are in data/facts.js under
+"The Planner".
