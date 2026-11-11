@@ -39,7 +39,7 @@
         { if: '!f-force', text: 'In 1943, at sixty-eight, {full} went north with the working parties to the Burma railway, and came back.' },
         { if: '!returned', text: 'Home in 1945, the man from Changi won a by-election and came back to the House.' },
       ],
-      real: 'Duff Cooper, the Resident Minister in Singapore, left in January 1942 when his post was abolished, before the city fell on 15 February. Churchill was Prime Minister throughout. About 80,000 British, Indian and Australian troops became prisoners at Singapore.',
+      real: 'Duff Cooper, the Minister Resident in Singapore, left in January 1942, before the city fell on 15 February. Churchill was Prime Minister throughout. About 80,000 British, Indian and Australian troops became prisoners at Singapore.',
       ends: {
         3: { if: '!offmap', head: 'The man from Changi', text: 'October 1951. {full} is {age}, and weighs what a man of that age should, at last. The war was won while you were behind the wire, and the peace was made without you. Some lives are bent by a single decision to stay.' },
       },
@@ -91,10 +91,10 @@
   A[2].scenes.push(
     { id: 'cf-ruin-1930', t: 1930.25, year: 1930, title: 'The Official Receiver', if: '!ruined-1929 !mp',
       venue: { plate: 'city', label: 'Carey Street, London, spring 1930' },
-      text: 'Your creditors have lost patience. A petition in bankruptcy has been filed, and the Official Receiver\'s letter is on your desk. If you are adjudged bankrupt and the order stands, you cannot sit in the House of Commons: in six months the Speaker will declare your seat vacant. Your friends have heard. One of them, a financier who admires your books, has offered quietly to take over your debts.',
-      basis: 'The rule that a Member adjudged bankrupt loses his seat unless the bankruptcy is annulled within six months, as Horatio Bottomley found in 1912; and the 1938 rescue of Churchill\'s debts by Sir Henry Strakosch.',
+      text: 'Your creditors have lost patience. A petition in bankruptcy has been filed, and the Official Receiver\'s letter is on your desk. If you are adjudged bankrupt and the order stands, you cannot sit in the House of Commons, and your seat will be declared vacant. Your friends have heard. One of them, a financier who admires your books, has offered quietly to take over your debts.',
+      basis: 'The rule that a bankrupt cannot sit in the House of Commons, which forced Horatio Bottomley to resign his seat in 1912; and the 1938 rescue of Churchill\'s debts by Sir Henry Strakosch.',
       real: 'Churchill lost heavily in the Crash but was never made bankrupt. In 1938, facing new share losses, he put Chartwell up for sale, and Sir Henry Strakosch took over his positions.',
-      check: 'unchecked', facts: ['bankrupt-mp'],
+      check: 'research', facts: ['bankrupt-mp'],
       choices: [
         { label: 'Take the financier\'s money', effects: 'loyalty+1', roll: { stat: 'favour', diff: 40,
             pass: { effects: '-!ruined-1929 money+20 rep-1', result: 'The debts vanish into an account in the City. You never quite know what you owe him, which is the point.', diary: 'Rescued. By a man I hardly know. I shall not ask the price.' },
@@ -112,7 +112,7 @@
       text: 'Two years on. Everything you earn goes to the trustee in bankruptcy, who pays it out to your creditors at so much in the pound. You write for the Sunday papers, for American magazines, for anyone who pays: lives of generals, a film script that is never made. To be discharged you must satisfy the court you have paid what you can. In Germany the Nazis have just become the largest party in the Reichstag.',
       basis: 'Discharge from bankruptcy by the court; Churchill\'s own journalism of the early 1930s; the German election of July 1932, in which the Nazis became the largest party.',
       real: 'Churchill was never bankrupt. In the early 1930s he wrote at great speed to repair his losses, including Marlborough and the essays later collected as Great Contemporaries.',
-      check: 'unchecked', facts: ['reichstag-1932'],
+      check: 'research', facts: ['reichstag-1932'],
       choices: [
         { label: 'Write anything that pays', effects: 'money+10 health-4 press+3', result: 'You write a million words in two years. Your creditors get eleven shillings in the pound. You get tired.', diary: 'Eleven shillings in the pound. A million words. Not one about Germany.' },
         { label: 'Apply to the court for your discharge', effects: 'cap+1', roll: { stat: 'money', diff: 45,
@@ -144,7 +144,7 @@
       venue: { plate: 'prison', label: 'Changi, Singapore, March 1942' },
       text: 'Singapore surrendered on 15 February, and tens of thousands of British, Indian and Australian troops went into captivity in a day. You have been marched with the civilians to Changi gaol, at the eastern end of the island: sixty-seven, a former minister, and of interest to the Japanese only as a name. The food is rice and little else. Dysentery has begun. The internees want someone to deal with the guards.',
       basis: 'The fall of Singapore on 15 February 1942 and the internment of British civilians in Changi gaol.',
-      real: 'This did not happen. Duff Cooper, the Resident Minister, left Singapore in January 1942. About 80,000 Allied troops surrendered on 15 February; some 3,000 British civilians were interned in Changi gaol.',
+      real: 'This did not happen. Duff Cooper, the Minister Resident, had left Singapore in January 1942. About 80,000 Allied troops surrendered on 15 February; about 3,000 civilians were interned in Changi gaol.',
       check: 'unchecked', facts: ['singapore-1942'],
       choices: [
         { label: 'Deal with the guards yourself', effects: 'steel+2 rep+4 health-6',
@@ -162,7 +162,7 @@
       venue: { plate: 'prison', label: 'Changi, April 1943' },
       text: 'The Japanese are building a railway through the jungle from Thailand into Burma, and they want seven thousand men from Changi for it. They say the new camps will be healthier, with better food. The doctors do not believe it. The men going north are soldiers, not internees, but the senior officers have asked you, as an old man they trust, to help decide which of the sick can be kept back. Every man kept back, another goes.',
       basis: 'F Force, about 7,000 prisoners sent from Changi in April 1943 to the Burma–Thailand railway, after being told the camps would be healthier; nearly half died.',
-      real: 'F Force left Changi in April 1943. Cholera, dysentery and starvation killed over 3,000 of its men, around 44 per cent. Civilian internees were not sent to the railway.',
+      real: 'F Force left Changi in April 1943. Cholera, dysentery and starvation killed some 3,000 of its 7,000 men. Civilian internees were not sent to the railway.',
       check: 'unchecked', facts: ['f-force-1943'],
       choices: [
         { label: 'Choose, and live with it', effects: 'steel+2 health-4 loyalty+2', result: 'You go down the lines with the doctors and make the list. Of the men who go north, nearly half will not come back. You keep the list until you die.', diary: 'Made the list. God forgive me. Somebody had to.' },
@@ -180,8 +180,8 @@
       venue: { plate: 'prison', label: 'Changi, September 1945' },
       text: 'Japan surrendered a month ago, and this morning British troops walked into Changi. You weigh seven stone. In England there has been a general election, held while you were behind the wire: Labour has won by a landslide, and men you have never heard of are ministers. Your old association, not knowing if you were alive, chose another candidate. A journalist wants your story, a doctor wants you in hospital, and a friend writes that a by-election is coming.',
       basis: 'The Japanese surrender of 15 August 1945, the British return to Singapore in early September, and the July 1945 general election.',
-      real: 'Japan surrendered on 15 August 1945 and British forces reoccupied Singapore on 5 September. Labour won the election of July 1945 by a landslide; Churchill stayed in the House as Leader of the Opposition.',
-      check: 'unchecked', facts: ['singapore-1945'],
+      real: 'Japan surrendered on 15 August 1945 and the British fleet reached Singapore on 4 September and troops landed on the 5th. Labour won the election of July 1945 by a landslide; Churchill stayed in the House as Leader of the Opposition.',
+      check: 'corroborated', facts: ['singapore-1945'],
       choices: [
         { label: 'Come home and fight the by-election', effects: 'steel+2 health-4', roll: { stat: 'reputation', diff: 50,
             pass: { effects: '!mp seat+25 cap+6 rep+5 office=Member_of_Parliament', result: 'In the spring of 1946 a safe seat falls vacant, and the man from Changi is returned with the largest majority of his life.', diary: 'Elected. Seven stone and seventy-one. The House stood when I came in.' },

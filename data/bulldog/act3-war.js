@@ -146,7 +146,7 @@
 
     { id: 'singapore-duff', t: 1942.1, year: 1942, title: 'Singapore', if: '!route-fo ~!pm ~!peace-signed !mp',
       venue: { plate: 'india', label: 'Singapore, January 1942' },
-      text: 'You were sent to Singapore as Resident Minister to coordinate the Far East, and found a colony that refused to believe in the war. The Japanese have come down the Malay peninsula in six weeks. The Governor will not order slit trenches dug on the golf course. You have been recalled. The last ships are leaving, and the Governor is asking whether you will stay.',
+      text: 'You were sent to Singapore as Minister Resident to coordinate the Far East, and found a colony that refused to believe in the war. The Japanese have come down the Malay peninsula in six weeks. The Governor will not order slit trenches dug on the golf course. You have been recalled. The last ships are leaving, and the Governor is asking whether you will stay.',
       basis: 'Duff Cooper as Resident Cabinet Minister in Singapore, 1941–42, his clashes with Governor Shenton Thomas, and his recall before the fall.',
       real: 'Duff Cooper was sent to Singapore in 1941 as Minister Resident. Both the military and civil authorities were reluctant to cooperate with him. He returned to Britain before Singapore surrendered on 15 February 1942, and was blamed by some for its fall.',
       check: 'unchecked', facts: ['duff-singapore'],
