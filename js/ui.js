@@ -237,6 +237,9 @@
       s.axes = Object.assign({}, axes);
       s.axesQuiz = Object.assign({}, axes);
       TM.startAct(s, 1);
+      // The owner's rule: no man/woman choice. In the Pioneer camp the character reads as a woman politician
+      // when the quiz answers say so (an answer tagged w), or later by the player's own choices in Act I.
+      if (TM.readsAsWoman(ui.quiz.answers) && !s.flags.includes('woman')) s.flags.push('woman');
       TM.save();
       render();
     });

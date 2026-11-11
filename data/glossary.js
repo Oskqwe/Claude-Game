@@ -611,7 +611,7 @@
     { id: 'voluntary-hospitals', m: 'rattling tins in the street', title: 'The voluntary hospitals', date: 'before 1948',
       text: 'Before the NHS, Britain\'s hospitals were a patchwork. The great voluntary hospitals were charities, run by boards of governors and funded by gifts, flag days, workers\' contribution schemes and fees; many were near bankrupt by the 1940s. The councils ran the municipal hospitals, many of them old workhouse infirmaries.' },
     { id: 'squatters', m: 'empty army camps', title: 'The squatters', date: '1946',
-      text: 'In the summer of 1946, with millions short of a home, some 40,000 people moved into empty army and air force camps across Britain, and the government, in the main, let them stay. In September, Communist-led squatters occupied empty blocks of flats in central London; they left after a court order.' },
+      text: 'In the summer of 1946, with millions short of a home, some 40,000 people moved into empty army and air force camps across Britain, and the government, in the main, let them stay. In September, Communist-led squatters occupied empty flats and a hotel in central London; the occupations ended after legal action.' },
     { id: 'bma', m: 'plebiscite', title: 'The doctors\' revolt', date: '1946–48',
       text: 'The British Medical Association fought the NHS for two years, fearing that doctors would become salaried state employees and lose their freedom and their private patients. Its members voted overwhelmingly against the terms in early 1948. Concessions, above all to the hospital consultants, brought them in by the summer.' },
     { id: 'hospital-lottery', m: 'hospital lottery', title: 'A town hall health service', date: 'counterfactual',

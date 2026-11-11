@@ -66,7 +66,7 @@
       { id: 'expelled-1939', year: 1939, title: 'Expelled', if: '!mp !tribune ~!route-glasgow ~!route-co',
         venue: { plate: 'whitehall', label: 'Transport House, Smith Square' },
         text: 'March 1939. Sir Stafford Crisp sent every party branch a memorandum calling for a Popular Front with the Liberals and the Communists against Chambers. The executive has expelled him, and now you and four others for supporting him. The terms for readmission are an undertaking to accept party discipline. The local party in {seat} wants you back. Crisp says no self-respecting man could sign.',
-        basis: 'The expulsion of Cripps in January 1939 and of Bevan, C. P. Trevelyan and others in March 1939 over the Popular Front campaign; Bevan was readmitted in December 1939.',
+        basis: 'The expulsion of Cripps in early 1939 and of Bevan, C. P. Trevelyan and others in March 1939 over the Popular Front campaign; Bevan was readmitted in December 1939.',
         real: 'Bevan was expelled in March 1939 with Cripps, Trevelyan and others for campaigning for a Popular Front. He accepted the party\'s conditions and was readmitted in December 1939. Cripps stayed out until 1945.',
         check: 'research', facts: ['firebrand-expelled-1939'],
         choices: [
@@ -101,9 +101,9 @@
 
       { id: 'refuse-1940', year: 1940, title: 'An insult', if: '!route-glasgow !mp',
         venue: { plate: 'whitehall', label: 'The Admiralty, Whitehall' },
-        text: 'May 1940. Mr Churchward has formed his coalition and Labour is in it. The new Prime Minister\'s office has telephoned: there is a junior post for you, parliamentary secretary at the Ministry of Food. You have been Secretary for Mines twice, you know the coalfields better than anyone in the House, and the Ministry of Mines is going to someone else. Your friends say take it; a foot in the door.',
-        basis: 'Shinwell\'s refusal of a junior post at the Ministry of Food when Churchill formed the coalition in May 1940, which he regarded as an insult.',
-        real: 'Shinwell refused the junior post at the Ministry of Food in May 1940, regarding it as beneath him, and spent the war as a back-bench critic of the coalition. In 1945 he became Minister of Fuel and Power.',
+        text: 'May 1940. Mr Churchward has formed his coalition and Labour is in it. The new Prime Minister\'s office has telephoned: there is a post for you at the Ministry of Food, not in the Cabinet. You have been Secretary for Mines twice, you know the coalfields better than anyone in the House, and the Ministry of Mines is going to someone else. Your friends say take it; a foot in the door.',
+        basis: 'Shinwell\'s refusal of a post at the Ministry of Food when Churchill formed the coalition in May 1940, which he called an insult.',
+        real: 'Shinwell refused a post at the Ministry of Food in May 1940, calling the offer an insult, and spent the war as a back-bench critic of the coalition. In 1945 he became Minister of Fuel and Power.',
         check: 'research', facts: ['shinwell-1940'],
         choices: [
           { label: 'Refuse it: you are worth more', effects: 'temper+2 steel+2 fav-3 press+2', historical: true,
@@ -122,7 +122,7 @@
         venue: { plate: 'embankment', label: 'The Victoria Embankment' },
         text: 'June 1940. Dunkirk is over and the invasion is expected. You walk the Embankment after midnight with Michael Footman, a young journalist who works for Lord Beaverhulme and wheezes in the river air. He and two friends mean to write a book in a weekend: the case against the men who left Britain unready, naming every one of them. They want to call it Guilty Men. He wants your help, and your name nowhere near it.',
         basis: 'Guilty Men, written in a few days by Michael Foot, Frank Owen and Peter Howard under the pseudonym "Cato" and published in July 1940; Foot was a close friend and later biographer of Bevan.',
-        real: 'Guilty Men was written over a weekend by Foot, Owen and Howard, all Beaverbrook journalists, and published by Gollancz in July 1940. It sold over 200,000 copies despite being refused by major booksellers. Bevan and Foot were close; there is no evidence Bevan helped to write it.',
+        real: 'Guilty Men was written over a weekend by Foot, Owen and Howard, all Beaverbrook journalists, and published by Gollancz in July 1940. It sold 200,000 copies in a few weeks. Bevan and Foot were close; there is no evidence Bevan helped to write it.',
         check: 'research', facts: ['guilty-men-1940'],
         choices: [
           { label: 'Give him the stories, and keep your name out', effects: 'press+4 cap+2 @footman+10', historical: true,
@@ -141,9 +141,9 @@
         venue: { plate: 'club', label: 'Stornoway House, St James\'s' },
         guests: ['Lord Beaverhulme, host, press lord and minister', 'Michael Footman, his young editor', 'A Tory Member who says little', 'You'],
         menu: ['The war', 'The newspaper', 'The price'],
-        text: 'Autumn 1940. Lord Beaverhulme, who owns the Daily Express and the Evening Standard and is building the Spitfires as Minister of Aircraft Production, likes to collect clever young men of the left. He has made Footman an editor at twenty-eight. Now he has asked you to lunch, between air raids. The food is excellent. The guns in the park start at four.',
-        basis: 'Beaverbrook\'s friendship with Bevan and Foot; he made Foot acting editor of the Evening Standard in 1942 and courted Bevan socially, while they attacked his government.',
-        real: 'Beaverbrook was a friend and host to Bevan and Foot through the war, despite their politics; Bevan was often at his table. Foot became editor of the Evening Standard at 28. The lunch here is a composite.',
+        text: 'Autumn 1940. Lord Beaverhulme, who owns the Daily Express and the Evening Standard and is building the Spitfires as Minister of Aircraft Production, likes to collect clever young men of the left. He has taken Footman on as a writer, on your word. Now he has asked you to lunch, between air raids. The food is excellent. The guns in the park start at four.',
+        basis: 'Beaverbrook hired Foot on Bevan\'s recommendation and made him editor of the Evening Standard in 1942, at twenty-eight, though both attacked the government he served.',
+        real: 'Foot was hired by Beaverbrook on Bevan\'s recommendation and became editor of the Evening Standard in 1942, aged 28. The lunch is invented.',
         check: 'research', facts: ['beaverbrook-bevan'],
         courses: [
           { course: 'The war', text: 'Over the soup Beaverhulme asks what you think of the war. He wants an answer he can use.',
@@ -305,9 +305,9 @@
 
       { id: 'squatters-1946', year: 1946, title: 'The squatters', if: HEALTH,
         venue: { plate: 'city', label: 'Duchess of Bedford House, Kensington' },
-        text: 'September 1946. Forty thousand families have moved into empty army camps across the country, and you have let them stay. Now the Communist Party has led a thousand people into empty luxury flats in Kensington, requisitioned by the government and standing idle. The papers are full of it. The police want to clear them out. Your own back-benchers want you to give them the flats.',
-        basis: 'The squatters\' movement of 1946, when tens of thousands occupied empty army camps and, in September, Communist-led squatters occupied Duchess of Bedford House and other empty flats in London.',
-        real: 'Bevan tolerated the occupation of army camps but took a hard line on the London flat occupations of September 1946, calling them organised by the Communist Party; the squatters left peacefully after a court injunction. His housing programme built over a million homes by 1951, most of them council houses.',
+        text: 'September 1946. Forty thousand families have moved into empty army camps across the country, and you have let them stay. Now Communist Party members have led hundreds of people into empty luxury flats in Kensington, requisitioned by the government and standing idle. The papers are full of it. The police want to clear them out. Your own back-benchers want you to give them the flats.',
+        basis: 'The squatters\' movement of 1946: by October about 39,500 people were living in 1,038 occupied camps, and in September Communist-led squatters occupied empty flats and a hotel in central London.',
+        real: 'Bevan reported in October 1946 that 1,038 camps were occupied by 39,535 people, and refused squatters\' demands to help patch up the huts; the London occupations of September, organised by Communists, ended after legal action. His housing programme built over a million homes by 1951, most of them council houses.',
         check: 'unchecked', facts: ['squatters-1946'],
         choices: [
           { label: 'Clear the flats by law, and build faster', effects: 'order+2 fav+2 state+1', historical: true,
@@ -325,7 +325,7 @@
         venue: { plate: 'sickroom', label: 'BMA House, Tavistock Square' },
         text: 'February 1948. Five months to the appointed day, and the doctors have voted, in a plebiscite run by Dr Charles Hilliard of the BMA, nearly nine to one not to serve in your Health Service. They fear becoming salaried civil servants. Lord Moreland of the physicians, a clever courtier, has hinted at a way out: let consultants keep private patients and pay beds in the new state hospitals. Without the doctors there is no service.',
         basis: 'The BMA plebiscite of February 1948, in which doctors voted overwhelmingly against the NHS terms, and Bevan\'s concessions in April 1948, including private practice for consultants, negotiated partly through Lord Moran.',
-        real: 'In February 1948 about 40,000 doctors voted against the NHS terms and some 4,500 for. Bevan conceded that there would be no full-time salaried service by regulation, and let consultants keep private practice and pay beds. In May the BMA advised doctors to join. Bevan later said he had "stuffed their mouths with gold" (a phrase attributed to him, not a recorded quotation).',
+        real: 'In February 1948 about 40,000 doctors voted against the NHS terms and some 4,500 for. Bevan conceded that there would be no full-time salaried service by regulation, and let consultants keep private practice and pay beds. In May the BMA advised doctors to join. Years later, at a dinner in the mid-1950s, Bevan is reported to have said that he had stuffed their mouths with gold.',
         check: 'unchecked', facts: ['bma-1948'],
         choices: [
           { label: 'Buy the consultants with pay beds and private practice', effects: 'cap+3 fav+3 state-1 @moreland+6', historical: true,
@@ -380,8 +380,8 @@
       { id: 'vermin-1948', year: 1948, title: 'Belle Vue', if: HEALTH,
         venue: { plate: 'ballroom', label: 'Belle Vue, Manchester' },
         text: 'Sunday, 4 July 1948, the eve of the appointed day. Five thousand party workers in the hall at Belle Vue. You have the whole story in your head: the father with the dust in his lungs, the means test, the soup kitchens, the Tories who voted against the Health Service on every reading. The words are coming faster than you can weigh them. The press table is right below the platform.',
-        basis: 'Bevan\'s speech at Belle Vue, Manchester, on 4 July 1948, in which he said that no amount of cajolery could eradicate his deep hatred of the Tory Party and described them as lower than vermin.',
-        real: 'At Belle Vue on 4 July 1948 Bevan described his hatred of the Tories, rooted in the hardships of his youth, and called them "lower than vermin". The Conservative press used it for years; Attlee rebuked him; "Vermin Clubs" of young Tories were formed. The game paraphrases the speech.',
+        basis: 'Bevan\'s speech to the Manchester Labour rally at Belle Vue on 4 July 1948, the eve of the appointed day, in which he said that no amount of cajolery could eradicate his deep hatred of the Tory Party and described them as lower than vermin.',
+        real: 'At the Manchester Labour rally on 4 July 1948 Bevan described his hatred of the Tories, rooted in the hardships of his youth, and called them "lower than vermin". The Conservative press used it for years; Attlee rebuked him; angry Conservatives formed a Vermin Club. The game paraphrases the speech.',
         check: 'research', facts: ['vermin-1948'],
         choices: [
           { label: 'Say what you feel about the Tories', effects: 'press+3 temper+4 fav-5 @members+6 #vermin', historical: true,
@@ -399,7 +399,7 @@
         venue: { plate: 'gallery', label: 'The House of Commons, at night' },
         text: 'April 1951. You have been moved to the Ministry of Labour. Now Hugh Gaskell, the new Chancellor, a Wykehamist economist, has put charges on false teeth and spectacles in his budget to help pay for rearmament for Korea. A small sum. But the Health Service was to be free, all of it, for ever. The Prime Minister is in hospital. You walk the corridors at night, and the despatch box is waiting.',
         basis: 'Bevan\'s resignation on 23 April 1951 over Gaitskell\'s budget charges on dentures and spectacles, with Harold Wilson and John Freeman.',
-        real: 'Gaitskell\'s budget of 10 April 1951 introduced charges for dentures and spectacles to help fund rearmament. Bevan, by then Minister of Labour, resigned on 23 April, followed by Harold Wilson and John Freeman. Labour lost office that October.',
+        real: 'Gaitskell\'s budget of April 1951 introduced charges for dental care and spectacles to help fund rearmament. Bevan, by then Minister of Labour, resigned on 23 April, followed by Harold Wilson and John Freeman. Labour lost office that October.',
         check: 'research', facts: ['resignation-1951'],
         choices: [
           { label: 'Resign, and say why', effects: 'state+4 steel+3 fav-6 press+4 -!minister !resigned51 office=None', historical: true,

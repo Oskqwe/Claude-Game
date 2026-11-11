@@ -132,7 +132,7 @@
         ['Tell him yourself, to his face', { steel: 2, loyalty: -1 }],
         ["Wait. He'll go in his own time", { temper: -2 }],
       ] },
-    { q: "1912. Women campaigning for the vote are breaking shop windows in your high street. A neighbour asks whose side you're on.",
+    { w: [0], q: "1912. Women campaigning for the vote are breaking shop windows in your high street. A neighbour asks whose side you're on.",
       a: [
         ['Theirs. Give women the vote now', { order: -2, temper: 1 }],
         ['Give it, but not because of broken windows', { steel: 1, loyalty: 1 }],

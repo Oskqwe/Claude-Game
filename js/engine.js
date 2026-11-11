@@ -221,6 +221,8 @@
     return TM.CAMPS.map((c) => ({ camp: c, d: TM.distance(axes, c.vector) })).sort((x, y) => x.d - y.d);
   };
   TM.campById = (id) => TM.CAMPS.find((c) => c.id === id);
+  // True when any quiz answer tagged in data/quiz.js (q.w) was chosen: a reading, never asked outright.
+  TM.readsAsWoman = (answers) => TM.QUIZ.some((q, i) => q.w && answers && q.w.includes(answers[i]));
 
   /* ---------- Save and resume ---------- */
 
