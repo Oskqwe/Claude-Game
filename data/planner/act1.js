@@ -102,9 +102,9 @@
 
       { id: 'funeral-1901', year: 1901, title: 'The Queen comes home',
         venue: { plate: 'city', label: 'St George\'s Chapel, Windsor' },
-        text: 'February 1901. The old Queen is dead, and her coffin comes to Windsor on a gun carriage. The horses of the artillery bolt in the cold, and the sailors of the guard of honour haul the gun carriage up the hill themselves. Your father is in the chapel in his robes. The new King nods to him. You are thirteen, in the crowd, and you notice who is crying and who is counting.',
-        basis: 'Queen Victoria\'s funeral at Windsor on 2 February 1901, when the horses bolted and naval ratings drew the gun carriage; Canon Dalton had tutored the new King\'s sons and was a friend of the royal household.',
-        real: 'At Windsor on 2 February 1901 the artillery horses drawing the Queen\'s coffin bolted, and naval ratings pulled the gun carriage to St George\'s Chapel, beginning a tradition. Canon Dalton served at St George\'s.',
+        text: 'February 1901. The old Queen is dead, and her coffin comes to Windsor on a gun carriage. The horses of the artillery grow unmanageable in the cold, and the sailors of the guard of honour haul the gun carriage up the hill themselves. Your father is in the chapel in his robes. The new King nods to him. You are thirteen, in the crowd, and you notice who is crying and who is counting.',
+        basis: 'Queen Victoria\'s funeral at Windsor on 2 February 1901, when the artillery horses became unmanageable and naval ratings from HMS Excellent drew the gun carriage; Canon Dalton had tutored the new King\'s sons and was a friend of the royal household.',
+        real: 'At Windsor on 2 February 1901 the artillery horses drawing the Queen\'s coffin became unmanageable, and naval ratings pulled the gun carriage to St George\'s Chapel, beginning a tradition. Canon Dalton served at St George\'s.',
         check: 'unchecked', facts: ['dalton-early', 'funeral-1901'],
         choices: [
           { label: 'Watch the King, and the men round him', effects: 'cap+2 order+1', historical: true,
@@ -334,7 +334,7 @@
         choices: [
           { label: 'Fight on Labour\'s record: houses and pensions', effects: 'state+2 loyalty+2', historical: true,
             roll: { stat: 'seat', diff: -20,
-              pass: { effects: 'rep+4 seat+10 !mp office=Member_for_Peckham', result: 'You win by a few hundred. In a bad year for Labour, Peckham holds. You are a Member of Parliament at thirty-seven.', diary: 'Peckham! At last.' },
+              pass: { effects: 'rep+4 seat+10 !mp office=Member_for_Peckham', result: 'You win by under a thousand. In a bad year for Labour, Peckham holds. You are a Member of Parliament at thirty-seven.', diary: 'Peckham! At last.' },
               fail: { effects: 'rep-1', result: 'The Moscow letter does its work. You lose by a few hundred. Five defeats.', diary: 'Five defeats.' } } },
           { label: 'Call the letter a forgery from the platform', effects: 'press+3 temper+2',
             roll: { stat: 'press', diff: 15,
@@ -424,11 +424,11 @@
         venue: { plate: 'whitehall', label: 'The King\'s Robing Room, House of Lords' },
         text: 'March 1919. The miners have threatened a national strike, and the government has set up a Royal Commission under a judge to look at wages, hours and who should own the mines. Half its members are chosen by the miners. They want economists who can take the owners apart in public. You have spent ten years in the coalfields. The miners\' secretary asks you to prepare the evidence on nationalisation.',
         basis: 'The Coal Industry Commission (Sankey Commission) of 1919, whose sittings were public; R. H. Tawney sat on it for the miners; its chairman recommended nationalisation, which the government refused.',
-        real: 'The Sankey Commission sat in public in 1919. Tawney, Sidney Webb and Leo Chiozza Money sat on the miners\' side. The chairman, Sir John Sankey, recommended nationalisation of the mines in June 1919; Lloyd George\'s government did not carry it out.',
+        real: 'The Sankey Commission sat in public in 1919. Tawney, Sidney Webb and Leo Chiozza Money sat on the miners\' side. The commission split four ways in June 1919; its chairman, Sir John Sankey, recommended a modified nationalisation; Lloyd George\'s government did not carry it out.',
         check: 'unchecked', facts: ['sankey-1919'],
         choices: [
           { label: 'Prepare the evidence, and cross-examine the owners', effects: 'state+3 press+3 cap+2', historical: true,
-            result: 'You take a duke through his royalties in public. The newspapers print it verbatim. The Commission recommends nationalisation. The government ignores it.',
+            result: 'You take a duke through his royalties in public. The newspapers print it verbatim. The chairman recommends nationalisation, of a kind. The government ignores it.',
             diary: 'The duke and his royalties. Ignored.' },
           { label: 'Advise a compromise: joint control', effects: 'order+1 fav+3',
             result: 'Your scheme for joint pit committees is admired and shelved.',
