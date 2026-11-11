@@ -103,3 +103,10 @@ the May 1940 War Cabinet, the home front, Quit India, Beveridge, Bengal, the 194
 as Prime Minister: the Cabinet, the loan, the bomb, India, the 1947 plot, the docks, Korea, the ulcer and 1951.
 Separate routes for a deputy-level MP, a life outside the House (warden in the Blitz, the 1945 seat, the NHS day)
 and the National Labour world, plus a third rogue fork: Labour backing peace terms in 1940 (`world=terms40`). Facts are in data/facts.js under "The Quiet Major".
+
+`data/major/act1-routes.js` splits the camp at fourteen ("What the money allows", 1896): Haileybury (historical),
+or the lives of four colleagues walked by this character: the council clerk and the Co-op (after Alexander),
+the pupil-teacher and the ranks (Ede), Hunslet and the research department (Greenwood), or the anthracite pit
+and the Labour College (Griffiths). Each route sets `{seat}`, `{borough}`, `{region}`, `{council}` and `{wife}`
+(the `set:key=Value` effect; `TM.fill` reads them, with camp defaults in `TM.VARDEF`). `data/major/routes-later.js`
+adds each route's episodes in Acts II and III, and a Home Guard scene for players outside the House.
