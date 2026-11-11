@@ -77,7 +77,7 @@
       text: 'Agadir has frightened the Cabinet, and the Prime Minister wants a new First Lord to build a naval staff. You wanted the Admiralty more than anything. He has given it to Mr McKinnon and moved McKinnon\'s rival to the Home Office. For you he offers Ireland, where the Home Rule Bill is coming and Ulster is drilling with wooden rifles, or the Duchy of Lancaster, which is nothing at all. He does not mention Sidney Street. He does not have to.',
       basis: 'The Agadir crisis of 1911 and the October 1911 reshuffle in which Asquith moved Churchill to the Admiralty to create a naval war staff.',
       real: 'In October 1911 Churchill and Reginald McKenna exchanged offices: Churchill went to the Admiralty, McKenna to the Home Office. Augustine Birrell remained Chief Secretary for Ireland until 1916.',
-      check: 'unchecked', facts: ['reshuffle-1911'],
+      check: 'research', facts: ['reshuffle-1911'],
       choices: [
         { label: 'Take Ireland', effects: 'cap+4 empire-1 office=Chief_Secretary_for_Ireland !irish-office !minister', result: 'You go to the Irish Office, the graveyard of reputations, with a Home Rule Bill to pass and Ulster promising to fight it.', diary: 'Chief Secretary for Ireland. Where careers go to die. We shall see.' },
         { label: 'Take the Duchy and wait', effects: 'loyalty+3 cap-2 office=Chancellor_of_the_Duchy', result: 'You take the sinecure and sit in Cabinet with nothing to do but talk. You talk a great deal.', diary: 'The Duchy. A seat at the table and nothing on my plate.' },
@@ -89,7 +89,7 @@
       text: 'The Home Rule Bill will pass this summer. Ulster has a hundred thousand Volunteers and means to resist. The Army in Ireland has been told to prepare to move on Ulster, and this morning the cavalry officers at the Curragh camp have said they would rather resign than march against the Ulstermen. It is mutiny in everything but name. The Cabinet will look to you. So will Belfast.',
       basis: 'The Curragh incident of 20 March 1914, when cavalry officers said they would resign rather than act against Ulster, and the Larne gun-running of April 1914.',
       real: 'Churchill, at the Admiralty, moved a battle squadron toward Ulster in March 1914, and was accused by the Tories of plotting a pogrom. After the Curragh the Government backed down. In April the Ulster Volunteers landed some 25,000 rifles at Larne.',
-      check: 'unchecked', facts: ['curragh-1914'],
+      check: 'corroborated', facts: ['curragh-1914'],
       choices: [
         { label: 'Order the troops north and face the mutiny down', effects: 'steel+4 order+2 loyalty-2', roll: { stat: 'capital', diff: 60,
             pass: { effects: 'cap+6 rep+3 press-4', result: 'The officers are given a choice between their orders and their commissions. Most take their orders. The troops go north. Belfast does not fire, yet.', diary: 'Faced it down. The Army obeyed, just. Ulster is watching.' },
@@ -128,7 +128,7 @@
       text: 'You have been moved to Holzminden, the worst officers\' camp in Germany, with a commandant who hates the British. For nine months men have dug a tunnel from under a staircase, out under the wire, to a field of rye. Tonight it is to be used. Every man who goes will need to walk a hundred and fifty miles to Holland with forged papers. You have a place in the queue. A younger man without one is watching you.',
       basis: 'The Holzminden tunnel escape of 23–24 July 1918, when 29 officers escaped and 10 reached neutral Holland.',
       real: 'The Holzminden tunnel was the largest British escape of the war: 29 officers got out and 10 reached the Netherlands. Churchill, by then Minister of Munitions, was never a prisoner.',
-      check: 'unchecked', facts: ['holzminden-1918'],
+      check: 'research', facts: ['holzminden-1918'],
       choices: [
         { label: 'Go through the tunnel', effects: 'steel+3 health-6',
           death: D(0.06, 'You went out through the Holzminden tunnel in July 1918 and were shot by a frontier guard near the Dutch border. You were forty-three.', 'Member of Parliament killed escaping'),
@@ -165,7 +165,7 @@
       text: 'The Fleet lies off Constantinople. The Young Turk government has fled across the Bosphorus to Anatolia, and the city waits for terms. The Russians have been secretly promised Constantinople and the Straits if the war is won, and their ambassador is already measuring the curtains. The French want the Ottoman debt. The Greeks want a share. You have a fleet, a city and perhaps a week to decide what Britain wants.',
       basis: 'The secret Constantinople Agreement of March 1915, promising Russia the city and the Straits; the debate over what forcing the Narrows might have won.',
       real: 'This did not happen. The Fleet never reached Constantinople. The Ottoman Empire fought on until October 1918, and the Bolsheviks published the Constantinople Agreement in 1917.',
-      check: 'unchecked', facts: ['constantinople-1915'],
+      check: 'research', facts: ['constantinople-1915'],
       choices: [
         { label: 'Hand the city to Russia, as promised', effects: 'loyalty+3 empire-1 war+6 !straits-russia', result: 'The Russian flag goes up over the Bosphorus forts. Russia gets her warm-water port and her guns through the Straits, and promises to fight to the end.', diary: 'Constantinople to the Tsar. A promise is a promise. I hope it is a wise one.' },
         { label: 'Put the Straits under an Allied commission', effects: 'empire+2 cap+4 !straits-international', result: 'You insist on an international commission. The Straits are opened to Allied shipping under three flags. Petrograd is furious; Paris is relieved.', diary: 'An international Straits. Nobody happy. That usually means it is right.' },

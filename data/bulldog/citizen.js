@@ -16,7 +16,7 @@
         { if: '!life-over', text: 'MI5 had been watching the agent for months. The arrest came in the autumn, under the new Treachery Act.' },
         { if: '~!life-over', text: 'Nobody ever came. The banknotes were spent, and the fear lasted the rest of the war.' },
       ],
-      real: 'This did not happen. Under the Treachery Act 1940, sixteen men were executed in Britain as enemy agents during the war. Many other German agents were caught and turned by MI5 in the Double Cross system.',
+      real: 'This did not happen. Under the Treachery Act 1940, fifteen people were hanged in Britain during and after the war, and one more was shot after a court martial. Many other German agents were caught and turned by MI5 in the Double Cross system.',
       ends: {
         3: { if: '!life-over', head: 'The traitor', text: '{full} was tried in camera at the Old Bailey in 1942. The press was told only that a man had been convicted under the Treachery Act. The name was kept out of the papers for thirty years, at the request of people who had once called {full} a friend.' },
       },
@@ -28,8 +28,8 @@
       venue: { plate: 'city', label: 'A grocer\'s in Kensington, January 1940' },
       text: 'Rationing has begun: four ounces of bacon a week, four of butter, twelve of sugar, and you must register with one grocer and buy only from him. The queue is out of the door. You are sixty-five, living on what you write, and the butcher has hinted that for a consideration there is always a little extra under the counter for a gentleman. Your neighbour has three children and a husband in France.',
       basis: 'The start of food rationing in Britain on 8 January 1940 (bacon, butter and sugar), registration with a single retailer, and the black market that grew up beside it.',
-      real: 'Rationing of bacon, butter and sugar began on 8 January 1940; meat followed in March. Churchill, at the Admiralty, argued against extending rationing too far, fearing for morale.',
-      check: 'unchecked', facts: ['rationing-1940'],
+      real: 'Rationing of bacon, butter and sugar began on 8 January 1940; other foods followed through the war. Churchill, at the Admiralty, argued against extending rationing too far, fearing for morale.',
+      check: 'research', facts: ['rationing-1940'],
       choices: [
         { label: 'Take the butcher\'s extra, and say nothing', effects: 'health+3 money-3 loyalty-2', roll: { stat: 'reputation', diff: 40,
             pass: { effects: '', result: 'A little extra, wrapped in newspaper, every Friday. Nobody asks, and you do not tell.', diary: 'Extra bacon. I am ashamed of how good it tastes.' },
@@ -42,8 +42,8 @@
       venue: { plate: 'city', label: 'A sandbagged warden\'s post, Stepney, October 1940' },
       text: 'You volunteered as an air-raid warden because nobody would have you for anything else. Every night for a month the bombers have come. Tonight a land mine has come down on its parachute behind the Commercial Road and flattened a terrace. People are under the rubble; you can hear them. The Heavy Rescue squad is an hour away. Down the road, a crowd is forcing the gates of the Underground station to shelter on the platforms.',
       basis: 'The Blitz on London from September 1940, the volunteer wardens of Air Raid Precautions, parachute mines, and East Enders taking over Tube stations as shelters against official policy.',
-      real: 'The Blitz began on 7 September 1940; London was bombed on 57 consecutive nights. The Government at first refused to let the Underground be used as shelters, then gave way when people bought tickets and stayed. Churchill toured the bombed East End as Prime Minister.',
-      check: 'unchecked', facts: ['blitz-shelters'],
+      real: 'The Blitz began on 7 September 1940; London was bombed on 56 of the next 57 days and nights. The Government had refused to let the Underground be used as shelters, and gave way in the second week of heavy bombing. Churchill toured the bombed East End as Prime Minister.',
+      check: 'research', facts: ['blitz-shelters'],
       choices: [
         { label: 'Go into the rubble yourself', effects: 'steel+3 rep+5 health-8',
           death: D(0.14, 'You went into the ruins of a terrace off the Commercial Road in October 1940 to reach a family under the rubble. The wall above you came down. You were sixty-five.', 'Warden killed in Stepney raid'),
@@ -56,8 +56,8 @@
       venue: { plate: 'club', label: 'A club in St James\'s, February 1941' },
       text: 'A pleasant man from a neutral legation has bought you dinner twice. He has read your articles. He agrees that the Government is run by fools. Tonight, over the port, he says that a man of your experience, who hears things in the clubs, could be very useful to people who will remember their friends when the war ends, one way or the other. He mentions a sum of money. You owe your tailor, your printer and the bank.',
       basis: 'German and Soviet attempts to recruit discontented men in London in 1940–41; the Tyler Kent and Right Club affair of May 1940; the Treachery Act 1940; MI5\'s Double Cross system, which turned captured agents.',
-      real: 'This did not happen. Under the Treachery Act 1940 sixteen men were executed as enemy agents in Britain. MI5 caught or turned nearly every German agent sent to Britain and ran many as double agents.',
-      check: 'unchecked', facts: ['treachery-1940'],
+      real: 'This did not happen. Under the Treachery Act 1940 fifteen people were hanged and one more was shot after a court martial. MI5 caught or turned nearly every German agent sent to Britain and ran many as double agents.',
+      check: 'research', facts: ['treachery-1940'],
       choices: [
         { label: 'Report him to a friend in the War Office', effects: 'loyalty+3 rep+2 war+2', roll: { stat: 'reputation', diff: 45,
             pass: { effects: 'cap+4 war+3 !double-cross', result: 'A quiet man from MI5 asks you to keep dining with him, and tells you what to say. For a year you feed a foreign power gossip invented in an office in St James\'s Street.', diary: 'Dinner with the legation man again. Every word I said was written for me. Rather enjoyed it.' },
@@ -88,7 +88,7 @@
       text: 'The invasion of France has begun, and London thought the worst was over. Now the flying bombs come over in daylight, buzzing like motorbikes, and when the engine cuts out you have twelve seconds. One has fallen on a church in Westminster during the Sunday service. Your street is under the flight path to the city. The council is evacuating children again. You are sixty-nine, alone, and tired of shelters.',
       basis: 'The V-1 flying bomb offensive on London from 13 June 1944, a week after D-Day, including the bomb that hit the Guards Chapel during a Sunday service on 18 June.',
       real: 'The first V-1s fell on London on 13 June 1944. On 18 June one struck the Guards Chapel at Wellington Barracks during morning service, killing 121 people. About 6,000 people were killed by V-1s.',
-      check: 'unchecked', facts: ['v1-1944'],
+      check: 'corroborated', facts: ['v1-1944'],
       choices: [
         { label: 'Stay in your own bed, whatever comes', effects: 'temper+2 health-2',
           death: D(0.06, 'A flying bomb cut out over your street in the summer of 1944. You were in your own bed, as you had said you would be. You were sixty-nine.', 'Killed by flying bomb'),
