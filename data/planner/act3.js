@@ -75,8 +75,8 @@
       { id: 'expelled-1939-plan', year: 1939, t: 1939.05, title: 'The Popular Front', if: '!route-patents ' + LIVE,
         venue: { plate: 'city', label: 'Your chambers, the Temple' },
         text: 'January 1939. You have sent a memorandum to the Labour Executive: Labour, Liberals, Communists and anti-Munich Tories should stand together on one programme to bring down the government before Hitler moves again. The Executive has ordered you to withdraw it. You have printed it and sent it to every constituency party instead. The letter from Transport House is on your desk: withdraw or be expelled.',
-        basis: 'Cripps\'s Popular Front memorandum of January 1939, which he circulated to constituency parties; he was expelled from the Labour Party on 25 January 1939 and readmitted in 1945.',
-        real: 'Cripps was expelled from the Labour Party in January 1939 for campaigning for a Popular Front; Bevan and George Strauss were expelled with him in March. He was readmitted in 1945.',
+        basis: 'Cripps\'s Popular Front memorandum of January 1939, which he circulated to constituency parties; he was expelled from the Labour Party in early 1939 and readmitted in 1945.',
+        real: 'Cripps was expelled from the Labour Party in early 1939 for campaigning for a Popular Front; Bevan and George Strauss were expelled in March. He was readmitted in 1945.',
         check: 'research', facts: ['cripps-1930s'],
         choices: [
           { label: 'Refuse, and be expelled', effects: 'steel+3 loyalty-6 state+1 #expelled', historical: true,
@@ -131,7 +131,7 @@
         venue: { plate: 'whitehall', label: 'The Board of Trade, Millbank' },
         text: 'May 1942. You are President of the Board of Trade now: utility clothing, clothes coupons, the concentration of industry. Coal output is falling and the winter will be short. Your plan is simple: ration household coal, as fairly as bread. Ninety Conservative Members have signed a protest. They say it is socialism by the back door, which it partly is. The Prime Minister is wobbling.',
         basis: 'Dalton as President of the Board of Trade from February 1942; his fuel rationing scheme of spring 1942, dropped in May 1942 after a Conservative back-bench revolt, replaced by a white paper proposing dual control of the mines.',
-        real: 'Dalton\'s scheme to ration household coal, based on Beveridge\'s plan, was dropped in May 1942 after strong Conservative opposition. A white paper in June 1942 set up dual control of the mines under a new Ministry of Fuel and Power.',
+        real: 'Dalton\'s scheme to ration household coal, based on Beveridge\'s plan, was dropped in May 1942 after strong Conservative opposition. A white paper in June 1942 proposed dual control of the mines, and a Ministry of Fuel and Power followed.',
         check: 'research', facts: ['dalton-1938-51'],
         choices: [
           { label: 'Fight for it in Cabinet', effects: 'state+3 steel+2 fav-3 office=President_of_the_Board_of_Trade', historical: true,
@@ -305,7 +305,7 @@
         menu: ['The loan', 'The conditions', 'The Bank'],
         text: 'November 1945. Mr Maynard Kaine has come back from Washington ill and exhausted. He went for a gift of six thousand million dollars; the Americans have offered a loan of under four thousand million, at interest, with a condition that sterling be freely convertible into dollars within a year of the agreement taking effect. Over lunch at the Reform he tells you it is the best that could be got.',
         basis: 'Keynes\'s negotiation of the Anglo-American loan, autumn 1945: $3.75 billion at 2 per cent, with convertibility of sterling a year after it came into force; Dalton\'s doubts; the loan agreement of 6 December 1945.',
-        real: 'The Anglo-American loan of December 1945 was $3.75 billion at 2 per cent, with sterling to become convertible a year after it came into effect (July 1947). Keynes, who negotiated it, defended it in the Lords. Much of the loan was used up in the convertibility crisis of 1947. The lunch is invented.',
+        real: 'The Anglo-American loan, agreed in December 1945 and in force from 15 July 1946, was $3.75 billion at 2 per cent, with sterling to become convertible a year later, on 15 July 1947. Keynes, who negotiated it, defended it in the Lords. Much of the loan was used up in the convertibility crisis of 1947. The lunch is invented.',
         check: 'research', facts: ['loan-1945', 'planner-convertibility'],
         courses: [
           { course: 'The loan', text: 'Over the soup Kaine says that without the loan there will be starvation rations by spring. He looks very tired.',
@@ -444,9 +444,9 @@
       /* ═══════ 1948: Dunbar ═══════ */
       { id: 'dunbar-1948', year: 1948, t: 1948.68, title: 'Strangles Beach', if: '~!route-grammar ' + LIVE,
         venue: { plate: 'embankment', label: 'A Cornish beach near Bude' },
-        text: 'September 1948. A telegram from Cornwall. Evan Dunbar, who was in the car in 1926 and in every argument since, has drowned at a beach near Bude, after swimming out to save one of his daughters and another child caught by the current. They were saved. He was forty-two. His wife asks if you will speak at the memorial, and Gaskell, who cannot speak for weeping, asks you to write the notice.',
-        basis: 'Evan Durbin\'s death on 3 September 1948, drowned near Bude in Cornwall after rescuing his daughter and another child; Gaitskell\'s tribute in The Times.',
-        real: 'Evan Durbin drowned on 3 September 1948 at Strangles Beach, near Crackington Haven, Cornwall, having saved one of his daughters and another girl from the sea. He was 42. Gaitskell wrote his tribute in The Times.',
+        text: 'September 1948. A telegram from Cornwall. Evan Dunbar, who was in the car in 1926 and in every argument since, has drowned at a beach near Bude, after swimming out to save one of his daughters, caught by the current. She was saved. He was forty-two. His wife asks if you will speak at the memorial, and Gaskell, who cannot speak for weeping, asks you to write the notice.',
+        basis: 'Evan Durbin\'s death on 3 September 1948, drowned near Bude in Cornwall while rescuing one of his daughters; Gaitskell\'s tribute in The Times.',
+        real: 'Evan Durbin drowned on 3 September 1948 at Strangles Beach, near Crackington Haven, Cornwall, while rescuing one of his daughters from the sea. He was 42. Gaitskell wrote his tribute in The Times.',
         check: 'research', facts: ['planner-durbin'],
         choices: [
           { label: 'Speak at the memorial', effects: 'health-1 @gaskell+4 @dunbar+10', historical: true,

@@ -314,7 +314,7 @@
         venue: { plate: 'city', label: 'The Free Trade Hall, Manchester' },
         text: 'January 1937. A Unity Campaign: the Socialist League, the ILP and the Communists on one platform against fascism and the National Government. You have put up the money for a weekly paper, Tribune, to argue for it. The Labour Party Executive has said that members of the League who share a platform with Communists will be expelled. The hall is full. The platform is waiting.',
         basis: 'The Unity Campaign of 1937 (Socialist League, ILP and Communist Party); the founding of Tribune; the League dissolved itself in 1937 rather than face expulsion; Cripps was expelled in early 1939 over the Popular Front.',
-        real: 'The Unity Campaign was launched in January 1937. The Labour Executive disaffiliated the Socialist League, which dissolved itself in May 1937. Cripps was expelled from the Labour Party in January 1939 for advocating a Popular Front, and readmitted in 1945.',
+        real: 'The Unity Campaign was launched in January 1937. The Labour Executive disaffiliated the Socialist League, which dissolved itself in May 1937. Cripps was expelled from the Labour Party in early 1939 for advocating a Popular Front, and readmitted in 1945.',
         check: 'research', facts: ['cripps-1930s'],
         choices: [
           { label: 'Go on the platform', effects: 'state+3 loyalty-4 press+2 #unity', historical: true,
