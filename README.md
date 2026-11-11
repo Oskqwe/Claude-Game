@@ -88,4 +88,4 @@ the game mentions (Mafeking night, Black Week, the coupon election, the Blitz...
 of each in a quiz question, scene, lunch course or outcome is underlined with dots, and tapping it
 opens a small card (`gl()` and `glossOpen()` in `js/ui.js`). Explainers say only what was known at the
 time, keep echo names, and are never attached to invented alternate-history events. Run
-`node glosscov.js <repo>` from the scratchpad tools to list scenes with no explainer.
+`node tools/glosscov.js "$PWD"` to list scenes with no explainer.
