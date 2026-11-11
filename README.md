@@ -98,4 +98,8 @@ Stepney, the Webbers, the war and Limehouse. Branches: the officer (Helles, Suvl
 (the tribunal and prison) and the ambulance driver. `data/major/act2.js`: Act II, 1922–1938 (PPS, the War Office, the Zinoviev letter, the 1926 power
 committee, the Simon Commission, 1931, Brighton, the leadership ballot, Spain), with routes back for
 players outside the House and two rogue forks: National Labour in 1931 (`world=national31`) and staying
-to fight in Spain (`fork=spain37`). Act III is still to come; `act.continues` says so on the end screen. Facts are in data/facts.js under "The Quiet Major".
+to fight in Spain (`fork=spain37`). `data/major/act3.js`: Act III, 1938–1951. As leader: Munich, the expulsions, the operation, Norway, Bournemouth,
+the May 1940 War Cabinet, the home front, Quit India, Beveridge, Bengal, the 1945 letter, the campaign and the Palace;
+as Prime Minister: the Cabinet, the loan, the bomb, India, the 1947 plot, the docks, Korea, the ulcer and 1951.
+Separate routes for a deputy-level MP, a life outside the House (warden in the Blitz, the 1945 seat, the NHS day)
+and the National Labour world, plus a third rogue fork: Labour backing peace terms in 1940 (`world=terms40`). Facts are in data/facts.js under "The Quiet Major".
