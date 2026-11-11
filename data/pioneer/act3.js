@@ -2,7 +2,7 @@
    Manchester spine (Wilkinson): Munich, Pensions and then Home Security under Morrow (shelters, 1940–45),
    the July 1945 plot to replace Astley with Morrow, Minister of Education 1945, the leaving age raised to
    fifteen on 1 April 1947, and her death in February 1947 (here a health risk, not a certainty).
-   Routes: medicine (Summerskill: Women's Home Defence 1940, Ministry of Food 1945–50, clean milk,
+   Routes: medicine (Summerskill: Women's Home Defence 1941, Ministry of Food 1945–50, clean milk,
    National Insurance 1950), the Liberal (Rathbone and Megan Lloyd George: internment debate July 1940,
    the declaration of December 1942, family allowances to the mother 1945, deputy leader 1949, Anglesey
    lost 1951), the Conservative (Tate and Cazalet-Keir: the Right Club and mass internment 1939–40, a rogue
@@ -78,7 +78,7 @@
         venue: { plate: 'station', label: 'A railway station, {city}' },
         text: 'September 1939. Every child in {city} who can be sent is going, with a label on the coat, a gas mask in a cardboard box and a bag of clothes. You are on the platform with the billeting lists. The country households have been told to take them in, and some do not want slum children. A mother will not let her two go. A billeting officer in the country telephones: one of yours has nits.',
         basis: 'Operation Pied Piper, the government evacuation of about 1.5 million people, mostly schoolchildren and mothers with small children, from 1 September 1939; the shock in the reception areas at urban poverty.',
-        real: 'About one and a half million people were evacuated in the first days of September 1939. The condition of some city children shocked the reception areas and fed the demand for social reform. When the bombs did not come, most had gone home by January 1940.',
+        real: 'About one and a half million people were evacuated in the first days of September 1939. The condition of some city children shocked the reception areas and fed the demand for social reform. When the bombs did not come, many drifted home: by early 1940 most of the mothers and nearly half the children had gone back.',
         check: 'unchecked', facts: ['evacuation-1939'],
         choices: [
           { label: 'Go with the train and see them placed', effects: 'state+3 cap+2 health-1', historical: true,
@@ -115,7 +115,7 @@
         venue: { plate: 'chamber', label: 'The Members\' Lobby' },
         text: 'May 1940. Holland has fallen in five days, and the papers say German parachutists came disguised as nuns, helped by Germans living there. In the Lobby the cry is to intern every German and Austrian in Britain, refugees included, at once. Your constituents agree. Mr Morrow\'s people say the refugees are Hitler\'s enemies. And the Right Club\'s founder has just been arrested by Special Branch.',
         basis: 'The fifth-column panic of May 1940 after the fall of the Netherlands; Mavis Tate\'s call for the mass internment of enemy aliens; Ramsay\'s detention on 23 May 1940.',
-        real: 'Fear of a fifth column after the invasion of the Low Countries led to the mass internment of about 27,000 German, Austrian and Italian men, most of them refugees, in May–July 1940. Mavis Tate was among the Members who urged it. Archibald Ramsay was detained on 23 May 1940.',
+        real: 'Fear of a fifth column after the invasion of the Low Countries led to the mass internment of many thousands of German, Austrian and Italian men, most of the Germans and Austrians refugees, in May–July 1940. Mavis Tate was among the Members who urged it. Archibald Ramsay was detained on 23 May 1940.',
         check: 'unchecked', facts: ['internment-1940', 'tate-later', 'right-club'],
         choices: [
           { label: 'Call for mass internment: better safe than sorry', effects: 'order+4 state-2 press+2', historical: true,
@@ -192,11 +192,11 @@
         ] },
 
       /* ═══════ The doctor ═══════ */
-      { id: 'home-defence-1940', year: 1940, t: 1940.6, title: 'Women with rifles', if: '!route-doctor ' + LIVE,
+      { id: 'home-defence-1941', year: 1941, t: 1941.95, title: 'Women with rifles', if: '!route-doctor ' + LIVE,
         venue: { plate: 'field', label: 'A rifle range, Middlesex' },
-        text: 'Summer 1940. The Home Guard will not take women. The War Office says that women shooting at German paratroopers would break the laws of war and anyway faint. A group of women, some of them Members, have started their own: Women\'s Home Defence, on a borrowed range, with borrowed rifles. They ask you, a doctor, to lead them. The War Office has written to say it disapproves.',
-        basis: 'Edith Summerskill\'s founding of Women\'s Home Defence in 1940, which trained women in shooting and fieldcraft after they were refused entry to the Home Guard; women were admitted in non-combatant roles in 1943.',
-        real: 'Edith Summerskill founded Women\'s Home Defence in 1940 after the Home Guard refused to take women. It trained thousands of women to shoot. In 1943 the War Office admitted women to the Home Guard as "nominated women", without weapons.',
+        text: 'December 1941. The Home Guard will not take women. The War Office says that women shooting at German paratroopers would break the laws of war and anyway faint. A group of women, some of them Members, have started their own: Women\'s Home Defence, on a borrowed range, with borrowed rifles. They ask you, a doctor, to lead them. The War Office has written to say it disapproves.',
+        basis: 'Edith Summerskill\'s direction of Women\'s Home Defence, an unofficial body formed in December 1941, which trained women in shooting and fieldcraft after they were refused entry to the Home Guard; women were later admitted in support roles.',
+        real: 'Women\'s Home Defence was formed in December 1941 under Edith Summerskill\'s direction, after the Home Guard refused to take women, and trained women to shoot. In 1943 the War Office admitted women to the Home Guard as unarmed auxiliaries.',
         check: 'unchecked', facts: ['home-defence-1940'],
         choices: [
           { label: 'Lead them, and invite the press', effects: 'press+4 steel+2 fav-2', historical: true,
@@ -233,7 +233,7 @@
       /* ═══════ The Liberal: internment and the refugees ═══════ */
       { id: 'internment-1940', year: 1940, t: 1940.52, title: 'Behind the wire', if: '!route-liberal ' + LIVE,
         venue: { plate: 'chamber', label: 'The House of Commons' },
-        text: 'July 1940. Twenty thousand refugees from Hitler are behind wire on the Isle of Man and at a derelict mill in Bury, some of them men Miss Rathmore and you got out of Vienna. A ship taking internees to Canada has been torpedoed and hundreds drowned. A Nobel laureate is sleeping on straw. Miss Rathmore has a debate on Wednesday. She wants you to read out the cases.',
+        text: 'July 1940. Thousands of refugees from Hitler are behind wire on the Isle of Man and at a derelict mill in Bury, some of them men Miss Rathmore and you got out of Vienna. A ship taking internees to Canada has been torpedoed and hundreds drowned. A Nobel laureate is sleeping on straw. Miss Rathmore has a debate on Wednesday. She wants you to read out the cases.',
         basis: 'Rathbone\'s campaign against the mass internment of refugees in the summer of 1940, including the debate of 10 July 1940; the sinking of the Arandora Star on 2 July 1940; Warth Mills at Bury.',
         real: 'The Arandora Star, carrying German and Italian internees to Canada, was torpedoed on 2 July 1940 with the loss of over 800 lives. In the Commons on 10 July 1940 Rathbone and others attacked the internment of refugees. Releases began that August, and most refugees were free by 1941.',
         check: 'unchecked', facts: ['internment-1940', 'arandora-star', 'rathbone-early'],
@@ -269,11 +269,11 @@
         ] },
 
       /* ═══════ The Conservative: women's injuries ═══════ */
-      { id: 'injuries-1941', year: 1941, t: 1941.8, title: 'Seven shillings less', if: '!route-tory !mp ' + LIVE,
+      { id: 'injuries-1941', year: 1941, t: 1941.8, title: 'Less for a woman', if: '!route-tory !mp ' + LIVE,
         venue: { plate: 'office', label: 'A committee room, House of Commons' },
-        text: '1941. A woman fire-watcher who loses a leg in a raid gets seven shillings a week less in compensation than a man who loses one. The Treasury says women earn less, so they lose less. A group of women Members from every party has formed a committee on women\'s war work and wants you to put down the amendment. Your own front bench says it will cost too much.',
+        text: '1941. A woman fire-watcher who loses a leg in a raid gets less compensation each week than a man who loses one. The Treasury says women earn less, so they lose less. A group of women Members from every party has formed a committee on women\'s war work and wants you to put down the amendment. Your own front bench says it will cost too much.',
         basis: 'The campaign led by Mavis Tate and the cross-party Women\'s Power Committee against lower compensation rates for women under the Personal Injuries (Civilians) Scheme; equal rates conceded in 1943.',
-        real: 'Under the wartime Personal Injuries scheme women civilians injured by enemy action received lower compensation than men. A cross-party campaign of women Members, with Mavis Tate prominent, forced the government to concede equal rates in April 1943.',
+        real: 'Under the wartime Personal Injuries scheme women civilians injured by enemy action received lower compensation than men. A cross-party campaign of women Members, with Mavis Tate prominent, forced the government to concede equal rates in 1943.',
         check: 'unchecked', facts: ['injuries-1943', 'tate-later'],
         choices: [
           { label: 'Put down the amendment and whip the women', effects: 'state+2 steel+3 loyalty-2 #equal', historical: true,
@@ -333,7 +333,7 @@
         venue: { plate: 'field', label: 'Buchenwald concentration camp, Weimar' },
         text: 'April 1945. General Eisenhower has asked for Members of Parliament to see what the Americans found at Buchenwald, and you are one of ten who fly out. The dead are stacked by the crematorium. The living weigh five stone. An American officer shows you the lampshades and the shrunken heads. A prisoner asks in German whether anyone in England knew. You will be asked to sign the report.',
         basis: 'The parliamentary delegation of ten MPs and peers, including Mavis Tate, which visited Buchenwald in April 1945 at Eisenhower\'s invitation; its report, Buchenwald Camp: The Report of a Parliamentary Delegation (Cmd 6626).',
-        real: 'A parliamentary delegation visited Buchenwald on 21 April 1945 at Eisenhower\'s invitation; Mavis Tate was a member, and she took photographs and spoke of what she saw. The delegation\'s report was published as a White Paper. About 56,000 people died at Buchenwald.',
+        real: 'A parliamentary delegation visited Buchenwald on 21 April 1945 at Eisenhower\'s invitation; Mavis Tate was a member, and she took photographs and spoke of what she saw. The delegation\'s report was presented to Parliament on 27 April 1945. One estimate puts the prisoners murdered at Buchenwald at 56,000, and many deaths were never recorded.',
         check: 'unchecked', facts: ['buchenwald-1945', 'tate-later'],
         choices: [
           { label: 'Sign the report, and speak of it everywhere', effects: 'state+3 press+3 health-2', historical: true,

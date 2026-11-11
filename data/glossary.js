@@ -684,7 +684,7 @@
     { id: 'tube-shelters', m: 'go down into the Tube', title: 'Shelters', date: '1939–41',
       text: 'The government handed out garden Anderson shelters and built brick street shelters, but feared a "deep shelter mentality" and at first barred the Underground. Londoners bought platform tickets and went down anyway. Later an indoor steel table shelter was issued for houses without gardens.' },
     { id: 'internment-1940', m: 'behind wire on the Isle of Man', title: 'Internment', date: '1939–41',
-      text: 'At the outbreak of war tribunals graded every German and Austrian in Britain; most were left free. In May and June 1940, with invasion feared, the government interned men in their tens of thousands, refugees from Hitler included, in camps on the Isle of Man and elsewhere, and shipped some overseas.' },
+      text: 'At the outbreak of war tribunals graded every German and Austrian in Britain; most were left free. In May and June 1940, with invasion feared, the government interned men by the thousand, refugees from Hitler included, in camps on the Isle of Man and elsewhere, and shipped some overseas.' },
     { id: 'declaration-1942', m: 'exterminate the Jewish people', title: 'The declaration of December 1942', date: '17 December 1942',
       text: 'The Allied governments, including Britain, the United States and the Soviet Union, jointly condemned the German policy of exterminating the Jews of Europe and promised that those responsible would be punished. It was read in the Commons by the Foreign Secretary, and the House stood in silence.' },
     { id: 'buchenwald', m: 'what the Americans found at Buchenwald', title: 'Buchenwald', date: '1937–45',
