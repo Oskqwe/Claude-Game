@@ -39,7 +39,7 @@
       vector: v(2, 1, 4, 6, -2, 1),
       line: 'Guards officer, Somme survivor, and a Tory who has read Keynes and walked the streets of Stockton.',
       figures: ['Harold Macmorran', 'Antony Edgerton', 'Rab Buller', 'Bob Boothroyd', 'Ronald Cartwright', 'Quintin Hoggart', 'Jack Proffitt'] },
-    { id: 'planner', name: 'The Planner', built: false, divergence: 'Moderate',
+    { id: 'planner', name: 'The Planner', built: true, divergence: 'Moderate',
       vector: v(-4, -3, 10, 4, 3, -2),
       line: 'Eton or Winchester, a First, and a slide rule. Socialism as a problem in arithmetic.',
       figures: ['Hugh Dalby', 'Stafford Crisp', 'Hugh Gaskell', 'Douglas Jagger', 'Harold Wilmot', 'Evan Dunbar'] },

@@ -56,7 +56,7 @@
     scenes: [
       /* ═══════ Munich and the coming of war ═══════ */
       { id: 'munich-1938-pion', year: 1938, t: 1938.75, title: 'Peace for our time', if: '!mp ' + LIVE,
-        venue: { plate: 'chamber', label: 'The House of Commons' },
+        venue: { plate: 'gallery', label: 'The House of Commons' },
         text: 'October 1938. Mr Nevil Chambers has come back from Munich with a paper signed by Hitler, and the crowds sang outside the Palace. The Czechs have lost their frontier and their forts. The House debates the agreement for four days. Your {party} whips have told you how to vote. Your post is full of letters from mothers thanking God for peace, and one from a Czech refugee in {city} who does not.',
         basis: 'The Munich debate of 3–6 October 1938 and the vote of 6 October; the Duchess of Atholl, Cazalet-Keir and the women Members divided by it.',
         real: 'The Commons approved the Munich agreement by 366 to 144 on 6 October 1938, with about thirty Conservatives abstaining. Labour and the Liberals voted against. The Duchess of Atholl, a Conservative woman Member, resigned her seat over appeasement and lost the by-election that December.',
@@ -112,7 +112,7 @@
         ] },
 
       { id: 'fifth-column-1940', year: 1940, t: 1940.37, title: 'The fifth column', if: '!route-tory !mp ' + LIVE,
-        venue: { plate: 'chamber', label: 'The Members\' Lobby' },
+        venue: { plate: 'gallery', label: 'The Members\' Lobby' },
         text: 'May 1940. Holland has fallen in five days, and the papers say German parachutists came disguised as nuns, helped by Germans living there. In the Lobby the cry is to intern every German and Austrian in Britain, refugees included, at once. Your constituents agree. Mr Morrow\'s people say the refugees are Hitler\'s enemies. And the Right Club\'s founder has just been arrested by Special Branch.',
         basis: 'The fifth-column panic of May 1940 after the fall of the Netherlands; Mavis Tate\'s call for the mass internment of enemy aliens; Ramsay\'s detention on 23 May 1940.',
         real: 'Fear of a fifth column after the invasion of the Low Countries led to the mass internment of many thousands of German, Austrian and Italian men, most of the Germans and Austrians refugees, in May–July 1940. Mavis Tate was among the Members who urged it. Archibald Ramsay was detained on 23 May 1940.',
@@ -136,7 +136,7 @@
         ] },
 
       { id: 'norway-1940-pion', year: 1940, t: 1940.35, title: 'In the name of God, go', if: '!mp ' + LIVE,
-        venue: { plate: 'chamber', label: 'The House of Commons' },
+        venue: { plate: 'gallery', label: 'The House of Commons' },
         text: 'May 1940. Two days of debate on Norway, where the expedition has been thrown back into the sea. Old Leo Emery has quoted Cromwell at the Prime Minister. The government has turned it into a vote of confidence. In the division lobbies Conservatives in uniform are weeping. Mrs Aster, of all people, is going to vote against. Your vote is one of six hundred, and tonight each one is weighed.',
         basis: 'The Norway debate of 7–8 May 1940 and the division of 8 May; Nancy Astor voted with the Opposition, as did other Conservative rebels.',
         real: 'The government won the Norway division by 281 to 200, but about forty of its supporters voted against and many more abstained. Chamberlain resigned on 10 May and Churchill formed a coalition. Nancy Astor was among the Conservatives who voted against the government.',
@@ -155,7 +155,7 @@
 
       /* ═══════ Manchester: the shelters ═══════ */
       { id: 'pensions-1940', year: 1940, t: 1940.4, title: 'A junior minister', if: MAN + ' !mp ' + LIVE,
-        venue: { plate: 'office', label: 'The Ministry of Pensions, Acton' },
+        venue: { plate: 'whitehall', label: 'The Ministry of Pensions, Acton' },
         text: 'May 1940. In the coalition Mr Churchward has made you Parliamentary Secretary to the Ministry of Pensions. There is a car, a private secretary and a building full of files on the wounded of the last war, some still fighting for their pensions after twenty years. The officials expect you to sign. The men in the files expect you to read. There are more than a hundred thousand of them.',
         basis: 'Wilkinson\'s appointment as Parliamentary Secretary to the Ministry of Pensions in May 1940, in the Churchill coalition.',
         real: 'Ellen Wilkinson became Parliamentary Secretary to the Ministry of Pensions when Churchill formed his coalition in May 1940. She moved to the Ministry of Home Security under Herbert Morrison that October.',
@@ -232,7 +232,7 @@
 
       /* ═══════ The Liberal: internment and the refugees ═══════ */
       { id: 'internment-1940', year: 1940, t: 1940.52, title: 'Behind the wire', if: '!route-liberal ' + LIVE,
-        venue: { plate: 'chamber', label: 'The House of Commons' },
+        venue: { plate: 'gallery', label: 'The House of Commons' },
         text: 'July 1940. Thousands of refugees from Hitler are behind wire on the Isle of Man and at a derelict mill in Bury, some of them men Miss Rathmore and you got out of Vienna. A ship taking internees to Canada has been torpedoed and hundreds drowned. A Nobel laureate is sleeping on straw. Miss Rathmore has a debate on Wednesday. She wants you to read out the cases.',
         basis: 'Rathbone\'s campaign against the mass internment of refugees in the summer of 1940, including the debate of 10 July 1940; the sinking of the Arandora Star on 2 July 1940; Warth Mills at Bury.',
         real: 'The Arandora Star, carrying German and Italian internees to Canada, was torpedoed on 2 July 1940 with the loss of over 800 lives. In the Commons on 10 July 1940 Rathbone and others attacked the internment of refugees. Releases began that August, and most refugees were free by 1941.',
@@ -250,7 +250,7 @@
         ] },
 
       { id: 'declaration-1942', year: 1942, t: 1942.96, title: 'The declaration', if: '!mp ~!route-tory ' + LIVE,
-        venue: { plate: 'chamber', label: 'The House of Commons' },
+        venue: { plate: 'gallery', label: 'The House of Commons' },
         text: 'December 1942. The Foreign Secretary, Mr Edgerton, reads a declaration by the Allies that the Germans are carrying out Hitler\'s intention to exterminate the Jewish people of Europe. The House stands in silence, which it has never done before. Miss Rathmore stands with you. Afterwards she says that silence will not save one child. She wants a deputation to demand that Britain take those who can still be got out.',
         basis: 'The Joint Declaration of the Allies of 17 December 1942, read in the Commons by Eden, after which Members stood in silence; Rathbone\'s National Committee for Rescue from Nazi Terror, 1943.',
         real: 'On 17 December 1942 Eden read the Allied declaration condemning the extermination of the Jews of Europe, and the Commons stood in silence. Rathbone and Victor Gollancz pressed for rescue; the Bermuda conference of April 1943 produced little.',
@@ -270,7 +270,7 @@
 
       /* ═══════ The Conservative: women's injuries ═══════ */
       { id: 'injuries-1941', year: 1941, t: 1941.8, title: 'Less for a woman', if: '!route-tory !mp ' + LIVE,
-        venue: { plate: 'office', label: 'A committee room, House of Commons' },
+        venue: { plate: 'whitehall', label: 'A committee room, House of Commons' },
         text: '1941. A woman fire-watcher who loses a leg in a raid gets less compensation each week than a man who loses one. The Treasury says women earn less, so they lose less. A group of women Members from every party has formed a committee on women\'s war work and wants you to put down the amendment. Your own front bench says it will cost too much.',
         basis: 'The campaign led by Mavis Tate and the cross-party Women\'s Power Committee against lower compensation rates for women under the Personal Injuries (Civilians) Scheme; equal rates conceded in 1943.',
         real: 'Under the wartime Personal Injuries scheme women civilians injured by enemy action received lower compensation than men. A cross-party campaign of women Members, with Mavis Tate prominent, forced the government to concede equal rates in 1943.',
@@ -307,7 +307,7 @@
 
       /* ═══════ Equal pay, 1944 ═══════ */
       { id: 'equal-pay-1944', year: 1944, t: 1944.24, title: 'One vote', if: '!mp ' + LIVE,
-        venue: { plate: 'chamber', label: 'The House of Commons' },
+        venue: { plate: 'gallery', label: 'The House of Commons' },
         text: 'March 1944. The Education Bill is in committee, and Miss Cazenove-Kerr\'s clause to pay women teachers the same as men has just been carried, by 117 votes to 116. It is the government\'s first defeat of the war. Mr Churchward is furious. He will make its removal a vote of confidence on Thursday: vote for equal pay and you vote against him, in the middle of the war. The women are counting heads.',
         basis: 'Cazalet-Keir\'s equal-pay amendment to the Education Bill, carried 117–116 on 28 March 1944 and reversed on 30 March after Churchill made it a matter of confidence.',
         real: 'On 28 March 1944 the Commons carried the equal-pay amendment by one vote, the coalition\'s only defeat on a major bill. Churchill made its deletion a confidence vote, and on 30 March the House reversed it by 425 to 23. A Royal Commission on Equal Pay was set up and reported in 1946.',
@@ -409,7 +409,7 @@
 
       /* ═══════ Manchester: the plot, and Education ═══════ */
       { id: 'plot-1945', year: 1945, t: 1945.56, title: 'The plot in the corridor', if: MAN + ' !mp ' + LIVE,
-        venue: { plate: 'corridor', label: 'Transport House, Smith Square' },
+        venue: { plate: 'whitehall', label: 'Transport House, Smith Square' },
         text: '26 July 1945. Labour has won by a landslide, and Mr Astley has gone to the Palace. But Mr Morrow, whom you have followed for five years, says the new Members should choose the leader first, and that it should be him. He wants you to ring round. Ernie Bevis says Astley goes to the Palace and that is that. Within the hour the King will have asked someone.',
         basis: 'Herbert Morrison\'s attempt on 26 July 1945 to delay Attlee\'s acceptance of office until the new Parliamentary Labour Party had elected a leader; Wilkinson, his close ally, supported him.',
         real: 'On 26 July 1945 Morrison argued that the new parliamentary party should elect its leader before anyone formed a government. Ellen Wilkinson backed him. Attlee went to the Palace that evening and accepted office; Bevin supported him. Attlee nonetheless made Wilkinson Minister of Education.',
@@ -428,7 +428,7 @@
         ] },
 
       { id: 'education-1945', year: 1945, t: 1945.6, title: 'The Minister of Education', if: MAN + ' !mp ' + LIVE,
-        venue: { plate: 'office', label: 'The Ministry of Education, Belgrave Square' },
+        venue: { plate: 'whitehall', label: 'The Ministry of Education, Belgrave Square' },
         text: 'August 1945. Mr Astley has made you Minister of Education, the second woman ever to sit in a British Cabinet. The 1944 Act says every child shall go to secondary school, and the leaving age shall rise to fifteen. There are not enough teachers, classrooms or bricks. The Treasury wants it postponed. You left school at sixteen with a scholarship and a fight. The officials want to know your priorities.',
         basis: 'Wilkinson\'s appointment as Minister of Education on 3 August 1945; the 1944 Education Act\'s requirement to raise the school leaving age to 15.',
         real: 'Ellen Wilkinson became Minister of Education on 3 August 1945, the second woman to sit in a British Cabinet after Margaret Bondfield. She insisted on raising the leaving age to fifteen from 1 April 1947 despite Treasury pressure to delay, and introduced free school milk.',
@@ -446,7 +446,7 @@
         ] },
 
       { id: 'winter-1947', year: 1947, t: 1947.1, title: 'The winter of 1947', if: '!education ' + LIVE,
-        venue: { plate: 'office', label: 'The Minister\'s room, Belgrave Square' },
+        venue: { plate: 'whitehall', label: 'The Minister\'s room, Belgrave Square' },
         text: 'February 1947. The coldest winter anyone remembers. The power stations have no coal and the offices work by candlelight. Your bronchitis is back, and the asthma; you sleep on pills. In eight weeks the leaving age goes up, and four hundred thousand more children will need a desk. The huts are stuck in the snow. Your doctor says rest. Your officials say the April date can still slip.',
         basis: 'The fuel crisis of February 1947; Wilkinson\'s chronic ill health; her death on 6 February 1947 from an overdose of medication, recorded as accidental; the leaving age raised on 1 April 1947.',
         real: 'Ellen Wilkinson, long in poor health with asthma and bronchitis, died on 6 February 1947, aged 55, from an overdose of barbiturates, recorded by the coroner as accidental. Her successor, George Tomlinson, raised the school leaving age to fifteen on 1 April 1947 as she had planned.',
@@ -466,7 +466,7 @@
 
       /* ═══════ The doctor at the Ministry of Food ═══════ */
       { id: 'food-1946', year: 1946, t: 1946.5, title: 'Bread units', if: '!route-doctor !mp ' + LIVE,
-        venue: { plate: 'office', label: 'The Ministry of Food, Portman Square' },
+        venue: { plate: 'whitehall', label: 'The Ministry of Food, Portman Square' },
         text: 'July 1946. You are Parliamentary Secretary at the Ministry of Food. The war is won and the rations are smaller: there is famine in Germany and India, and the world wheat crop has failed. The Cabinet has decided to ration bread, which it never did in the war. The bakers are threatening to strike, the housewives\' leagues are marching, and you are to defend it on the wireless tonight.',
         basis: 'Summerskill as Parliamentary Secretary to the Ministry of Food, 1945–50; bread rationing from 21 July 1946 to July 1948; the British Housewives\' League.',
         real: 'Edith Summerskill was Parliamentary Secretary to the Ministry of Food from 1945 to 1950. Bread, never rationed in the war, was rationed from 21 July 1946 until July 1948. The British Housewives\' League campaigned noisily against rationing.',
@@ -502,7 +502,7 @@
         ] },
 
       { id: 'insurance-1950', year: 1950, t: 1950.3, title: 'National Insurance', if: '!route-doctor !minister !mp ' + LIVE,
-        venue: { plate: 'office', label: 'The Ministry of National Insurance, Newcastle' },
+        venue: { plate: 'whitehall', label: 'The Ministry of National Insurance, Newcastle' },
         text: 'March 1950. Mr Astley has kept his majority by a whisker and made you Minister of National Insurance. Out at Longbenton, near Newcastle, thousands of clerks keep a card for every adult in Britain. The pensions and the sickness benefit are running out of money as prices rise. The Treasury wants the benefit kept down. The trade unions want it raised. You are the woman with the cards.',
         basis: 'Summerskill\'s appointment as Minister of National Insurance in February 1950, after the general election; the ministry\'s central office at Longbenton, Newcastle.',
         real: 'Summerskill became Minister of National Insurance in 1950 and held the post until Labour lost office in October 1951. She was made a privy counsellor in 1949.',
@@ -521,7 +521,7 @@
 
       /* ═══════ The Liberal: family allowances and after ═══════ */
       { id: 'allowances-1945', year: 1945, t: 1945.17, title: 'To the mother', if: '!route-liberal !mp ' + LIVE,
-        venue: { plate: 'chamber', label: 'The House of Commons' },
+        venue: { plate: 'gallery', label: 'The House of Commons' },
         text: 'March 1945. After twenty-five years, a family allowance bill: five shillings a week for every child after the first. But it will be paid to the father. Miss Rathmore, old and ill, says she will vote against her own life\'s work unless it goes to the mother, who feeds the children. The government says a man is head of the household. There will be a free vote. She wants you to count.',
         basis: 'Rathbone\'s campaign, in March 1945, to have the family allowance paid to the mother; the government conceded a free vote, and the Family Allowances Act 1945 paid it to the mother.',
         real: 'The Family Allowances Bill of 1945 originally provided payment to the father. Rathbone threatened to vote against it, the government allowed a free vote, and the allowance was paid to the mother. The Act paid five shillings a week for second and later children from August 1946. Rathbone died in January 1946.',
@@ -558,7 +558,7 @@
 
       /* ═══════ Life outside office ═══════ */
       { id: 'carswell-1946', year: 1946, t: 1946.2, title: 'Tea on the Terrace', if: '!mp ~!route-tory ' + LIVE, kind: 'lunch',
-        venue: { plate: 'river', label: 'The Terrace, House of Commons' },
+        venue: { plate: 'embankment', label: 'The Terrace, House of Commons' },
         guests: ['Barbara Carswell, the new Member for Blackburn', 'Edith Summerfield, doctor and minister', 'Jennie Leigh, the Member for Cannock', 'You'],
         menu: ['The new women', 'Housing', 'Bevis and America'],
         text: 'Spring 1946. Tea on the Terrace in thin sunshine, the river brown below. There are twenty-four women in the House now, most of them Labour and most of them new. Barbara Carswell, from Blackburn, red-haired and impatient, wants to know how the place works. Edith Summerfield wants an ally on milk. Jennie Leigh wants to talk about Nye and the Americans. Everyone wants to talk about houses.',
@@ -587,7 +587,7 @@
         ] },
 
       { id: 'holiday-1948', year: 1948, t: 1948.6, title: 'A week off', if: LIVE,
-        venue: { plate: 'river', label: 'A boarding house at Llandudno' },
+        venue: { plate: 'embankment', label: 'A boarding house at Llandudno' },
         text: 'August 1948. The House has risen, and for the first time in years you have a week with nothing in it. The boarding house serves powdered egg and a view of the bay. Your doctor has told you to sleep. The constituency has sent a pile of letters after you, there is a summer school in Oxford that wants a speaker, and on the promenade a band is playing tunes from before the war.',
         basis: 'The ordinary life of a mid-century politician: the summer recess, the seaside, the never-ending post. No single real episode.',
         real: 'Invented. Women Members of this generation often wrote of overwork and loneliness; Wilkinson, Rathbone and Tate all died within a few years of the war, worn out.',

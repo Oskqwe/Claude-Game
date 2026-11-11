@@ -99,6 +99,7 @@
        office=Second_Lieutenant                office (underscores become spaces; {vars} filled)
        set:seat=Sheffield_Hillsborough         a life-specific word, read in text as {seat}
        year=1895                               move the calendar
+       born=1916                               a route that follows a younger life (sets the birth year)
   */
   TM.applyEffects = function (s, str, delta) {
     delta = delta || { stats: {}, axes: {}, nation: {}, rel: {}, traits: [], lost: [], office: null };
@@ -136,6 +137,8 @@
         delta.office = s.office;
       } else if ((m = tok.match(/^year=(\d{4})$/))) {
         s.year = +m[1];
+      } else if ((m = tok.match(/^born=(\d{4})$/))) {
+        s.born = +m[1];
       } else if ((m = tok.match(/^@([\w-]+)([+-]\d+)$/))) {
         const k = m[1], n = +m[2];
         if (!s.rel[k]) s.rel[k] = { score: 0, status: '' };
