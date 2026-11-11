@@ -88,6 +88,7 @@
     const docs = [];
     let gotoId = c.goto || null;
     let passed = null;
+    let ended = !!c.end;
 
     if (c.roll) {
       passed = TM.roll(s, c.roll.stat, c.roll.diff);
@@ -99,6 +100,7 @@
         if (o.diary) diary = o.diary;
         if (o.doc) docs.push(fileDoc(s, o.doc, sc));
         if (o.goto) gotoId = o.goto;
+        if (o.end) ended = true;
       }
     }
     if (c.doc) docs.push(fileDoc(s, c.doc, sc));
@@ -129,7 +131,7 @@
     }
 
     s.lastDelta = delta;
-    s.pending = { result: TM.fill(result, s), docs: docs.filter(Boolean), goto: gotoId, died, end: !!c.end, fork: delta.fork || null };
+    s.pending = { result: TM.fill(result, s), docs: docs.filter(Boolean), goto: gotoId, died, end: ended, fork: delta.fork || null };
     TM.save();
   };
 

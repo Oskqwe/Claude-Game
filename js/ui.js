@@ -307,8 +307,8 @@
       const hint = locked ? `<span class="lock">Needs: ${esc(String(o.c.requires).replace(/[#!~]/g, '').replace(/-/g, ' '))}</span>` : '';
       return `<button class="choice" data-key="${KEYS[n]}" data-i="${o.i}" ${locked ? 'disabled' : ''}>${esc(TM.fill(o.c.label, s))}${hint}</button>`;
     }).join('');
-    const own = TM.Live && TM.Live.offered(sc) ? `<details class="own-move"><summary>Or do something of your own</summary>
-      <label class="muted" for="own-text">Write what you do, in a sentence or two. Claude writes what happens; the dice stay hidden.</label>
+    const own = TM.Live && TM.Live.offered(sc, s) ? `<details class="own-move"><summary>Or do something of your own</summary>
+      <label class="muted" for="own-text">Write what you do, in a sentence or two. Claude writes what happens; the dice stay hidden. ${TM.Live.left(s)} of ${TM.Live.PER_ACT} left in this act.</label>
       <textarea id="own-text" maxlength="240" placeholder="For example: I ride to Downing Street and demand to see the Prime Minister tonight."></textarea>
       <div class="row"><button class="btn" id="own-go" type="button">Do it</button><span class="muted" id="own-msg"></span></div></details>` : '';
     setSheet(`<div class="stack">${sceneHead(sc, s)}${body}<div class="choices">${choices}</div>${own}</div>`);

@@ -69,6 +69,10 @@ First branch: `data/bulldog/fork-mamund.js`. Riding alone into a village at Mala
 
 More forks (`data/bulldog/forks.js`): `bankrupt` (buying on the way down in 1929; a bankrupt cannot sit in the Commons, and an undischarged one cannot stand) and `changi` (staying in Singapore in 1942: Changi, the Burma railway, liberation). `world=<id>` records a bend in history that leaves the character on the record: the Peace of 1940, Hallifield's premiership with the player as Minister of Defence, Trondheim taken from the sea. Winning a seat clears `offmap` automatically and sets `returned`.
 
+Act II forks (`data/bulldog/forks2.js`): `narrows` (the Fleet sent into the Dardanelles again in 1915: Constantinople and a different 1917, or a drowned fleet), `sidney` (leading the rush at Sidney Street costs the Admiralty; Ireland and the Curragh instead), `pow-1916` (taken on a raid from Ploegsteert: the camps, Switzerland or the Holzminden tunnel, and the coupon election). `data/bulldog/citizen.js` gives off-record lives an ordinary war: the ration book, the warden's post, the stranger at the club (the `traitor` fork), the call-up of old men, the flying bombs.
+
+Typed live moves are limited to three per act (`TM.Live.PER_ACT`). `TM.DEATH_SCALE` (1.35) tunes mortality to about one life in four ending before 1951.
+
 ## Your own move (live)
 
 In the claude.ai artifact the page can ask Claude through the `sample` capability (`js/live.js`). On ordinary scenes the player may type an action; Claude returns JSON (outcome, effects, optional roll, risk, optional fork). The engine caps every change (standing ±6, convictions ±3, nation ±5), rolls the dice itself, decides death from the stated risk, and records any fork as `live-<n>` in `s.liveForks`. Live moments are marked "written live, not from the record" in the epilogue. Opened from disk, the box never appears.

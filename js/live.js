@@ -21,7 +21,9 @@
   } catch (e) { /* no runtime: nothing to do */ }
 
   // Scenes where a typed move makes sense: ordinary scenes, not lunches, Question Time or walks.
-  Live.offered = (sc) => Live.ready && !Live.off && sc && !sc.kind;
+  Live.PER_ACT = 3; // owner's limit: three typed moves per act
+  Live.left = (s) => Live.PER_ACT - (((s && s.liveUsed) || {})[s && s.act] || 0);
+  Live.offered = (sc, s) => Live.ready && !Live.off && sc && !sc.kind && Live.left(s || TM.state) > 0;
 
   const STAT_KEYS = { capital: 'cap', seat: 'seat', favour: 'fav', press: 'press', reputation: 'rep', money: 'money', health: 'health' };
   const AXIS_KEYS = ['order', 'empire', 'state', 'steel', 'loyalty', 'temper'];
@@ -98,7 +100,7 @@ Include only the effects that change. Keep numbers small; most moves change two 
   Live.choose = async function (s, move, done) {
     const sc = TM.scene(s);
     move = clip(move, 240);
-    if (!move || !Live.offered(sc) || Live.busy) return done('');
+    if (!move || !Live.offered(sc, s) || Live.busy) return done('');
     Live.busy = true;
     let r;
     try {
@@ -115,6 +117,8 @@ Include only the effects that change. Keep numbers small; most moves change two 
     if (!r || typeof r !== 'object' || !r.result) return done('Claude\'s answer could not be read. Try again, or take one of the written choices.');
     if (TM.state !== s || TM.scene(s) !== sc || s.pending) return done('');
 
+    s.liveUsed = s.liveUsed || {};
+    s.liveUsed[s.act] = (s.liveUsed[s.act] || 0) + 1;
     // Apply it through the engine, with every number capped.
     const delta = TM.applyEffects(s, effectString(r.effects));
     let result = clip(r.result, 900), passed = null;

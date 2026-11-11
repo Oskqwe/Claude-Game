@@ -194,9 +194,11 @@
     return Math.random() < TM.chance(s, stat, diff);
   };
   // Mortality: base chance scaled up when health is poor.
+  TM.DEATH_SCALE = 1.35;
   TM.deathRoll = function (s, chance) {
     const h = s.stats.health;
-    const p = clamp(chance * (1 + (50 - h) / 100), 0, 0.9);
+    // DEATH_SCALE tunes the whole game toward DESIGN §1: roughly one life in three or four ends before 1951.
+    const p = clamp(chance * TM.DEATH_SCALE * (1 + (50 - h) / 100), 0, 0.9);
     return Math.random() < p;
   };
 
