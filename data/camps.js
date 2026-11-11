@@ -31,7 +31,7 @@
       vector: v(-7, 2, 6, 8, 7, 1),
       line: 'Farm boy at eleven, drayman at eighteen, master of a million union cards by forty.',
       figures: ['Ernie Bevis', 'George Isaacson', 'Jim Gallagher', 'Jack Lawton', 'George Tomkinson'] },
-    { id: 'firebrand', name: 'The Firebrand', built: false, divergence: 'Moderate to drastic',
+    { id: 'firebrand', name: 'The Firebrand', built: true, divergence: 'Moderate to drastic',
       vector: v(-10, -7, 9, 3, -9, 8),
       line: 'From the pit and the soapbox. Expelled, reinstated, and building something nobody thought could be built.',
       figures: ['Nye Bowen', 'Manny Shinfield', 'Sydney Silverton', 'Jennie Leigh', 'Michael Footman', 'Woodrow Wyeth'] },
